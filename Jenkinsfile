@@ -34,7 +34,7 @@ node {
                     --header "draft: true " \
                     --header "Token: $GITHUBTOKEN" \
                     --request POST \
-                    "/repos/$OWNER/$REPO/releases"
+                    "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases"
 
                 # upload a release
                 for resolution_zip in "output"/*
