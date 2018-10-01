@@ -18,7 +18,10 @@ node {
     }
 
     def currentTag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+    echo $currentTag
     def newTag = (currentTag?.trim()) ? 1 : currentTag + 1
+    echo $newTag
+    newTag = 1
 
     stage('tag and push tags, push zip files to github') {
         withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUBTOKEN')]) {
