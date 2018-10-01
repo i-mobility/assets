@@ -21,7 +21,7 @@ node {
     def newTag = (currentTag != null) ? currentTag + 1 : 1
 
     stage('tag and push tags, push zip files to github') {
-        withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUB-TOKEN')]) {
+        withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUBTOKEN')]) {
             sh '''
                 UPLOAD_URL="api.github.com"
                 OWNER="i-mobility"
@@ -32,18 +32,18 @@ node {
                 curl \
                     --header "tag_name: v$newTag" \
                     --header "draft: true " \
-                    --header "Token: $GITHUB-TOKEN" \
+                    --header "Token: $GITHUBTOKEN" \
                     --request POST \
-                    "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases"
+                    "/repos/$OWNER/$REPO/releases"
 
                 # upload a release
                 for resolution_zip in "output"/*
                 do
                     curl \
                         --header "Content-Type: application/zip" \
-                        --header "Token: $GITHUB-TOKEN"
+                        --header "Token: $GITHUBTOKEN"
                         --request POST \
-                        --data "name:resolution_zip"
+                        --data "name:resolution_zip" \
                         "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases/$RELEASE_ID/assets"
                 done
             '''
