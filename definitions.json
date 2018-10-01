@@ -1,0 +1,106 @@
+{
+  "transportation_group": [
+    {
+      "id": "car",
+      "translation_key": {
+        "default": "transportation_label.car",
+        "nearby": "transportation_label.car",
+        "routing": null
+      }
+    },
+    {
+      "id": "public",
+      "translation_key": {
+        "default": "transportation_group.public",
+        "nearby": "transportation_group.public",
+        "routing": "transportation_group.public"
+      }
+    }
+  ],
+  "transport": [
+    {
+      "id": "nextbike",
+      "icon": {
+        "default": "nextbike",
+        "routing": "nextbike",
+        "nearby": "nextbike"
+      },
+      "image": {
+        "default": "details_nextbike",
+        "nearby": "details_nextbike",
+        "routing": "details_nextbike"
+      },
+      "color": {
+        "default": "#1332649",
+        "nearby": "#1332649",
+        "routing": "#1332649"
+      },
+      "translation_key": {
+        "default": "transportation_label.nextbike",
+        "nearby": "transportation_label.nextbike",
+        "routing": "transportation_label.nextbike"
+      },
+      "priority": "secondary"
+    },
+    {
+      "id": "taxi",
+      "icon": {
+        "default": "taxi",
+        "routing": "taxi",
+        "nearby": "taxi"
+      },
+      "image": {
+        "default": null
+      },
+      "color": {
+        "default": "#1332649",
+        "nearby": "#1332649"
+      },
+      "translation_key": {
+        "default": "transportation_label.taxi",
+        "nearby": "transportation_label.taxi"
+      },
+      "priority": "secondary"
+    },
+    {
+      "id": "taxi_rank",
+      "icon": {
+        "default": "taxi_rank",
+        "routing": "taxi_rank",
+        "nearby": "taxi_rank"
+      },
+      "image": {
+        "default": null
+      },
+      "color": {
+        "default": "#1332649",
+        "nearby": "#1332649"
+      },
+      "translation_key": {
+        "default": "transportation_label.taxi_rank",
+        "nearby": "transportation_label.taxi_rank"
+      },
+      "priority": "secondary"
+    },
+    {
+      "id": "car",
+      "icon": {
+        "default": "car",
+        "routing": "car",
+        "nearby": "car"
+      },
+      "image": {
+        "default": null
+      },
+      "color": {
+        "default": "#1332649",
+        "nearby": "#1332649"
+      },
+      "translation_key": {
+        "default": "transportation_label.car",
+        "nearby": "transportation_label.car"
+      },
+      "priority": "secondary"
+    }
+  ]
+}
