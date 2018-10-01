@@ -27,7 +27,7 @@ node {
                 UPLOAD_URL="api.github.com"
                 OWNER="i-mobility"
                 REPO="assets"
-                RELEASE_ID=$newTag
+                RELEASE_ID="$newTag"
 
                 # create a release
                 def create_response = curl \
