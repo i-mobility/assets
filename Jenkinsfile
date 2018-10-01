@@ -8,19 +8,20 @@ node {
     stage('zipping resolution folders') {
         sh '''
             OUTPUT_FOLDER="output"
+            mkdir -p $OUTPUT_FOLDER
+
             for resolution_entry in "images"/*
             do
                 RESOLUTION_FOLDERNAME=$(basename $resolution_entry)
-                mkdir -p $OUTPUT_FOLDER
                 zip -FSr $OUTPUT_FOLDER/$RESOLUTION_FOLDERNAME.zip "$resolution_entry" "definitions.json" "translations"
             done
         '''
     }
 
     def currentTag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
-    echo $currentTag
+    echo ${currentTag}
     def newTag = (currentTag?.trim()) ? 1 : currentTag + 1
-    echo $newTag
+    echo ${newTag}
     newTag = 1
 
     stage('tag and push tags, push zip files to github') {
