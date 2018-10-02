@@ -13,7 +13,8 @@ node {
     def newTag = (currentTag == "undefined") ? 1 : currentTag + 1
 
     stage('tag and push new tag') {
-        sh 'echo newTag'
+        sh 'echo $currentTag'
+        sh 'echo $newTag'
         sh 'git tag $newTag'
         sh 'git push --tag'
     }
@@ -24,7 +25,7 @@ node {
                 UPLOAD_URL="api.github.com"
                 OWNER="i-mobility"
                 REPO="assets"
-                RELEASE_ID=${newTag}
+                RELEASE_ID=1
 
                 # create a release
                 curl \

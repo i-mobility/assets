@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# script to zip assets with individual resolutions seperately and puts all of them in an output folder
+# script to zip assets with individual resolutions separately and puts all of them in an output folder
 # requirements: needed folders/files: images/<resolution>, translations, definitions.json
 # result: each zip holds a folder with assets, the definsions.json and the translations folders
 
