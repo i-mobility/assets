@@ -1,24 +1,24 @@
 node {
     cleanWs()
 
-    stage("checkout") {
-        checkout scm
-    }
-
-    stage('zipping resolution folders') {
-        sh './zip-resolution-folders.sh'
-    }
-
     def currentTag
     def newTag
 
-    stage('tag and push new tag') {
+    stage("checkout, tag and push new tag") {
+        checkout scm
+
         currentTag = sh(returnStdout: true, script: "git name-rev --tags --name-only \$(git rev-parse HEAD)").trim()
-        newTag = (currentTag == "undefined") ? 1 : currentTag + 1
+        sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
+        newTag = (currentTag == "") ? 1 : currentTag + 1
+
         sh 'echo $currentTag'
         sh 'echo $newTag'
         sh 'git tag $newTag'
         sh 'git push --tag'
+    }
+
+    stage('zipping resolution folders') {
+        sh './zip-resolution-folders.sh'
     }
 
     stage('create github release and push zip files to github as releases') {
