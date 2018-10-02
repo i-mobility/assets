@@ -6,25 +6,18 @@ node {
     }
 
     stage('zipping resolution folders') {
-        sh '''
-            OUTPUT_FOLDER="output"
-            mkdir -p $OUTPUT_FOLDER
-
-            for resolution_entry in "images"/*
-            do
-                RESOLUTION_FOLDERNAME=$(basename $resolution_entry)
-                zip -FSr $OUTPUT_FOLDER/$RESOLUTION_FOLDERNAME.zip "$resolution_entry" "definitions.json" "translations"
-            done
-        '''
+        sh './zip-resolution-folders.sh'
     }
 
-    def currentTag = sh(returnStdout: true, script: "git tag --contains | head -1").trim()
-    echo ${currentTag}
-    def newTag = (currentTag?.trim()) ? 1 : currentTag + 1
-    echo ${newTag}
-    newTag = 1
+    def currentTag = sh(returnStdout: true, script: "git name-rev --tags --name-only $(git rev-parse HEAD)").trim()
+    def newTag = (currentTag == "undefined") ? 1 : currentTag + 1
 
-    stage('tag and push tags, push zip files to github') {
+    stage('tag and push new tag') {
+        sh 'git tag $(newTag)'
+        sh 'git push --tag'
+    }
+
+    stage('create github release and push zip files to github as releases') {
         withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUBTOKEN')]) {
             sh '''
                 UPLOAD_URL="api.github.com"
@@ -34,9 +27,12 @@ node {
 
                 # create a release
                 curl \
-                    --header "tag_name: v$newTag" \
-                    --header "draft: true " \
-                    --header "Token: $GITHUBTOKEN" \
+                    --header "tag_name: 1" \
+                    --header "target_commitish: master" \
+                    --header "name: 1" \
+                    --header "draft: false " \
+                    --header "prerelease: false" \
+                    --header "Token: $(GITHUBTOKEN)" \
                     --request POST \
                     "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases"
 
@@ -47,10 +43,10 @@ node {
                         --header "Content-Type: application/zip" \
                         --header "Token: $GITHUBTOKEN"
                         --request POST \
-                        --data "name:resolution_zip" \
+                        --data "name: $resolution_zip" \
                         "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases/$RELEASE_ID/assets"
                 done
             '''
         }
     }
-}   
+}
