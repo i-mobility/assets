@@ -19,7 +19,7 @@ node {
 
         echo "newTag: ${newTag}"
 
-        sh 'git tag ${newTag}'
+        sh 'git tag $newTag'
         sh 'git push --tag'
     }
 
@@ -33,18 +33,18 @@ node {
                 UPLOAD_URL="api.github.com"
                 OWNER="i-mobility"
                 REPO="assets"
-                RELEASE_ID=1
+                VERSION=1
 
                 # create a release
                 curl \
-                    --header "tag_name: 1" \
-                    --header "target_commitish: master" \
-                    --header "name: 1" \
-                    --header "body: 1" \
-                    --header "draft: false " \
-                    --header "prerelease: false" \
-                    --header "Authorization: token ${GITHUBTOKEN}" \
                     --request POST \
+                    --header "Authorization: token ${GITHUBTOKEN}" \
+                    --data "tag_name: 1" \
+                    --data "target_commitish: master" \
+                    --data "name: 1" \
+                    --data "body: 1" \
+                    --data "draft: false " \
+                    --data "prerelease: false" \
                     "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases"
 
                 # upload a release
