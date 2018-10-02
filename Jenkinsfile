@@ -12,6 +12,8 @@ node {
             returnStdout: true
         ).trim()
 
+        sh 'git fetch --tags'
+        sh 'git tag | tail -1'
         sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
         newTag = (currentTag == "undefined") ? (1) : (currentTag + 1)
 
@@ -33,7 +35,7 @@ node {
                 UPLOAD_API_URL="uploads.github.com"
                 OWNER="i-mobility"
                 REPO="assets"
-                VERSION=1
+                VERSION=${newTag}
 
                 API_CREATION_JSON=$(
                     printf '{
