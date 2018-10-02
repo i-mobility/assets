@@ -9,10 +9,12 @@ node {
         sh './zip-resolution-folders.sh'
     }
 
-    def currentTag = sh(returnStdout: true, script: "git name-rev --tags --name-only \$(git rev-parse HEAD)").trim()
-    def newTag = (currentTag == "undefined") ? 1 : currentTag + 1
+    def currentTag
+    def newTag
 
     stage('tag and push new tag') {
+        currentTag = sh(returnStdout: true, script: "git name-rev --tags --name-only \$(git rev-parse HEAD)").trim()
+        newTag = (currentTag == "undefined") ? 1 : currentTag + 1
         sh 'echo $currentTag'
         sh 'echo $newTag'
         sh 'git tag $newTag'
