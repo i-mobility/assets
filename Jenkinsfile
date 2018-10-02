@@ -1,8 +1,8 @@
 node {
     cleanWs()
 
-    currentTag
-    newTag
+    def currentTag
+    def newTag
 
     stage("checkout, tag and push new tag") {
         checkout scm
