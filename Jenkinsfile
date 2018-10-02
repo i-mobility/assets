@@ -51,13 +51,18 @@ node {
                 )
 
                 # create a release
-                $RESPONSE = curl \
-                    --request POST \
-                    --header "Authorization: token ${GITHUBTOKEN}" \
-                    --data "$API_CREATION_JSON" \
-                    "https://$API_URL/repos/$OWNER/$REPO/releases"
+                RESPONSE = $(
+                    curl \
+                        --request POST \
+                        --header "Authorization: token ${GITHUBTOKEN}" \
+                        --data "$API_CREATION_JSON" \
+                        "https://$API_URL/repos/$OWNER/$REPO/releases"
+                )
 
-                $RELEASE_ID = grep -oP '(?<="id": ")[^"]* ' $RESPONSE
+                RELEASE_ID = $(
+                    grep -oP '(?<="id": ")[^"]* ' $RESPONSE
+                )
+
                 echo "github release ID: $RELEASE_ID"
 
                 # creating a release, results in a ID created by github
