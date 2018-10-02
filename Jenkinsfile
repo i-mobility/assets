@@ -17,6 +17,8 @@ node {
         sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
         newTag = (currentTag == "undefined") ? 1 : currentTag + 1
 
+        echo "newTag: ${newTag}
+
         sh 'git tag ${newTag}'
         sh 'git push --tag'
     }
@@ -38,6 +40,7 @@ node {
                     --header "tag_name: 1" \
                     --header "target_commitish: master" \
                     --header "name: 1" \
+                    --header "body: 1" \
                     --header "draft: false " \
                     --header "prerelease: false" \
                     --header "Authorization: token ${GITHUBTOKEN}" \
@@ -49,7 +52,7 @@ node {
                 do
                     curl \
                         --header "Content-Type: application/zip" \
-                        --header "Autohorization: token ${env.GITHUBTOKEN}" \
+                        --header "Authorization: token ${GITHUBTOKEN}" \
                         --request POST \
                         --data "name: $resolution_zip" \
                         "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases/$RELEASE_ID/assets"
