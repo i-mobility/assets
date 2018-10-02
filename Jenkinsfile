@@ -7,7 +7,13 @@ node {
     stage("checkout, tag and push new tag") {
         checkout scm
 
-        currentTag = sh(returnStdout: true, script: "git name-rev --tags --name-only \$(git rev-parse HEAD)").trim()
+        currentTag = sh(
+            script: "git name-rev --tags --name-only \$(git rev-parse HEAD)",
+            returnStdout: true
+        ).trim()
+
+        echo "currentTag: ${currentTag}"
+
         sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
         newTag = (currentTag == "") ? 1 : currentTag + 1
 
@@ -36,7 +42,7 @@ node {
                     --header "name: 1" \
                     --header "draft: false " \
                     --header "prerelease: false" \
-                    --header "Token: $GITHUBTOKEN" \
+                    --header "Authorization: token ${env.GITHUBTOKEN}" \
                     --request POST \
                     "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases"
 
@@ -45,7 +51,7 @@ node {
                 do
                     curl \
                         --header "Content-Type: application/zip" \
-                        --header "Token: $GITHUBTOKEN" \
+                        --header "Autohorization: token ${env.GITHUBTOKEN}" \
                         --request POST \
                         --data "name: $resolution_zip" \
                         "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases/$RELEASE_ID/assets"
