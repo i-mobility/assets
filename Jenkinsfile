@@ -15,16 +15,20 @@ node {
         echo "currentTag: ${currentTag}"
 
         sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
-        $newTag = (currentTag == "undefined") ? 1 : currentTag + 1
+        newTag = (currentTag == "undefined") ? 1 : currentTag + 1
 
         echo "newTag: ${newTag}"
 
         sh 'echo newTag'
         sh 'echo $newTag'
         sh 'echo \$newTag'
-        sh 'echo ${newTag}'
+        sh 'echo {newTag}'
+        sh '''
+            echo ${newTag}
+        '''
         sh 'echo \${newTag}'
         sh 'echo "$newTag"'
+        sh "echo \"{newTag}\""
         sh 'echo "\$newTag"'
         sh 'echo "${newTag}"'
         sh 'echo "\${newTag}"'
