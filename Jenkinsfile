@@ -15,11 +15,9 @@ node {
         echo "currentTag: ${currentTag}"
 
         sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
-        newTag = (currentTag == "") ? 1 : currentTag + 1
+        newTag = (${currentTag} == "undefined") ? 1 : ${currentTag} + 1
 
-        sh 'echo $currentTag'
-        sh 'echo $newTag'
-        sh 'git tag $newTag'
+        sh 'git tag ${newTag}'
         sh 'git push --tag'
     }
 
@@ -42,7 +40,7 @@ node {
                     --header "name: 1" \
                     --header "draft: false " \
                     --header "prerelease: false" \
-                    --header "Authorization: token ${env.GITHUBTOKEN}" \
+                    --header "Authorization: token ${GITHUBTOKEN}" \
                     --request POST \
                     "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases"
 
