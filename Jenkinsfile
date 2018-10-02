@@ -12,12 +12,8 @@ node {
             returnStdout: true
         ).trim()
 
-        echo "currentTag: ${currentTag}"
-
         sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
         newTag = (currentTag == "undefined") ? (1) : (currentTag + 1)
-
-        echo "newTag: ${newTag}"
 
         sh "git tag ${newTag}"
         sh 'git push --tag'
@@ -34,7 +30,7 @@ node {
 
             sh '''
                 API_URL="api.github.com"
-                UPLOAD_API_URL="upload.github.com"
+                UPLOAD_API_URL="uploads.github.com"
                 OWNER="i-mobility"
                 REPO="assets"
                 VERSION=1
@@ -60,7 +56,7 @@ node {
                 )
 
                 RELEASE_ID = $(
-                    grep -oP '(?<="id": ")[^"]* ' $RESPONSE
+                    grep -oP '(?<="id": ")[^"]*' <<< "$RESPONSE"
                 )
 
                 echo "github release ID: $RELEASE_ID"
