@@ -13,6 +13,7 @@ node {
     def newTag = (currentTag == "undefined") ? 1 : currentTag + 1
 
     stage('tag and push new tag') {
+        sh 'echo $(newTag)'
         sh 'git tag $(newTag)'
         sh 'git push --tag'
     }
@@ -32,7 +33,7 @@ node {
                     --header "name: 1" \
                     --header "draft: false " \
                     --header "prerelease: false" \
-                    --header "Token: $(GITHUBTOKEN)" \
+                    --header "Token: $GITHUBTOKEN" \
                     --request POST \
                     "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases"
 
@@ -41,7 +42,7 @@ node {
                 do
                     curl \
                         --header "Content-Type: application/zip" \
-                        --header "Token: $GITHUBTOKEN"
+                        --header "Token: $GITHUBTOKEN" \
                         --request POST \
                         --data "name: $resolution_zip" \
                         "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases/$RELEASE_ID/assets"
