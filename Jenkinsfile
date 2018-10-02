@@ -44,7 +44,7 @@ node {
     stage('create github release and push zip files to github as releases') {
         withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUBTOKEN')]) {
 
-        echo "currentTag: ${currentTag}"
+            echo "currentTag: ${currentTag}"
 
             sh '''
                 UPLOAD_URL="api.github.com"
