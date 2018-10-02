@@ -19,12 +19,17 @@ node {
 
         echo "newTag: ${newTag}"
 
+        sh 'echo newTag'
+        sh 'echo $newTag'
+        sh 'echo \$newTag'
+        sh 'echo ${newTag}'
+        sh 'echo \${newTag}'
         sh 'echo "$newTag"'
         sh 'echo "\$newTag"'
         sh 'echo "${newTag}"'
         sh 'echo "\${newTag}"'
 
-        sh 'git tag /${newTag}'
+        sh 'git tag newTag'
         sh 'git push --tag'
     }
 
