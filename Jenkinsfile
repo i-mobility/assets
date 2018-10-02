@@ -13,8 +13,8 @@ node {
     def newTag = (currentTag == "undefined") ? 1 : currentTag + 1
 
     stage('tag and push new tag') {
-        sh 'echo $(newTag)'
-        sh 'git tag $(newTag)'
+        sh 'echo newTag'
+        sh 'git tag $newTag'
         sh 'git push --tag'
     }
 
