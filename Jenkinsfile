@@ -15,7 +15,7 @@ node {
             returnStdout: true
         ).trim()
 
-        newTag = (currentTag == "undefined") ? (1) : (currentTag + 1)
+        newTag = (currentTag == "undefined") ? (1) : (currentTag.toInteger() + 1)
 
         sh "git tag ${newTag}"
         sh 'git push --tag'
@@ -27,8 +27,6 @@ node {
 
     stage('create github release and push zip files to github as releases') {
         withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUBTOKEN')]) {
-
-            echo "currentTag: ${currentTag}"
 
             sh '''
                 API_URL="api.github.com"
@@ -58,7 +56,7 @@ node {
                 )
 
                 RELEASE_ID = $(
-                    grep -oP '(?<="id": ")[^"]*' <<< "$RESPONSE"
+                    echo "&RESPONSE" | grep -oP '(?<="id": ")[^"]*'
                 )
 
                 echo "github release ID: $RELEASE_ID"
