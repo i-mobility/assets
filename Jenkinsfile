@@ -19,22 +19,6 @@ node {
 
         echo "newTag: ${newTag}"
 
-        sh '''
-            echo newTag
-            echo $newTag
-            echo \$newTag
-            echo {newTag}
-            echo ${newTag}
-            echo "next five"
-            echo \${newTag}
-            echo "$newTag"
-            echo \"{newTag}\"
-            echo "\$newTag"
-            echo "${newTag}"
-            echo "last one"
-            echo "\${newTag}"
-        '''
-
         sh "git tag ${newTag}"
         sh 'git push --tag'
     }
@@ -67,12 +51,13 @@ node {
                 )
 
                 # create a release
-                $RELEASE_ID = curl \
+                $RESPONSE = curl \
                     --request POST \
                     --header "Authorization: token ${GITHUBTOKEN}" \
                     --data "$API_CREATION_JSON" \
-                    "https://$API_URL/repos/$OWNER/$REPO/releases" | jq -r .id
+                    "https://$API_URL/repos/$OWNER/$REPO/releases"
 
+                $RELEASE_ID = grep -oP '(?<="id": ")[^"]* ' $RESPONSE
                 echo "github release ID: $RELEASE_ID"
 
                 # creating a release, results in a ID created by github
