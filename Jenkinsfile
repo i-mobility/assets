@@ -15,7 +15,7 @@ node {
         echo "currentTag: ${currentTag}"
 
         sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
-        newTag = (currentTag == "undefined") ? 1 : currentTag + 1
+        $newTag = (currentTag == "undefined") ? 1 : currentTag + 1
 
         echo "newTag: ${newTag}"
 
@@ -70,7 +70,7 @@ node {
                         --request POST \
                         --header "Authorization: token ${GITHUBTOKEN}" \
                         --header "Content-Type: application/zip" \
-                        --data-binary resolution_zip\
+                        --data-binary $resolution_zip\
                         "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases/$VERSION/assets?name=$(basename $resolution_zip)"
                 done
             '''
