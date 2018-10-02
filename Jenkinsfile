@@ -7,14 +7,15 @@ node {
     stage("checkout, tag and push new tag") {
         checkout scm
 
+        sh 'git fetch --tags'
+        sh 'git tag | tail -1'
+        sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
+
         currentTag = sh(
             script: "git name-rev --tags --name-only \$(git rev-parse HEAD)",
             returnStdout: true
         ).trim()
 
-        sh 'git fetch --tags'
-        sh 'git tag | tail -1'
-        sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
         newTag = (currentTag == "undefined") ? (1) : (currentTag + 1)
 
         sh "git tag ${newTag}"
