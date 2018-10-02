@@ -35,10 +35,8 @@ node {
             echo "\${newTag}"
         '''
 
-        sh '''
-            git tag ${newTag}
-            git push --tag
-        '''
+        sh "git tag ${newTag}"
+        sh 'git push --tag'
     }
 
     stage('zipping resolution folders') {
@@ -51,7 +49,8 @@ node {
             echo "currentTag: ${currentTag}"
 
             sh '''
-                UPLOAD_URL="api.github.com"
+                API_URL="api.github.com"
+                UPLOAD_API_URL="upload.github.com"
                 OWNER="i-mobility"
                 REPO="assets"
                 VERSION=1
@@ -68,11 +67,15 @@ node {
                 )
 
                 # create a release
-                curl \
+                $RELEASE_ID = curl \
                     --request POST \
                     --header "Authorization: token ${GITHUBTOKEN}" \
                     --data "$API_CREATION_JSON" \
-                    "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases"
+                    "https://$API_URL/repos/$OWNER/$REPO/releases" | jq -r .id
+
+                echo "github release ID: $RELEASE_ID"
+
+                # creating a release, results in a ID created by github
 
                 # upload a release
                 for resolution_zip in "output"/*
@@ -82,7 +85,7 @@ node {
                         --header "Authorization: token ${GITHUBTOKEN}" \
                         --header "Content-Type: application/zip" \
                         --data-binary $resolution_zip\
-                        "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases/$VERSION/assets?name=$(basename $resolution_zip)"
+                        "https://$UPLOAD_API_URL/repos/$OWNER/$REPO/releases/$RELEASE_ID/assets?name=$(basename $resolution_zip)"
                 done
             '''
         }
