@@ -56,7 +56,7 @@ node {
                 )
 
                 RELEASE_ID = $(
-                    echo "&RESPONSE" | grep -oP '(?<="id": ")[^"]*'
+                    echo "$RESPONSE" | grep -oP '(?<="id": ")[^"]*'
                 )
 
                 echo "github release ID: $RELEASE_ID"
