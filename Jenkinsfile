@@ -19,7 +19,12 @@ node {
 
         echo "newTag: ${newTag}"
 
-        sh 'git tag ${newTag}'
+        sh 'echo "$newTag"'
+        sh 'echo "/$newTag"'
+        sh 'echo "${newTag}"'
+        sh 'echo "/${newTag}"'
+
+        sh 'git tag /${newTag}'
         sh 'git push --tag'
     }
 
@@ -56,18 +61,12 @@ node {
                 # upload a release
                 for resolution_zip in "output"/*
                 do
-                    API_ASSET_UPLOAD_JSON=$(
-                        printf '{
-                            "name: "%s"
-                        }' $resolution_zip
-                    )
-
                     curl \
                         --request POST \
-                        --header "Content-Type: application/zip" \
                         --header "Authorization: token ${GITHUBTOKEN}" \
-                        --data "$API_ASSET_UPLOAD_JSON" \
-                        "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases/$VERSION/assets"
+                        --header "Content-Type: application/zip" \
+                        --data-binary resolution_zip\
+                        "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases/$VERSION/assets?name=$(basename $resolution_zip)"
                 done
             '''
         }
