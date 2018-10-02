@@ -19,7 +19,7 @@ node {
 
         echo "newTag: ${newTag}"
 
-        sh 'git tag $newTag'
+        sh 'git tag \$newTag'
         sh 'git push --tag'
     }
 
@@ -35,16 +35,22 @@ node {
                 REPO="assets"
                 VERSION=1
 
+                API_CREATION_JSON=$(
+                    printf '{
+                        "tag_name": "%s",
+                        "target_commitish": "master",
+                        "name": "v%s",
+                        "body": "Release of version %s",
+                        "draft": false,
+                        "prerelease": false
+                    }' $VERSION $VERSION $VERSION
+                )
+
                 # create a release
                 curl \
                     --request POST \
                     --header "Authorization: token ${GITHUBTOKEN}" \
-                    --data "tag_name: 1" \
-                    --data "target_commitish: master" \
-                    --data "name: 1" \
-                    --data "body: 1" \
-                    --data "draft: false " \
-                    --data "prerelease: false" \
+                    --data "$API_CREATION_JSON" \
                     "https://$UPLOAD_URL/repos/$OWNER/$REPO/releases"
 
                 # upload a release
