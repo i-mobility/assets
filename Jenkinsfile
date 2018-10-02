@@ -9,10 +9,9 @@ node {
 
         sh 'git fetch --tags'
         sh 'git tag | tail -1'
-        sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
 
         currentTag = sh(
-            script: "git name-rev --tags --name-only \$(git rev-parse HEAD)",
+            script: "git tag | tail -1",
             returnStdout: true
         ).trim()
 
