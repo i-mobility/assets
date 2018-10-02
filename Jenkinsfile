@@ -17,7 +17,7 @@ node {
         sh 'git name-rev --tags --name-only \$(git rev-parse HEAD)'
         newTag = (currentTag == "undefined") ? 1 : currentTag + 1
 
-        echo "newTag: ${newTag}
+        echo "newTag: ${newTag}"
 
         sh 'git tag ${newTag}'
         sh 'git push --tag'
