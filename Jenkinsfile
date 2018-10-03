@@ -15,7 +15,7 @@ node {
             returnStdout: true
         ).trim()
 
-        newTag = (currentTag == "undefined") ? (1) : (currentTag.toInteger() + 1)
+        newTag = (currentTag == "") ? (1) : (currentTag.toInteger() + 1)
 
         sh "git tag ${newTag}"
         sh 'git push --tag'
