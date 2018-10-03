@@ -7,10 +7,14 @@
 OUTPUT_FOLDER="output"
 
 mkdir -p $OUTPUT_FOLDER
-for resolution_entry in "images"/*
+cp -R "images" "$OUTPUT_FOLDER/"
+
+for resolution_entry in "$OUTPUT_FOLDER/images"/*
 do
     RESOLUTION_FOLDERNAME=$(basename $resolution_entry)
     zip -jrm $OUTPUT_FOLDER/$RESOLUTION_FOLDERNAME.zip "$resolution_entry"
     zip -ur $OUTPUT_FOLDER/$RESOLUTION_FOLDERNAME.zip "translations"
     zip -u $OUTPUT_FOLDER/$RESOLUTION_FOLDERNAME.zip "definitions.json"
 done
+
+rm -Rf "$OUTPUT_FOLDER/images"
