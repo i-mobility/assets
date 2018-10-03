@@ -200,13 +200,13 @@
       "id": "sco2t",
       "icon": "sco2t",
       "color": "#17ed74",
-      "translation_key": "transportation_label.sco2t"
+      "translation_key": "transportation_label.sco_2_t"
     },
     {
       "id": "mo2drive",
       "icon": "mo2drive",
       "color": "#404041",
-      "translation_key": "transportation_label.mo2drive"
+      "translation_key": "transportation_label.mo_2_drive"
     },
     {
       "id": "gourban",
