@@ -66,6 +66,7 @@ node {
                 # upload a release
                 for resolution_zip in "output"/*
                 do
+                    echo "\$(ls -al)"
                     curl \
                         --request POST \
                         --header "Authorization: token \${GITHUBTOKEN}" \
