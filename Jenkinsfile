@@ -22,9 +22,7 @@ node {
     }
 
     stage('zipping resolution folders') {
-        dir ('assets') {
-            sh 'zip-resolution-folders.sh'
-        }
+        sh './zip-resolution-folders.sh'
     }
 
     stage('create github release and push zip files to github as releases') {

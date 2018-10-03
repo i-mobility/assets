@@ -7,9 +7,10 @@
 OUTPUT_FOLDER="output"
 
 mkdir -p $OUTPUT_FOLDER
-
+echo "$(ls -al)"
 for resolution_entry in "images"/*
 do
+    echo "$(ls -al)"
     RESOLUTION_FOLDERNAME=$(basename $resolution_entry)
     zip -r $OUTPUT_FOLDER/$RESOLUTION_FOLDERNAME.zip "$resolution_entry" "definitions.json" "translations"
 done
