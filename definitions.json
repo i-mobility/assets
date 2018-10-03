@@ -1,106 +1,355 @@
 {
   "transportation_group": [
     {
-      "id": "car",
-      "translation_key": {
-        "default": "transportation_label.car",
-        "nearby": "transportation_label.car",
-        "routing": null
-      }
-    },
-    {
       "id": "public",
       "translation_key": {
         "default": "transportation_group.public",
         "nearby": "transportation_group.public",
         "routing": "transportation_group.public"
       }
+    },
+    {
+      "id": "walk",
+      "translation_key": "transportation_group.walk"
+    },
+    {
+      "id": "bike",
+      "translation_key": "transportation_group.bike"
+    },
+    {
+      "id": "bike_sharing",
+      "translation_key": "transportation_group.bike_sharing"
+    },
+    {
+      "id": "car",
+      "translation_key": "transportation_group.car"
+    },
+    {
+      "id": "car_sharing",
+      "translation_key": "transportation_group.car_sharing"
+    },
+    {
+      "id": "car_rental",
+      "translation_key": "transportation_group.car_rental"
+    },
+    {
+      "id": "taxi",
+      "translation_key": "transportation_group.taxi"
+    },
+    {
+      "id": "long_distance_bus",
+      "translation_key": "transportation_group.long_distance_bus"
+    },
+    {
+      "id": "scooter_sharing",
+      "translation_key": "transportation_group.scooter_sharing"
+    },
+    {
+      "id": "tourist",
+      "translation_key": "transportation_group.tourist"
     }
   ],
   "transport": [
     {
-      "id": "nextbike",
+      "id": "train",
+      "priority": "primary",
+      "type": "public",
       "icon": {
-        "default": "nextbike",
-        "routing": "nextbike",
-        "nearby": "nextbike"
+        "nearby": "station_train",
+        "routing": "train",
+        "default": "train"
       },
-      "image": {
-        "default": "details_nextbike",
-        "nearby": "details_nextbike",
-        "routing": "details_nextbike"
-      },
-      "color": {
-        "default": "#1332649",
-        "nearby": "#1332649",
-        "routing": "#1332649"
-      },
-      "translation_key": {
-        "default": "transportation_label.nextbike",
-        "nearby": "transportation_label.nextbike",
-        "routing": "transportation_label.nextbike"
-      },
-      "priority": "secondary"
+      "color": "#2f4780",
+      "translation_key": "transportation_label.train"
     },
     {
-      "id": "taxi",
-      "icon": {
-        "default": "taxi",
-        "routing": "taxi",
-        "nearby": "taxi"
-      },
-      "image": {
-        "default": null
-      },
-      "color": {
-        "default": "#1332649",
-        "nearby": "#1332649"
-      },
-      "translation_key": {
-        "default": "transportation_label.taxi",
-        "nearby": "transportation_label.taxi"
-      },
-      "priority": "secondary"
+      "id": "long_distance_bus",
+      "type": "public",
+      "icon": "long_distance_bus",
+      "color": "#2f4780",
+      "translation_key": "transportation_label.long_distance_bus"
     },
     {
-      "id": "taxi_rank",
-      "icon": {
-        "default": "taxi_rank",
-        "routing": "taxi_rank",
-        "nearby": "taxi_rank"
-      },
-      "image": {
-        "default": null
-      },
-      "color": {
-        "default": "#1332649",
-        "nearby": "#1332649"
-      },
-      "translation_key": {
-        "default": "transportation_label.taxi_rank",
-        "nearby": "transportation_label.taxi_rank"
-      },
-      "priority": "secondary"
+      "id": "flixbus",
+      "type": "public",
+      "icon": "flixbus",
+      "color": "#73D800",
+      "translation_key": "transportation_label.flixbus"
+    },
+    {
+      "id": "city_train",
+      "type": "public",
+      "icon": "s_bahn",
+      "color": "#009DDD",
+      "translation_key": "transportation_label.city_train"
+    },
+    {
+      "id": "s_bahn",
+      "priority": "primary",
+      "type": "public",
+      "icon": "s_bahn",
+      "color": "#009DDD",
+      "translation_key": "transportation_label.s_bahn"
+    },
+    {
+      "id": "ship",
+      "type": "public",
+      "icon": "ship",
+      "color": "#2f4780",
+      "translation_key": "transportation_label.ship"
+    },
+    {
+      "id": "metro",
+      "priority": "primary",
+      "type": "public",
+      "icon": "metro",
+      "color": "#156ab8",
+      "translation_key": "transportation_label.metro"
+    },
+    {
+      "id": "tram",
+      "type": "public",
+      "icon": "tram",
+      "color": "#2f4780",
+      "translation_key": "transportation_label.tram"
+    },
+    {
+      "id": "city_bus",
+      "type": "public",
+      "icon": "bus",
+      "color": "#2f4780",
+      "translation_key": "transportation_label.bus"
+    },
+    {
+      "id": "express_bus",
+      "type": "public",
+      "icon": "bus",
+      "color": "#2f4780",
+      "translation_key": "transportation_label.bus"
+    },
+    {
+      "id": "regional_bus",
+      "type": "public",
+      "icon": "bus",
+      "color": "#2f4780",
+      "translation_key": "transportation_label.bus"
+    },
+    {
+      "id": "dial_a_ride",
+      "icon": "dialaride",
+      "color": "#F4A81A",
+      "translation_key": "transportation_label.dial_a_ride"
+    },
+    {
+      "id": "cable_car",
+      "type": "public",
+      "icon": "cable_car",
+      "color": "#2f4780",
+      "translation_key": "transportation_label.cable_car"
+    },
+    {
+      "id": "car_train",
+      "type": "public",
+      "icon": "cartrain",
+      "color": "#2f4780",
+      "translation_key": "transportation_label.car_train"
+    },
+    {
+      "id": "walk",
+      "icon": "walk",
+      "color": "#525C69",
+      "translation_key": "transportation_label.walk"
     },
     {
       "id": "car",
+      "icon": "car",
+      "color": "#ED741B",
+      "translation_key": "transportation_label.car"
+    },
+    {
+      "id": "bike",
+      "icon": "bike",
+      "color": "#1F8970",
+      "translation_key": "transportation_label.bike"
+    },
+    {
+      "id": "taxi",
+      "icon": "taxi",
+      "color": "#f4a81a",
+      "translation_key": "transportation_label.taxi"
+    },
+    {
+      "id": "citybike",
+      "icon": "citybike",
+      "color": "#C30016",
+      "translation_key": "transportation_label.citybike"
+    },
+    {
+      "id": "nextbike",
+      "icon": "nextbike",
+      "color": "#1c4c94",
+      "translation_key": "transportation_label.nextbike"
+    },
+    {
+      "id": "ofo",
+      "icon": "ofo",
+      "color": "#fbd902",
+      "translation_key": "transportation_label.ofo"
+    },
+    {
+      "id": "sco2t",
+      "icon": "sco2t",
+      "color": "#17ed74",
+      "translation_key": "transportation_label.sco2t"
+    },
+    {
+      "id": "mo2drive",
+      "icon": "mo2drive",
+      "color": "#404041",
+      "translation_key": "transportation_label.mo2drive"
+    },
+    {
+      "id": "gourban",
+      "icon": "gourban",
+      "color": "#00b0e9",
+      "translation_key": "transportation_label.gourban"
+    },
+    {
+      "id": "donkey",
+      "icon": "donkey",
+      "color": "#e46d2c",
+      "translation_key": "transportation_label.donkey"
+    },
+    {
+      "id": "open_charge",
+      "icon": "open_charge",
+      "color": "#41a641",
+      "translation_key": "transportation_label.open_charge"
+    },
+    {
+      "id": "ride_and_charge",
+      "icon": "ride_and_charge",
+      "color": "#41a641",
+      "translation_key": "transportation_label.ride_and_charge"
+    },
+    {
+      "id": "carsharing_247",
       "icon": {
-        "default": "car",
-        "routing": "car",
-        "nearby": "car"
-      },
-      "image": {
-        "default": null
-      },
-      "color": {
-        "default": "#1332649",
-        "nearby": "#1332649"
-      },
-      "translation_key": {
-        "default": "transportation_label.car",
-        "nearby": "transportation_label.car"
-      },
-      "priority": "secondary"
+        "nearby": "station_carsharing_247",
+        "routing": "carsharing_247",
+        "default": "carsharing_247"
+      }
+      ,
+      "color": "#8cb238",
+      "translation_key": "transportation_label.carsharing_247"
+    },
+    {
+      "id": "taxi_rank",
+      "icon": "taxi_rank",
+      "color": "#f4a81a",
+      "translation_key": "transportation_label.taxi_rank"
+    },
+    {
+      "id": "parken_at",
+      "icon": "parken_at",
+      "color": "#0068b1",
+      "translation_key": "transportation_label.parken_at"
+    },
+    {
+      "id": "auto_europe",
+      "icon": "auto_europe",
+      "color": "#006a7a",
+      "translation_key": "transportation_label.auto_europe"
+    },
+    {
+      "id": "thrifty",
+      "icon": "thrifty",
+      "color": "#0167BB",
+      "translation_key": "transportation_label.thrifty"
+    },
+    {
+      "id": "sixt",
+      "icon": "sixt",
+      "color": "#10130C",
+      "translation_key": "transportation_label.sixt"
+    },
+    {
+      "id": "europcar",
+      "icon": "europcar",
+      "color": "#009900",
+      "translation_key": "transportation_label.europcar"
+    },
+    {
+      "id": "megadrive",
+      "icon": "megadrive",
+      "color": "#FB0102",
+      "translation_key": "transportation_label.megadrive"
+    },
+    {
+      "id": "buchbinder",
+      "icon": "buchbinder",
+      "color": "#FD0506",
+      "translation_key": "transportation_label.buchbinder"
+    },
+    {
+      "id": "global",
+      "icon": "global",
+      "color": "#334899",
+      "translation_key": "transportation_label.global"
+    },
+    {
+      "id": "hertz",
+      "icon": "hertz",
+      "color": "#FFD004",
+      "translation_key": "transportation_label.hertz"
+    },
+    {
+      "id": "budget",
+      "icon": "budget",
+      "color": "#00275E",
+      "translation_key": "transportation_label.budget"
+    },
+    {
+      "id": "avis",
+      "icon": "avis",
+      "color": "#FD0506",
+      "translation_key": "transportation_label.avis"
+    },
+    {
+      "id": "segway",
+      "icon": "segway",
+      "color": "#1c1d21",
+      "translation_key": "transportation_label.segway"
+    },
+    {
+      "id": "tractor",
+      "icon": "tractor",
+      "color": "#553b2c",
+      "translation_key": "transportation_label.tractor"
+    },
+    {
+      "id": "bike_rental",
+      "icon": "bike_rental",
+      "color": "#1e085d",
+      "translation_key": "transportation_label.bike_rental"
+    },
+    {
+      "id": "horse_carriage",
+      "icon": "horse_carriage",
+      "color": "#767676",
+      "translation_key": "transportation_label.horse_carriage"
+    },
+    {
+      "id": "park_and_ride",
+      "icon": "park_and_ride",
+      "color": "#0068b1",
+      "translation_key": "transportation_label.park_and_ride"
+    },
+    {
+      "id": "drivy",
+      "icon": "drivy",
+      "color": "#18ecb8",
+      "translation_key": "transportation_label.drivy"
     }
   ]
 }
