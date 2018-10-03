@@ -66,12 +66,12 @@ node {
                 # upload a release
                 for resolution_zip in "output"/*
                 do
-                    echo "\$(ls -al)"
+                    echo "\$(ls -al output)"
                     curl \
                         --request POST \
                         --header "Authorization: token \${GITHUBTOKEN}" \
                         --header "Content-Type: application/zip" \
-                        --data-binary \$resolution_zip\
+                        --data-binary \$resolution_zip \
                         "https://\$UPLOAD_API_URL/repos/\$OWNER/\$REPO/releases/\$RELEASE_ID/assets?name=\$(basename \$resolution_zip)"
                 done
             """
