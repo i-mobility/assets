@@ -11,5 +11,5 @@ mkdir -p $OUTPUT_FOLDER
 for resolution_entry in "images"/*
 do
     RESOLUTION_FOLDERNAME=$(basename $resolution_entry)
-    zip -FSr $OUTPUT_FOLDER/$RESOLUTION_FOLDERNAME.zip "$resolution_entry" "definitions.json" "translations"
+    zip -r $OUTPUT_FOLDER/$RESOLUTION_FOLDERNAME.zip "$resolution_entry" "definitions.json" "translations"
 done
