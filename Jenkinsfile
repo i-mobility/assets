@@ -7,7 +7,7 @@ node {
     stage("checkout, tag and push new tag") {
         checkout scm
 
-        def branch = ${env.BRANCH_NAME}
+        def branch = env.BRANCH_NAME
         error(branch)
 
         sh 'git fetch --tags'
