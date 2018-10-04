@@ -29,7 +29,7 @@ node {
                 FILE_FORMAT="simple_json"
                 PROJECT_ID="5d1947d996b5e135178933ba3654bd38"
                 TRANSLATIONS_FOLDER="translations"
-                LOCALE_DE="ab544bfc73101286f93b5048d676e005"
+                LOCALE_DE="_ab544bfc73101286f93b5048d676e005"
                 LOCALE_EN="165be6785e2440749b1e30818469e531"
                 LOCALE_DE_FILENAME="de.json"
                 LOCALE_EN_FILENAME="en.json"
