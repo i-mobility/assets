@@ -58,11 +58,11 @@ node {
                 )
             """
 
-            if (!fileExists("translations/de.json")) {
+            if (readFile("translations/de.json") == "") {
                 error("translations file missing: translations/de.json")
             }
 
-            if (!fileExists("translations/de.json")) {
+            if (readFile("translations/de.json") == "") {
                 error("translations file missing: translations/de.json")
             }
         }
