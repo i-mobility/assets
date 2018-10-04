@@ -102,9 +102,6 @@ node {
 
                 # creating a release, results in a ID created by github
 
-                # remove ldpi.zip, as it is not needed
-                rm "output/ldpi.zip"
-
                 # upload a release
                 for resolution_zip in "output"/*
                 do
