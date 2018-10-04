@@ -39,6 +39,10 @@ node {
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME"
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME"
 
+                if (fileExists("translations/de.json")) {
+                    error("de.json exists after deletion")
+                }
+
                 DE_LOCALE_RESPONSE=\$(
                     curl \
                         --request GET \
@@ -47,6 +51,7 @@ node {
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?file_format=\$FILE_FORMAT"
                 )
 
+                echo "content of de.json: \$(cat de.json)"
                 echo "\$(ls translations)"
 
                 EN_LOCALE_RESPONSE=\$(
@@ -56,6 +61,7 @@ node {
                         --output "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME" \
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?file_format=\$FILE_FORMAT"
                 )
+
             """
 
             if (readFile("translations/de.json") == "") {
