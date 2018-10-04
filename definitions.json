@@ -59,7 +59,7 @@
         "routing": "train",
         "default": "train"
       },
-      "color": "#2f4780",
+      "color": "#d70012",
       "translation_key": "transportation_label.train"
     },
     {
@@ -110,28 +110,28 @@
       "id": "tram",
       "type": "public",
       "icon": "tram",
-      "color": "#2f4780",
+      "color": "#4d7ea8",
       "translation_key": "transportation_label.tram"
     },
     {
       "id": "city_bus",
       "type": "public",
       "icon": "bus",
-      "color": "#2f4780",
+      "color": "#5bc0eb",
       "translation_key": "transportation_label.bus"
     },
     {
       "id": "express_bus",
       "type": "public",
       "icon": "bus",
-      "color": "#2f4780",
+      "color": "#5bc0eb",
       "translation_key": "transportation_label.bus"
     },
     {
       "id": "regional_bus",
       "type": "public",
       "icon": "bus",
-      "color": "#2f4780",
+      "color": "#5bc0eb",
       "translation_key": "transportation_label.bus"
     },
     {
@@ -236,7 +236,7 @@
       "id": "carsharing_247",
       "icon": {
         "nearby": "station_carsharing_247",
-        "routing": "carsharing_247",
+        "routing": "routing_carsharing_247",
         "default": "carsharing_247"
       }
       ,
