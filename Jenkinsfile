@@ -46,6 +46,7 @@ node {
                         --request GET \
                         --header "Authorization: token ${PHRASEAPPTOKEN}" \
                         --output "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME" \
+                        --dump-header "locale_de_response_header" \
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?file_format=\$FILE_FORMAT"
                 )
 
@@ -57,8 +58,12 @@ node {
                         --request GET \
                         --header "Authorization: token ${PHRASEAPPTOKEN}" \
                         --output "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME" \
+                        --dump-header "locale_en_response_header" \
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?file_format=\$FILE_FORMAT"
                 )
+
+                echo "\$(cat locale_de_response_header)"
+                echo "\$(cat locale_en_response_header)"
 
             """
 
