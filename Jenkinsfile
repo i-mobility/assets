@@ -27,14 +27,15 @@ node {
             sh"""
                 PHRASEAPP_API="api.phraseapp.com/api/v2/"
                 FILE_FORMAT="simple_json"
-                PROJECT_ID="5d1947d996b5e135178933ba3654bd38"
+                PROJECT_ID="XXX5d1947d996b5e135178933ba3654bd38"
                 TRANSLATIONS_FOLDER="translations"
-                LOCALE_DE="_ab544bfc73101286f93b5048d676e005"
+                LOCALE_DE="XXXab544bfc73101286f93b5048d676e005"
                 LOCALE_EN="165be6785e2440749b1e30818469e531"
                 LOCALE_DE_FILENAME="de.json"
                 LOCALE_EN_FILENAME="en.json"
                 
                 # delete old translations
+                echo "$(ls translations)"
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME"
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME"
 
@@ -45,6 +46,8 @@ node {
                         --output "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME" \
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?file_format=\$FILE_FORMAT"
                 )
+
+                echo "$(ls translations)"
 
                 EN_LOCALE_RESPONSE=\$(
                     curl \
