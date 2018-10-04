@@ -21,6 +21,40 @@ node {
         sh 'git push --tag'
     }
 
+    stage('pull translations from PhraseApp') {
+        withCredentials([string(credentialsId: 'd1d41fbe-b0f8-4a36-b95e-960e7d6285dd', variable: 'PHRASEAPPTOKEN')]) {
+            sh"""
+                PHRASEAPP_API="api.phraseapp.com/api/v2/"
+                FILE_FORMAT="simple_json"
+                PROJECT_ID="5d1947d996b5e135178933ba3654bd38"
+                LOCALE_DE="ab544bfc73101286f93b5048d676e005"
+                LOCALE_EN="165be6785e2440749b1e30818469e531"
+                LOCALE_DE_FILENAME="de.json"
+                LOCALE_EN_FILENAME="en.json"
+
+                echo "\$(ls)"
+
+                DE_LOCALE_RESPONSE=\$(
+                    curl \
+                        --request GET \
+                        --header "Authorization: token ${PHRASEAPPTOKEN}" \
+                        --output "\$LOCALE_DE_FILENAME" \
+                        "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?file_format=\$FILE_FORMAT"
+                )
+
+                EN_LOCALE_RESPONSE=\$(
+                    curl \
+                        --request GET \
+                        --header "Authorization: token ${PHRASEAPPTOKEN}" \
+                        --output "\$LOCALE_EN_FILENAME" \
+                        "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?file_format=\$FILE_FORMAT"
+                )
+
+                # check for failure
+            """ 
+        }
+    }
+
     stage('zipping resolution folders') {
         sh './zip-resolution-folders.sh'
     }

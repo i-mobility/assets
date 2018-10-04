@@ -7,6 +7,7 @@
 OUTPUT_FOLDER="output"
 
 mkdir -p $OUTPUT_FOLDER
+echo "$(ls)"
 
 for resolution_entry in "images"/*
 do
