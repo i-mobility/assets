@@ -39,9 +39,7 @@ node {
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME"
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME"
 
-                if (fileExists("translations/de.json")) {
-                    error("de.json exists after deletion")
-                }
+                echo "$(cat translations/de.json)"
 
                 DE_LOCALE_RESPONSE=\$(
                     curl \
