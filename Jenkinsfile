@@ -35,7 +35,7 @@ node {
                 LOCALE_EN_FILENAME="en.json"
                 
                 # delete old translations
-                echo "$(ls translations)"
+                echo "\$(ls translations)"
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME"
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME"
 
@@ -47,7 +47,7 @@ node {
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?file_format=\$FILE_FORMAT"
                 )
 
-                echo "$(ls translations)"
+                echo "\$(ls translations)"
 
                 EN_LOCALE_RESPONSE=\$(
                     curl \
