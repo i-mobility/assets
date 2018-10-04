@@ -65,6 +65,8 @@ node {
             if (readFile("translations/de.json") == "") {
                 error("translations file missing: translations/de.json")
             }
+            
+            echo readFile("translations/de.json")
 
             if (readFile("translations/en.json") == "") {
                 error("translations file missing: translations/en.json")
