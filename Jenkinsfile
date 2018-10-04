@@ -62,8 +62,8 @@ node {
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?file_format=\$FILE_FORMAT"
                 )
 
-                echo "\$(cat locale_de_response_header | grep "HTTP/1.1)"
-                echo "\$(cat locale_en_response_header | grep "HTTP/1.1)"
+                echo "\$(cat locale_de_response_header | grep \"HTTP/1.1\")"
+                echo "\$(cat locale_en_response_header | grep \"HTTP/1.1\")"
 
             """
 
