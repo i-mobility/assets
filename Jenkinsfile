@@ -39,7 +39,7 @@ node {
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME"
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME"
 
-                echo "$(cat translations/de.json)"
+                echo "\$(cat translations/de.json)"
 
                 DE_LOCALE_RESPONSE=\$(
                     curl \
