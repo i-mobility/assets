@@ -69,7 +69,7 @@ node {
         sh './zip-resolution-folders.sh'
 
         if(env.BRANCH_NAME == "development") {
-            sh 'ls -al'
+            sh 'ls -al output'
         }
     }
 
