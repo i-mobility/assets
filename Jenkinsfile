@@ -36,14 +36,14 @@ node {
                 echo "\$(ls -al)"
                 
                 # delete old translations
-                rm "\$(TRANSLATIONS_FOLDER)/\$LOCALE_DE_FILENAME"
-                rm "\$(TRANSLATIONS_FOLDER)/\$LOCALE_EN_FILENAME"
+                rm "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME"
+                rm "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME"
 
                 DE_LOCALE_RESPONSE=\$(
                     curl \
                         --request GET \
                         --header "Authorization: token ${PHRASEAPPTOKEN}" \
-                        --output "\$(TRANSLATIONS_FOLDER)/\$LOCALE_DE_FILENAME" \
+                        --output "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME" \
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?file_format=\$FILE_FORMAT"
                 )
 
@@ -51,7 +51,7 @@ node {
                     curl \
                         --request GET \
                         --header "Authorization: token ${PHRASEAPPTOKEN}" \
-                        --output "\$(TRANSLATIONS_FOLDER)/\$LOCALE_EN_FILENAME" \
+                        --output "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME" \
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?file_format=\$FILE_FORMAT"
                 )
 
