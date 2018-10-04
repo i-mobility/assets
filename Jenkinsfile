@@ -44,9 +44,9 @@ node {
                 DE_LOCALE_RESPONSE=\$(
                     curl \
                         --request GET \
+                        --fail \
                         --header "Authorization: token ${PHRASEAPPTOKEN}" \
                         --output "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME" \
-                        --dump-header "locale_de_response_header" \
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?file_format=\$FILE_FORMAT"
                 )
 
@@ -56,26 +56,12 @@ node {
                 EN_LOCALE_RESPONSE=\$(
                     curl \
                         --request GET \
+                        --fail \
                         --header "Authorization: token ${PHRASEAPPTOKEN}" \
                         --output "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME" \
-                        --dump-header "locale_en_response_header" \
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?file_format=\$FILE_FORMAT"
                 )
-
-                echo "\$(cat locale_de_response_header | grep \"HTTP/1.1\")"
-                echo "\$(cat locale_en_response_header | grep \"HTTP/1.1\")"
-
             """
-
-            if (readFile("translations/de.json") == "") {
-                error("translations file missing: translations/de.json")
-            }
-            
-            echo readFile("translations/de.json")
-
-            if (readFile("translations/en.json") == "") {
-                error("translations file missing: translations/en.json")
-            }
         }
     }
 
@@ -112,6 +98,7 @@ node {
                     RESPONSE=\$(
                         curl \
                             --request POST \
+                            --fail \
                             --header "Authorization: token ${GITHUBTOKEN}" \
                             --data "\$API_CREATION_JSON" \
                             "https://\$API_URL/repos/\$OWNER/\$REPO/releases"
@@ -131,6 +118,7 @@ node {
                         echo "\$(ls -al output)"
                         curl \
                             --request POST \
+                            --fail \
                             --header "Authorization: token \${GITHUBTOKEN}" \
                             --header "Content-Type: application/zip" \
                             --data-binary @\$resolution_zip \
