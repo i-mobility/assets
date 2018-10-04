@@ -7,6 +7,9 @@ node {
     stage("checkout, tag and push new tag") {
         checkout scm
 
+        def branch = ${env.BRANCH_NAME}
+        error(branch)
+
         sh 'git fetch --tags'
 
         currentTag = sh(
@@ -31,8 +34,6 @@ node {
                 LOCALE_EN="165be6785e2440749b1e30818469e531"
                 LOCALE_DE_FILENAME="de.json"
                 LOCALE_EN_FILENAME="en.json"
-
-                echo "\$(ls -al)"
                 
                 # delete old translations
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME"
@@ -53,9 +54,15 @@ node {
                         --output "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME" \
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?file_format=\$FILE_FORMAT"
                 )
+            """
 
-                # check for failure
-            """ 
+            if (!fileExists("translations/de.json") {
+                error("translations file missing: translations/de.json")
+            }
+
+            if (!fileExists("translations/de.json") {
+                error("translations file missing: translations/de.json")
+            }
         }
     }
 
@@ -65,7 +72,6 @@ node {
 
     stage('create github release and push zip files to github as releases') {
         withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUBTOKEN')]) {
-
             sh """
                 API_URL="api.github.com"
                 UPLOAD_API_URL="uploads.github.com"
