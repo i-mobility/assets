@@ -27,7 +27,7 @@ node {
             sh"""
                 PHRASEAPP_API="api.phraseapp.com/api/v2/"
                 FILE_FORMAT="simple_json"
-                PROJECT_ID="5d1947d996b5e135178933ba3654bd38eeeee"
+                PROJECT_ID="5d1947d996b5e135178933ba3654bd38"
                 TRANSLATIONS_FOLDER="translations"
                 LOCALE_DE="ab544bfc73101286f93b5048d676e005"
                 LOCALE_EN="165be6785e2440749b1e30818469e531"
@@ -62,8 +62,8 @@ node {
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?file_format=\$FILE_FORMAT"
                 )
 
-                echo "\$(cat locale_de_response_header)"
-                echo "\$(cat locale_en_response_header)"
+                echo "\$(cat locale_de_response_header | grep "HTTP/1.1)"
+                echo "\$(cat locale_en_response_header | grep "HTTP/1.1)"
 
             """
 
