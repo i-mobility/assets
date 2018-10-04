@@ -25,11 +25,11 @@ node {
     stage('pull translations from PhraseApp') {
         withCredentials([string(credentialsId: 'd1d41fbe-b0f8-4a36-b95e-960e7d6285dd', variable: 'PHRASEAPPTOKEN')]) {
             sh"""
-                PHRASEAPP_API="api.phraseapp.com/api/v2/"
+                PHRASEAPP_API="api.phraseapp.com/api/v3/"
                 FILE_FORMAT="simple_json"
-                PROJECT_ID="XXX5d1947d996b5e135178933ba3654bd38"
+                PROJECT_ID="5d1947d996b5e135178933ba3654bd38"
                 TRANSLATIONS_FOLDER="translations"
-                LOCALE_DE="XXXab544bfc73101286f93b5048d676e005"
+                LOCALE_DE="ab544bfc73101286f93b5048d676e005"
                 LOCALE_EN="165be6785e2440749b1e30818469e531"
                 LOCALE_DE_FILENAME="de.json"
                 LOCALE_EN_FILENAME="en.json"
@@ -66,8 +66,8 @@ node {
                 error("translations file missing: translations/de.json")
             }
 
-            if (readFile("translations/de.json") == "") {
-                error("translations file missing: translations/de.json")
+            if (readFile("translations/en.json") == "") {
+                error("translations file missing: translations/en.json")
             }
         }
     }
