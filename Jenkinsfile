@@ -8,10 +8,9 @@ node {
         checkout scm
 
         sh 'git fetch --tags'
-        sh 'git tag | tail -1'
 
         currentTag = sh(
-            script: "git tag | tail -1",
+            script: "git tag | sort -n | tail -1",
             returnStdout: true
         ).trim()
 
