@@ -163,7 +163,7 @@ node {
             slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
             slackSend channel: '@toni', message: groovy.json.JsonOutput.prettyPrint(slackMessageJson.toString())
         } else {
-            assetsUrlMap['testdpi'] = 'https://download.example.com/testdpi.zip'
+            assetsNameUrlMap['testdpi'] = 'https://download.example.com/testdpi.zip'
             def slackMessage = [
                 testAssets:[
                     assetsNameUrlMap
