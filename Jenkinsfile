@@ -141,7 +141,7 @@ node {
     }
 
     stage('send github asset release urls to slack') {
-        def assetNameUrlMap = [:]
+        def assetsNameUrlMap = [:]
 
         if(env.BRANCH_NAME == "master") {
             def releaseApiResponses = findFiles(glob: 'release-json-response/*.json')
@@ -150,7 +150,7 @@ node {
                 def url = responseJson['browser-download-url']
                 def name_withExtension = responseJson['name']
                 def name = name_withExtension.take(name_withExtension.lastIndexOf('.'))
-                assetNameUrlMap[name] = url
+                assetsNameUrlMap[name] = url
             }
 
             def slackMessage = [
