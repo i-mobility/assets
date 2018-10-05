@@ -161,17 +161,15 @@ node {
 
             def slackMessageJson = JsonOutput.toJson(slackMessageMap)
             slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
-            slackSend(channel: '@toni', message: slackMessageJson, tokenCredentialId: 'jenkins-slack')
+            slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson)
         } else {
             assetsNameUrlMap['testdpi'] = 'https://download.example.com/testdpi.zip'
             def slackMessageMap = [
-                testAssets:[
-                    assetsNameUrlMap
-                ]
+                testAssets:assetsNameUrlMap
             ]
             def slackMessageJson = JsonOutput.toJson(slackMessageMap)
             slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
-            slackSend(channel: '@UD4FPD79T', message: slackMessageJson)
+            slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson)
         }
     }
 }
