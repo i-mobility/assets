@@ -161,7 +161,7 @@ node {
 
             def slackMessageJson = JsonOutput.toJson(slackMessageMap)
             slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
-            slackSend channel: '@toni', message: groovy.json.JsonOutput.prettyPrint(slackMessageJson.toString())
+            slackSend channel: '@toni', message: slackMessageJson)
         } else {
             assetsNameUrlMap['testdpi'] = 'https://download.example.com/testdpi.zip'
             def slackMessageMap = [
@@ -171,7 +171,7 @@ node {
             ]
             def slackMessageJson = JsonOutput.toJson(slackMessageMap)
             slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
-            slackSend channel: '@toni', message: groovy.json.JsonOutput.prettyPrint(slackMessageJson.toStrong())
+            slackSend channel: '@toni', message: slackMessageJson)
         }
     }
 }
