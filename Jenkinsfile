@@ -1,3 +1,5 @@
+import groovy.json.JsonOutput
+
 node {
     cleanWs()
 
@@ -113,21 +115,51 @@ node {
                     # creating a release, results in a ID created by github
 
                     # upload a release
+                    RELEASE-JSON-RESPONSE-FOLDER="release-json-responses"
+                    mkdir -p "\$RELEASE-JSON-RESPONSE-FOLDER"
+
                     for resolution_zip in "output"/*
                     do
                         echo "\$(ls -al output)"
-                        curl \
-                            --request POST \
-                            --fail \
-                            --header "Authorization: token \${GITHUBTOKEN}" \
-                            --header "Content-Type: application/zip" \
-                            --data-binary @\$resolution_zip \
-                            "https://\$UPLOAD_API_URL/repos/\$OWNER/\$REPO/releases/\$RELEASE_ID/assets?name=\$(basename \$resolution_zip)"
+                        RELEASE_RESPONSE=\$(
+                            curl \
+                                --request POST \
+                                --fail \
+                                --header "Authorization: token \${GITHUBTOKEN}" \
+                                --header "Content-Type: application/zip" \
+                                --data-binary @\$resolution_zip \
+                                "https://\$UPLOAD_API_URL/repos/\$OWNER/\$REPO/releases/\$RELEASE_ID/assets?name=\$(basename \$resolution_zip)"
+                        )
+
+                        echo \$RELEASE_RESPONSE > "\$RELEASE-JSON-RESPONSE-FOLDER/\$(basename \$resolution_zip .zip).json"
                     done
                 """
             } else {
                 echo "only master branch pushes GITHUB releases"
             }
+        }
+    }
+
+    stage('send github asset release urls to slack') {
+            def assetNameUrlMap = [:]
+            def slackMessage = new groovy.json.JsonBuilder()
+
+        if(env.BRANCH_NAME == "master") {
+            def releaseApiResponses = findFiles(glob: 'release-json-response/*.json')
+            releaseApiResponses.each {
+                def responseJson = readJson file: it
+                def url = responseJson['browser-download-url']
+                def name_withExtension = responseJson['name']
+                def name = name_withExtension.take(name_withExtension.lastIndexOf('.'))
+                assetNameUrlMap[name] = url
+            }
+
+            slackMessage assets: assetsNameUrlMap
+            slackSend channel: '@toni', message: groovy.json.JsonOutput.prettyPrint(slackMessage.toString())
+        } else {
+            assetsUrlMap['testdpi'] = 'https://download.example.com/testdpi.zip'
+            slackMessage testAssets: assetsNameUrlMap
+            slackSend channel: '@toni', message: groovy.json.JsonOutput.prettyPrint(slackMessage.toStrong())
         }
     }
 }
