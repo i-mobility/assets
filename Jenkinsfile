@@ -3,6 +3,8 @@ import groovy.json.JsonOutput
 node {
     cleanWs()
 
+    def isDevelopment = (env.BRANCH_NAME == "master") false : true
+
     def currentTag
     def newTag
 
@@ -18,10 +20,8 @@ node {
 
         newTag = (currentTag == "") ? (1) : (currentTag.toInteger() + 1)
 
-        if(env.BRANCH_NAME == "master") {
-            sh "git tag ${newTag}"
-            sh 'git push --tag'
-        }
+        sh "git tag ${newTag}"
+        sh 'git push --tag'
     }
 
     stage('pull translations from PhraseApp') {
@@ -37,11 +37,8 @@ node {
                 LOCALE_EN_FILENAME="en.json"
                 
                 # delete old translations
-                echo "\$(ls translations)"
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME"
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME"
-
-                echo "\$(cat translations/de.json)"
 
                 DE_LOCALE_RESPONSE=\$(
                     curl \
@@ -51,9 +48,6 @@ node {
                         --output "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME" \
                         "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?file_format=\$FILE_FORMAT"
                 )
-
-                echo "content of de.json: \$(cat de.json)"
-                echo "\$(ls translations)"
 
                 EN_LOCALE_RESPONSE=\$(
                     curl \
@@ -77,99 +71,100 @@ node {
 
     stage('create github release and push zip files to github as releases') {
         withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUBTOKEN')]) {
-            if(env.BRANCH_NAME == "master") {
-                sh """
-                    API_URL="api.github.com"
-                    UPLOAD_API_URL="uploads.github.com"
-                    OWNER="i-mobility"
-                    REPO="assets"
-                    VERSION=${newTag}
 
-                    API_CREATION_JSON=\$(
-                        printf '{
-                            "tag_name": "%s",
-                            "target_commitish": "master",
-                            "name": "v%s",
-                            "body": "Release of version %s",
-                            "draft": false,
-                            "prerelease": false
-                        }' \$VERSION \$VERSION \$VERSION
-                    )
+            if (isDevelopment) {}
+                echo "only master branch pushes proper GITHUB releases, every else creates pre-releases"
+            }
 
-                    # create a release
-                    RESPONSE=\$(
+            sh """
+                API_URL="api.github.com"
+                UPLOAD_API_URL="uploads.github.com"
+                OWNER="i-mobility"
+                REPO="assets"
+                VERSION=${newTag}
+
+                API_CREATION_JSON=\$(
+                    printf '{
+                        "tag_name": "%s",
+                        "target_commitish": "development",
+                        "name": "v%s",
+                        "body": "Release of version %s",
+                        "draft": false,
+                        "prerelease": ${isDevelopment}
+                    }' \$VERSION \$VERSION \$VERSION
+                )
+
+                # create a release
+                RESPONSE=\$(
+                    curl \
+                        --request POST \
+                        --fail \
+                        --header "Authorization: token ${GITHUBTOKEN}" \
+                        --data "\$API_CREATION_JSON" \
+                        "https://\$API_URL/repos/\$OWNER/\$REPO/releases"
+                )
+
+                RELEASE_ID=\$(
+                    echo "\$RESPONSE" | jq '.id'
+                )
+
+                echo "github release ID: \$RELEASE_ID"
+
+                # creating a release, results in a ID created by github
+
+                # upload a release
+                RELEASE-JSON-RESPONSE-FOLDER="release-json-responses"
+                mkdir -p "\$RELEASE-JSON-RESPONSE-FOLDER"
+
+                for resolution_zip in "output"/*
+                do
+                    echo "\$(ls -al output)"
+                    RELEASE_RESPONSE=\$(
                         curl \
                             --request POST \
                             --fail \
-                            --header "Authorization: token ${GITHUBTOKEN}" \
-                            --data "\$API_CREATION_JSON" \
-                            "https://\$API_URL/repos/\$OWNER/\$REPO/releases"
+                            --header "Authorization: token \${GITHUBTOKEN}" \
+                            --header "Content-Type: application/zip" \
+                            --data-binary @\$resolution_zip \
+                            "https://\$UPLOAD_API_URL/repos/\$OWNER/\$REPO/releases/\$RELEASE_ID/assets?name=\$(basename \$resolution_zip)"
                     )
 
-                    RELEASE_ID=\$(
-                        echo "\$RESPONSE" | jq '.id'
-                    )
-
-                    echo "github release ID: \$RELEASE_ID"
-
-                    # creating a release, results in a ID created by github
-
-                    # upload a release
-                    RELEASE-JSON-RESPONSE-FOLDER="release-json-responses"
-                    mkdir -p "\$RELEASE-JSON-RESPONSE-FOLDER"
-
-                    for resolution_zip in "output"/*
-                    do
-                        echo "\$(ls -al output)"
-                        RELEASE_RESPONSE=\$(
-                            curl \
-                                --request POST \
-                                --fail \
-                                --header "Authorization: token \${GITHUBTOKEN}" \
-                                --header "Content-Type: application/zip" \
-                                --data-binary @\$resolution_zip \
-                                "https://\$UPLOAD_API_URL/repos/\$OWNER/\$REPO/releases/\$RELEASE_ID/assets?name=\$(basename \$resolution_zip)"
-                        )
-
-                        echo \$RELEASE_RESPONSE > "\$RELEASE-JSON-RESPONSE-FOLDER/\$(basename \$resolution_zip .zip).json"
-                    done
-                """
-            } else {
-                echo "only master branch pushes GITHUB releases"
-            }
+                    echo \$RELEASE_RESPONSE > "\$RELEASE-JSON-RESPONSE-FOLDER/\$(basename \$resolution_zip .zip).json"
+                done
+            """
         }
     }
 
     stage('send github asset release urls to slack') {
         def assetsNameUrlMap = [:]
 
-        if(env.BRANCH_NAME == "master") {
-            def releaseApiResponses = findFiles(glob: 'release-json-response/*.json')
-            releaseApiResponses.each {
-                def responseJson = readJson file: it
-                def url = responseJson['browser-download-url']
-                def name_withExtension = responseJson['name']
-                def name = name_withExtension.take(name_withExtension.lastIndexOf('.'))
-                assetsNameUrlMap[name] = url
-            }
-
-            def slackMessageMap = [
-                assets:[
-                    assetsNameUrlMap
-                ]
-            ]
-
-            def slackMessageJson = JsonOutput.toJson(slackMessageMap)
-            slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
-            slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
-        } else {
+        if (isDevelopment)
             assetsNameUrlMap['testdpi'] = 'https://download.example.com/testdpi.zip'
+
             def slackMessageMap = [
                 testAssets:assetsNameUrlMap
             ]
+
             def slackMessageJson = JsonOutput.toJson(slackMessageMap)
             slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
             slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
         }
+
+        def releaseApiResponses = findFiles(glob: 'release-json-response/*.json')
+        releaseApiResponses.each {
+            def responseJson = readJson file: it
+            def url = responseJson['browser-download-url']
+            def name_withExtension = responseJson['name']
+            def name = name_withExtension.take(name_withExtension.lastIndexOf('.'))
+            assetsNameUrlMap[name] = url
+        }
+
+        def slackMessageMap = [
+            assets:assetsNameUrlMap
+        ]
+
+        def slackMessageJson = JsonOutput.toJson(slackMessageMap)
+        slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
+        slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
     }
 }
