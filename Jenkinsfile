@@ -3,7 +3,7 @@ import groovy.json.JsonOutput
 node {
     cleanWs()
 
-    def isDevelopment = (env.BRANCH_NAME == "master") false : true
+    def isDevelopment = (env.BRANCH_NAME == "master") ? false : true
 
     def currentTag
     def newTag
