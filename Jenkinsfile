@@ -72,7 +72,7 @@ node {
     stage('create github release and push zip files to github as releases') {
         withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUBTOKEN')]) {
 
-            if (isDevelopment) {}
+            if (isDevelopment) {
                 echo "only master branch pushes proper GITHUB releases, every else creates pre-releases"
             }
 
@@ -138,7 +138,7 @@ node {
     stage('send github asset release urls to slack') {
         def assetsNameUrlMap = [:]
 
-        if (isDevelopment)
+        if (isDevelopment) {
             assetsNameUrlMap['testdpi'] = 'https://download.example.com/testdpi.zip'
 
             def slackMessageMap = [
