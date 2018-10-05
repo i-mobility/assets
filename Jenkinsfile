@@ -82,6 +82,9 @@ node {
                 OWNER="i-mobility"
                 REPO="assets"
                 VERSION=${newTag}
+                RELEASE_JSON_RESPONSE_FOLDER="release-json-responses"
+
+                mkdir -p "\$RELEASE_JSON_RESPONSE_FOLDER"
 
                 API_CREATION_JSON=\$(
                     printf '{
@@ -113,8 +116,6 @@ node {
                 # creating a release, results in a ID created by github
 
                 # upload a release
-                RELEASE-JSON-RESPONSE-FOLDER="release-json-responses"
-                mkdir -p "\$RELEASE-JSON-RESPONSE-FOLDER"
 
                 for resolution_zip in "output"/*
                 do
@@ -129,7 +130,7 @@ node {
                             "https://\$UPLOAD_API_URL/repos/\$OWNER/\$REPO/releases/\$RELEASE_ID/assets?name=\$(basename \$resolution_zip)"
                     )
 
-                    echo \$RELEASE_RESPONSE > "\$RELEASE-JSON-RESPONSE-FOLDER/\$(basename \$resolution_zip .zip).json"
+                    echo \$RELEASE_RESPONSE > "\$RELEASE_JSON_RESPONSE_FOLDER/\$(basename \$resolution_zip .zip).json"
                 done
             """
         }
@@ -150,7 +151,7 @@ node {
             slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
         }
 
-        def releaseApiResponses = findFiles(glob: 'release-json-response/*.json')
+        def releaseApiResponses = findFiles(glob: 'release-json-responses/*.json')
         releaseApiResponses.each {
             def responseJson = readJson file: it
             def url = responseJson['browser-download-url']
