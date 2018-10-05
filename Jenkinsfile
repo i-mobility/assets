@@ -171,7 +171,7 @@ node {
             ]
             def slackMessageJson = JsonOutput.toJson(slackMessageMap)
             slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
-            slackSend(channel: '@toni', message: slackMessageJson, tokenCredentialId: 'jenkins-slack')
+            slackSend(channel: '@toni', message: 'test message', tokenCredentialId: 'jenkins-slack')
         }
     }
 }
