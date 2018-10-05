@@ -141,8 +141,7 @@ node {
     }
 
     stage('send github asset release urls to slack') {
-            def assetNameUrlMap = [:]
-            def slackMessage = new groovy.json.JsonBuilder()
+        def assetNameUrlMap = [:]
 
         if(env.BRANCH_NAME == "master") {
             def releaseApiResponses = findFiles(glob: 'release-json-response/*.json')
@@ -154,11 +153,24 @@ node {
                 assetNameUrlMap[name] = url
             }
 
-            slackMessage assets: assetsNameUrlMap
-            slackSend channel: '@toni', message: groovy.json.JsonOutput.prettyPrint(slackMessage.toString())
+            def slackMessage = [
+                assets:[
+                    assetsNameUrlMap
+                ]
+            ]
+
+            def slackMessageJson = JsonOutput.toJson(data)
+            slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
+            slackSend channel: '@toni', message: groovy.json.JsonOutput.prettyPrint(slackMessageJson.toString())
         } else {
             assetsUrlMap['testdpi'] = 'https://download.example.com/testdpi.zip'
-            slackMessage testAssets: assetsNameUrlMap
+            def slackMessage = [
+                testAssets:[
+                    assetsNameUrlMap
+                ]
+            ]
+            def slackMessageJson = JsonOutput.toJson(data)
+            slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
             slackSend channel: '@toni', message: groovy.json.JsonOutput.prettyPrint(slackMessage.toStrong())
         }
     }
