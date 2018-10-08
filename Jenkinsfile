@@ -7,6 +7,7 @@ node {
 
     def currentTag
     def newTag
+    def release_json_responses_folder = "release-json-responses"
 
     stage("checkout, tag and push new tag") {
         checkout scm
@@ -82,9 +83,8 @@ node {
                 OWNER="i-mobility"
                 REPO="assets"
                 VERSION=${newTag}
-                RELEASE_JSON_RESPONSE_FOLDER="release-json-responses"
 
-                mkdir -p "\$RELEASE_JSON_RESPONSE_FOLDER"
+                mkdir -p "${release_json_responses_folder}"
 
                 API_CREATION_JSON=\$(
                     printf '{
@@ -130,7 +130,7 @@ node {
                             "https://\$UPLOAD_API_URL/repos/\$OWNER/\$REPO/releases/\$RELEASE_ID/assets?name=\$(basename \$resolution_zip)"
                     )
 
-                    echo \$RELEASE_RESPONSE > "\$RELEASE_JSON_RESPONSE_FOLDER/\$(basename \$resolution_zip .zip).json"
+                    echo \$RELEASE_RESPONSE > "${release_json_responses_folder}/\$(basename "\$resolution_zip" .zip).json"
                 done
             """
         }
@@ -154,7 +154,7 @@ node {
         sh """
             tmp_asset_name_url_file="tmp_asset_name_url_file"
             asset_json_file="assets.json"
-            for response_json in "release-responses"/*
+            for response_json in "${release_json_responses_folder}"/*
             do
                 release_resolution_zip_name=\$(cat "\$response_json" | grep 'name' | cut -d '"' -f 4 )
                 release_resolution_name=\$(basename "\$release_resolution_zip_name" .zip)
