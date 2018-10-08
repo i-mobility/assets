@@ -154,7 +154,6 @@ node {
         sh """
             tmp_asset_name_url_file="tmp_asset_name_url_file"
             asset_json_file="assets.json"
-            # ESCAPE SHELL $ FOR JENKINS GROOVY SYNTAX
             for response_json in "release-responses"/*
             do
                 release_resolution_zip_name=\$(cat "\$response_json" | grep 'name' | cut -d '"' -f 4 )
