@@ -21,15 +21,11 @@ do
     mkdir "$OUTPUT_FOLDER/images"
 
     cp -R "$resolution_entry/." "$OUTPUT_FOLDER/images/"
-    cp -R translations "$OUTPUT_FOLDER/translations"
-    cp -R definitions.json "$OUTPUT_FOLDER/definitions.json"
 
     cd "$OUTPUT_FOLDER"
     zip -r $RESOLUTION_FOLDERNAME.zip "images" "translations" "definitions.json"
 
     rm -Rf "images"
-    rm -Rf "translations"
-    rm -f "definitions.json"
     cd ..
 done
 
