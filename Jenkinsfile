@@ -74,7 +74,7 @@ node {
         withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUBTOKEN')]) {
 
             if (isDevelopment) {
-                echo "only master branch pushes proper GITHUB releases, every else creates pre-releases"
+                echo "only master branch pushes proper GITHUB releases, everything else creates pre-releases"
             }
 
             sh """
@@ -116,7 +116,6 @@ node {
                 # creating a release, results in a ID created by github
 
                 # upload a release
-
                 for resolution_zip in "output"/*
                 do
                     echo "\$(ls -al output)"
