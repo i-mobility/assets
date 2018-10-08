@@ -138,20 +138,6 @@ node {
     }
 
     stage('send github asset release urls to slack') {
-        def assetsNameUrlMap = [:]
-
-        if (isDevelopment) {
-            assetsNameUrlMap['testdpi'] = 'https://download.example.com/testdpi.zip'
-
-            def slackMessageMap = [
-                testAssets:assetsNameUrlMap
-            ]
-
-            def slackMessageJson = JsonOutput.toJson(slackMessageMap)
-            slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
-            slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
-        }
-
         sh """
             tmp_asset_name_url_file="tmp_asset_name_url_file"
             asset_json_file="assets.json"
