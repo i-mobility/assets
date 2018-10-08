@@ -151,21 +151,29 @@ node {
             slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
         }
 
-        def releaseApiResponses = findFiles(glob: 'release-json-responses/*.json')
-        releaseApiResponses.each {
-            def responseJson = readJson file: it
-            def url = responseJson['browser-download-url']
-            def name_withExtension = responseJson['name']
-            def name = name_withExtension.take(name_withExtension.lastIndexOf('.'))
-            assetsNameUrlMap[name] = url
-        }
+        sh """
+            tmp_asset_name_url_file="tmp_asset_name_url_file"
+            asset_json_file="assets.json"
+            # ESCAPE SHELL $ FOR JENKINS GROOVY SYNTAX
+            for response_json in "release-responses"/*
+            do
+                release_resolution_zip_name=\$(cat "\$response_json" | grep 'name' | cut -d '"' -f 4 )
+                release_resolution_name=\$(basename "\$release_resolution_zip_name" .zip)
+                release_url=\$(cat "\$response_json" | grep 'browser_download_url' | cut -d '"' -f 4 )
 
-        def slackMessageMap = [
-            assets:assetsNameUrlMap
-        ]
+                printf "%s %s\n" "\$release_resolution_name" "\$release_url" >> "\$tmp_asset_name_url_file"
+            done
 
-        def slackMessageJson = JsonOutput.toJson(slackMessageMap)
-        slackMessageJson = JsonOutput.prettyPrint(slackMessageJson)
+            #create final json file
+            cat tmp_asset_name_url_file | jq -sR '{"assets": [split("\n")[:-1][] | split(" ") | {(.[0]): .[1]}] | add }' > \$asset_json_file
+        """
+
+        def asset_json_file_content = sh(
+            script: "cat assets.json",
+            returnStdout: true
+        ).trim()
+
+        slackMessageJson = JsonOutput.prettyPrint(asset_json_file_content)
         slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
     }
 }
