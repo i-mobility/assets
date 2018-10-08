@@ -159,9 +159,9 @@ node {
             for response_json in "${release_json_responses_folder}"/*
             do
                 echo "\$response_json"
-                release_resolution_zip_name=\$(cat "\$response_json" | grep 'name' | cut -d '"' -f 4 )
+                release_resolution_zip_name=\$(cat "\$response_json" | jq .name | tr -d '"' )
                 release_resolution_name=\$(basename "\$release_resolution_zip_name" .zip)
-                release_url=\$(cat "\$response_json" | grep 'browser_download_url' | cut -d '"' -f 4 )
+                release_url=\$(cat "\$response_json" | jq .browser_download_url | tr -d '"' )
 
                 printf "%s %s\n" "\$release_resolution_name" "\$release_url" >> "\$tmp_asset_name_url_file"
             done
