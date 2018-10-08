@@ -131,6 +131,8 @@ node {
                     )
 
                     echo \$RELEASE_RESPONSE > "${release_json_responses_folder}/\$(basename "\$resolution_zip" .zip).json"
+                    echo "curl release upload response: "
+                    echo "\$RELEASE_RESPONSE"
                 done
             """
         }
@@ -156,7 +158,7 @@ node {
             asset_json_file="assets.json"
             for response_json in "${release_json_responses_folder}"/*
             do
-                echo "$response_json"
+                echo "\$response_json"
                 release_resolution_zip_name=\$(cat "\$response_json" | grep 'name' | cut -d '"' -f 4 )
                 release_resolution_name=\$(basename "\$release_resolution_zip_name" .zip)
                 release_url=\$(cat "\$response_json" | grep 'browser_download_url' | cut -d '"' -f 4 )
