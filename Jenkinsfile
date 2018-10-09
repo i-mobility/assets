@@ -101,11 +101,10 @@ node {
                 )
 
                 if [ "true" == "${isDevelopment}" ]; then
-                  # reuse release but delete assets
-                  RELEASE_ID=\$DEV_RELEASE_ID
-                  for ASSET_ID in $(curl --fail -H "Authorization: token ${GITHUBTOKEN}" -s https://\$API_URL/repos/\$OWNER/\$REPO/releases/\$DEV_RELEASE_ID/assets | jq .[].id)
+                  RELEASE_ID="\$DEV_RELEASE_ID"
+                  for ASSET_ID in $(curl --fail -H "Authorization: token ${GITHUBTOKEN}" -s "https://\$API_URL/repos/\$OWNER/\$REPO/releases/\$DEV_RELEASE_ID/assets" | jq .[].id)
                   do
-                    curl --fail -H "Authorization: token ${GITHUBTOKEN}" -XDELETE https://\$API_URL/repos/\$OWNER/\$REPO/releases/assets/\$ASSET_ID
+                    curl --fail -H "Authorization: token ${GITHUBTOKEN}" -XDELETE "https://\$API_URL/repos/\$OWNER/\$REPO/releases/assets/\$ASSET_ID"
                   done
                 else
                   # create a release
