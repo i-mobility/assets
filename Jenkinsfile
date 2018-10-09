@@ -99,19 +99,22 @@ node {
                     }' \$VERSION \$VERSION \$VERSION
                 )
 
-                # create a release
-                RESPONSE=\$(
-                    curl \
-                        --request POST \
-                        --fail \
-                        --header "Authorization: token ${GITHUBTOKEN}" \
-                        --data "\$API_CREATION_JSON" \
-                        "https://\$API_URL/repos/\$OWNER/\$REPO/releases"
-                )
-
-                RELEASE_ID=\$(
-                    echo "\$RESPONSE" | jq '.id'
-                )
+                if ["true" == "${isDevelopment}"]; then
+                  RELEASE_ID="13323651"
+                else
+                  # create a release
+                  RESPONSE=\$(
+                      curl \
+                          --request POST \
+                          --fail \
+                          --header "Authorization: token ${GITHUBTOKEN}" \
+                          --data "\$API_CREATION_JSON" \
+                          "https://\$API_URL/repos/\$OWNER/\$REPO/releases"
+                  )
+                  RELEASE_ID=\$(
+                      echo "\$RESPONSE" | jq '.id'
+                  )
+                fi
 
                 echo "github release ID: \$RELEASE_ID"
 
