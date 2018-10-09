@@ -41,6 +41,8 @@ node {
                 LOCALE_DE_FILENAME="de.json"
                 LOCALE_EN_FILENAME="en.json"
 
+                mkdir translations
+
                 DE_LOCALE_RESPONSE=\$(
                     curl \
                         --request GET \
