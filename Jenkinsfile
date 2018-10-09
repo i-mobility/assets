@@ -21,8 +21,12 @@ node {
 
         newTag = (currentTag == "") ? (1) : (currentTag.toInteger() + 1)
 
-        sh "git tag ${newTag}"
-        sh 'git push --tag'
+        if (isDevelopment) {
+          newTag = 'dev'
+        }
+
+        sh "git tag -f ${newTag}"
+        sh 'git push -f --tag'
     }
 
     stage('pull translations from PhraseApp') {
@@ -36,7 +40,7 @@ node {
                 LOCALE_EN="165be6785e2440749b1e30818469e531"
                 LOCALE_DE_FILENAME="de.json"
                 LOCALE_EN_FILENAME="en.json"
-                
+
                 # delete old translations
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME"
                 rm "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME"
@@ -161,6 +165,11 @@ node {
         ).trim()
 
         slackMessageJson = JsonOutput.prettyPrint(asset_json_file_content)
-        slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
+
+        if (isDevelopment) {
+          slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
+        } else {
+          slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
+        }
     }
 }
