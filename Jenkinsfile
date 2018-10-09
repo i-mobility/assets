@@ -161,6 +161,6 @@ node {
         ).trim()
 
         slackMessageJson = JsonOutput.prettyPrint(asset_json_file_content)
-        slackSend(channel: '@C27931NAD', message: '```' + slackMessageJson + '```')
+        slackSend(channel: '#backend', message: '```' + slackMessageJson + '```')
     }
 }
