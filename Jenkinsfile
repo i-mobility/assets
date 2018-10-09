@@ -99,7 +99,7 @@ node {
                     }' \$VERSION \$VERSION \$VERSION
                 )
 
-                if ["true" = "${isDevelopment}"]; then
+                if [ "true" == "${isDevelopment}" ]; then
                   RELEASE_ID="13323651"
                 else
                   # create a release
