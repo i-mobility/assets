@@ -41,10 +41,6 @@ node {
                 LOCALE_DE_FILENAME="de.json"
                 LOCALE_EN_FILENAME="en.json"
 
-                # delete old translations
-                rm "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME"
-                rm "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME"
-
                 DE_LOCALE_RESPONSE=\$(
                     curl \
                         --request GET \
@@ -167,8 +163,10 @@ node {
         slackMessageJson = JsonOutput.prettyPrint(asset_json_file_content)
 
         if (isDevelopment) {
-          slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
+          // sends to #notifications
+          slackSend(channel: '@C1AERHFP1', message: '```' + slackMessageJson + '```')
         } else {
+          // sends to #backend
           slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
         }
     }
