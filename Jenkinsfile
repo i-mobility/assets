@@ -166,10 +166,10 @@ node {
 
         if (isDevelopment) {
           // sends to #notifications
-          slackSend(channel: '@C1AERHFP1', message: '```' + slackMessageJson + '```')
+          slackSend(channel: '#notifications', message: '```' + slackMessageJson + '```')
         } else {
           // sends to #backend
-          slackSend(channel: '@UD4FPD79T', message: '```' + slackMessageJson + '```')
+          slackSend(channel: '#backend', message: '```' + slackMessageJson + '```')
         }
     }
 }
