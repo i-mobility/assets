@@ -7,11 +7,13 @@
         "nearby" : "icon_transport_train_nearby"
       },
       "id" : "train",
-      "priority" : "primary"
+      "priority" : "primary",
+      "type": "public"
     },
     {
       "color" : "#2f4780",
-      "id" : "long_distance_bus"
+      "id" : "long_distance_bus",
+      "type": "public"
     },
     {
       "color" : "#73D700",
@@ -20,43 +22,51 @@
     {
       "color" : "#009DDD",
       "icon" : "icon_transport_s_bahn",
-      "id" : "city_train"
+      "id" : "city_train",
+      "type": "public"
     },
     {
       "color" : "#009DDD",
       "id" : "s_bahn",
-      "priority" : "primary"
+      "priority" : "primary",
+      "type": "public"
     },
     {
       "color" : "#2f4780",
-      "id" : "ship"
+      "id" : "ship",
+      "type": "public"
     },
     {
       "color" : "#156ab8",
       "id" : "metro",
-      "priority" : "primary"
+      "priority" : "primary",
+      "type": "public"
     },
     {
       "color" : "#4d7ea8",
-      "id" : "tram"
+      "id" : "tram",
+      "type": "public"
     },
     {
       "color" : "#5bc0eb",
       "icon" : "icon_transport_bus",
       "id" : "city_bus",
-      "translation_key" : "transportation_label.bus"
+      "translation_key" : "transportation_label.bus",
+      "type": "public"
     },
     {
       "color" : "#5bc0eb",
       "icon" : "icon_transport_bus",
       "id" : "express_bus",
-      "translation_key" : "transportation_label.bus"
+      "translation_key" : "transportation_label.bus",
+      "type": "public"
     },
     {
       "color" : "#5bc0eb",
       "icon" : "icon_transport_bus",
       "id" : "regional_bus",
-      "translation_key" : "transportation_label.bus"
+      "translation_key" : "transportation_label.bus",
+      "type": "public"
     },
     {
       "color" : "#F4A81A",
@@ -65,12 +75,14 @@
     },
     {
       "color" : "#2f4780",
-      "id" : "cable_car"
+      "id" : "cable_car",
+      "type": "public"
     },
     {
       "color" : "#2f4780",
       "icon" : "icon_transport_cartrain",
-      "id" : "car_train"
+      "id" : "car_train",
+      "type": "public"
     },
     {
       "color" : "#525C69",
