@@ -229,7 +229,8 @@
     },
     {
       "color" : "#0068b1",
-      "id" : "park_and_ride"
+      "id" : "park_and_ride",
+      "image": "image_transport_parken_at_details"
     },
     {
       "color" : "#18ecb8",
