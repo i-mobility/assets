@@ -138,7 +138,7 @@
     {
       "color" : "#41a641",
       "id" : "open_charge",
-      "icon": "icon_transport_echarging"
+      "icon": "icon_transport_echarging",
       "image": "image_transport_open_charge_details"
     },
     {
