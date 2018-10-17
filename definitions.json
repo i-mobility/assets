@@ -102,41 +102,49 @@
     },
     {
       "color" : "#C30016",
-      "id" : "citybike"
+      "id" : "citybike",
+      "image": "image_transport_citybike_details"
     },
     {
       "color" : "#1c4c94",
-      "id" : "nextbike"
+      "id" : "nextbike",
+      "image": "image_transport_nextbike_details"
     },
     {
       "color" : "#fbd902",
-      "id" : "ofo"
+      "id" : "ofo",
+      "image": "image_transport_ofo_details"
     },
     {
       "color" : "#17ed74",
       "id" : "sco2t",
-      "translation_key" : "transportation_label.sco_2_t"
+      "image": "image_transport_sco2t_details"
     },
     {
       "color" : "#404041",
       "id" : "mo2drive",
-      "translation_key" : "transportation_label.mo_2_drive"
+      "image": "image_transport_mo2drive_details"
     },
     {
       "color" : "#00b0e9",
-      "id" : "gourban"
+      "id" : "gourban",
+      "image": "image_transport_gourban_details"
     },
     {
       "color" : "#e46d2c",
-      "id" : "donkey"
+      "id" : "donkey",
+      "image": "image_transport_donkey_details"
     },
     {
       "color" : "#41a641",
-      "id" : "open_charge"
+      "id" : "open_charge",
+      "icon": "icon_transport_echarging"
+      "image": "image_transport_open_charge_details"
     },
     {
       "color" : "#41a641",
-      "id" : "ride_and_charge"
+      "id" : "ride_and_charge",
+      "icon" : "icon_transport_echarging"
     },
     {
       "color" : "#8cb238",
@@ -145,19 +153,23 @@
         "nearby" : "icon_transport_carsharing_247_nearby",
         "routing" : "icon_transport_carsharing_247_routing"
       },
-      "id" : "carsharing_247"
+      "id" : "carsharing_247",
+      "image": "image_transport_carsharing_247_details"
     },
     {
       "color" : "#f4a81a",
-      "id" : "taxi_rank"
+      "id" : "taxi_rank",
+      "image": "image_transport_taxi_rank_details"
     },
     {
       "color" : "#0068b1",
-      "id" : "parken_at"
+      "id" : "parken_at",
+      "image": "image_transport_parken_at_details"
     },
     {
       "color" : "#006a7a",
-      "id" : "auto_europe"
+      "id" : "auto_europe",
+      "image": "image_transport_auto_europe_details"
     },
     {
       "color" : "#0167BB",
@@ -197,19 +209,23 @@
     },
     {
       "color" : "#1c1d21",
-      "id" : "segway"
+      "id" : "segway",
+      "image": "image_transport_segway_details"
     },
     {
       "color" : "#553b2c",
-      "id" : "tractor"
+      "id" : "tractor",
+      "image": "image_transport_tractor_details"
     },
     {
       "color" : "#1e085d",
-      "id" : "bike_rental"
+      "id" : "bike_rental",
+      "image": "image_transport_bike_rental_details"
     },
     {
       "color" : "#767676",
-      "id" : "horse_carriage"
+      "id" : "horse_carriage",
+      "image": "image_transport_horse_carriage_details"
     },
     {
       "color" : "#0068b1",
@@ -217,7 +233,8 @@
     },
     {
       "color" : "#18ecb8",
-      "id" : "drivy"
+      "id" : "drivy",
+      "image": "image_transport_drivy_details"
     },
     {
       "color" : "#009be0",
