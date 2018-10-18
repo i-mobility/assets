@@ -1,7 +1,7 @@
 {
   "transport" : [
     {
-      "color" : "#ffc900",
+      "color" : "#d70012",
       "icon" : {
         "default" : "icon_transport_train",
         "nearby" : "icon_transport_train_nearby"
