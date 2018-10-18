@@ -113,12 +113,14 @@
     {
       "color": "#fbd902",
       "id": "ofo",
-      "complementary_color": "#000000"
+      "complementary_color": "#000000",
+      "rendering_mode": "original"
     },
     {
       "color": "#17ed74",
       "id": "sco2t",
-      "complementary_color": "#707070"
+      "complementary_color": "#707070",
+      "rendering_mode": "original"
     },
     {
       "color": "#404041",
