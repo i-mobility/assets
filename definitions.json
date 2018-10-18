@@ -1,263 +1,263 @@
 {
-  "transport" : [
+  "transport": [
     {
-      "color" : "#d70012",
-      "icon" : {
-        "default" : "icon_transport_train",
-        "nearby" : "icon_transport_train_nearby"
+      "color": "#d70012",
+      "icon": {
+        "default": "icon_transport_train",
+        "nearby": "icon_transport_train_nearby"
       },
-      "id" : "train",
-      "priority" : "primary",
+      "id": "train",
+      "priority": "primary",
       "type": "public"
     },
     {
-      "color" : "#2f4780",
-      "id" : "long_distance_bus",
+      "color": "#2f4780",
+      "id": "long_distance_bus",
       "type": "public"
     },
     {
-      "color" : "#73D700",
-      "id" : "flixbus"
+      "color": "#73D700",
+      "id": "flixbus"
     },
     {
-      "color" : "#009DDD",
-      "icon" : "icon_transport_s_bahn",
-      "id" : "city_train",
+      "color": "#009DDD",
+      "icon": "icon_transport_s_bahn",
+      "id": "city_train",
       "type": "public"
     },
     {
-      "color" : "#009DDD",
-      "id" : "s_bahn",
-      "priority" : "primary",
+      "color": "#009DDD",
+      "id": "s_bahn",
+      "priority": "primary",
       "type": "public"
     },
     {
-      "color" : "#2f4780",
-      "id" : "ship",
+      "color": "#2f4780",
+      "id": "ship",
       "type": "public"
     },
     {
-      "color" : "#156ab8",
-      "id" : "metro",
-      "priority" : "primary",
+      "color": "#156ab8",
+      "id": "metro",
+      "priority": "primary",
       "type": "public"
     },
     {
-      "color" : "#4d7ea8",
-      "id" : "tram",
+      "color": "#4d7ea8",
+      "id": "tram",
       "type": "public"
     },
     {
-      "color" : "#5bc0eb",
-      "icon" : "icon_transport_bus",
-      "id" : "city_bus",
-      "translation_key" : "transportation_label.bus",
+      "color": "#5bc0eb",
+      "icon": "icon_transport_bus",
+      "id": "city_bus",
+      "translation_key": "transportation_label.bus",
       "type": "public"
     },
     {
-      "color" : "#5bc0eb",
-      "icon" : "icon_transport_bus",
-      "id" : "express_bus",
-      "translation_key" : "transportation_label.bus",
+      "color": "#5bc0eb",
+      "icon": "icon_transport_bus",
+      "id": "express_bus",
+      "translation_key": "transportation_label.bus",
       "type": "public"
     },
     {
-      "color" : "#5bc0eb",
-      "icon" : "icon_transport_bus",
-      "id" : "regional_bus",
-      "translation_key" : "transportation_label.bus",
+      "color": "#5bc0eb",
+      "icon": "icon_transport_bus",
+      "id": "regional_bus",
+      "translation_key": "transportation_label.bus",
       "type": "public"
     },
     {
-      "color" : "#F4A81A",
-      "icon" : "icon_transport_dialaride",
-      "id" : "dial_a_ride"
+      "color": "#F4A81A",
+      "icon": "icon_transport_dialaride",
+      "id": "dial_a_ride"
     },
     {
-      "color" : "#2f4780",
-      "id" : "cable_car",
+      "color": "#2f4780",
+      "id": "cable_car",
       "type": "public"
     },
     {
-      "color" : "#2f4780",
-      "icon" : "icon_transport_cartrain",
-      "id" : "car_train",
+      "color": "#2f4780",
+      "icon": "icon_transport_cartrain",
+      "id": "car_train",
       "type": "public"
     },
     {
-      "color" : "#525C69",
-      "id" : "walk"
+      "color": "#525C69",
+      "id": "walk"
     },
     {
-      "color" : "#ED741B",
-      "id" : "car"
+      "color": "#ED741B",
+      "id": "car"
     },
     {
-      "color" : "#1F8970",
-      "id" : "bike"
+      "color": "#1F8970",
+      "id": "bike"
     },
     {
-      "color" : "#f4a81a",
-      "id" : "taxi"
+      "color": "#f4a81a",
+      "id": "taxi"
     },
     {
-      "color" : "#C30016",
-      "id" : "citybike"
+      "color": "#C30016",
+      "id": "citybike"
     },
     {
-      "color" : "#1c4c94",
-      "id" : "nextbike"
+      "color": "#1c4c94",
+      "id": "nextbike"
     },
     {
-      "color" : "#fbd902",
-      "id" : "ofo"
+      "color": "#fbd902",
+      "id": "ofo"
     },
     {
-      "color" : "#17ed74",
-      "id" : "sco2t"
+      "color": "#17ed74",
+      "id": "sco2t"
     },
     {
-      "color" : "#404041",
-      "id" : "mo2drive"
+      "color": "#404041",
+      "id": "mo2drive"
     },
     {
-      "color" : "#00b0e9",
-      "id" : "gourban"
+      "color": "#00b0e9",
+      "id": "gourban"
     },
     {
-      "color" : "#e46d2c",
-      "id" : "donkey"
+      "color": "#e46d2c",
+      "id": "donkey"
     },
     {
-      "color" : "#41a641",
-      "id" : "open_charge",
+      "color": "#41a641",
+      "id": "open_charge",
       "icon": "icon_transport_echarging"
     },
     {
-      "color" : "#41a641",
-      "id" : "ride_and_charge",
-      "icon" : "icon_transport_echarging"
+      "color": "#41a641",
+      "id": "ride_and_charge",
+      "icon": "icon_transport_echarging"
     },
     {
-      "color" : "#8cb238",
-      "icon" : {
-        "default" : "icon_transport_carsharing_247",
-        "nearby" : "icon_transport_carsharing_247_nearby",
-        "routing" : "icon_transport_carsharing_247_routing"
+      "color": "#8cb238",
+      "icon": {
+        "default": "icon_transport_carsharing_247",
+        "nearby": "icon_transport_carsharing_247_nearby",
+        "routing": "icon_transport_carsharing_247_routing"
       },
-      "id" : "carsharing_247"
+      "id": "carsharing_247"
     },
     {
-      "color" : "#f4a81a",
-      "id" : "taxi_rank"
+      "color": "#f4a81a",
+      "id": "taxi_rank"
     },
     {
-      "color" : "#0068b1",
-      "id" : "parken_at"
+      "color": "#0068b1",
+      "id": "parken_at"
     },
     {
-      "color" : "#006a7a",
-      "id" : "auto_europe"
+      "color": "#006a7a",
+      "id": "auto_europe"
     },
     {
-      "color" : "#0167BB",
-      "id" : "thrifty"
+      "color": "#0167BB",
+      "id": "thrifty"
     },
     {
-      "color" : "#10130C",
-      "id" : "sixt"
+      "color": "#10130C",
+      "id": "sixt"
     },
     {
-      "color" : "#009900",
-      "id" : "europcar"
+      "color": "#009900",
+      "id": "europcar"
     },
     {
-      "color" : "#FB0102",
-      "id" : "megadrive"
+      "color": "#FB0102",
+      "id": "megadrive"
     },
     {
-      "color" : "#FD0506",
-      "id" : "buchbinder"
+      "color": "#FD0506",
+      "id": "buchbinder"
     },
     {
-      "color" : "#334899",
-      "id" : "global"
+      "color": "#334899",
+      "id": "global"
     },
     {
-      "color" : "#FFD004",
-      "id" : "hertz"
+      "color": "#FFD004",
+      "id": "hertz"
     },
     {
-      "color" : "#00275E",
-      "id" : "budget"
+      "color": "#00275E",
+      "id": "budget"
     },
     {
-      "color" : "#FD0506",
-      "id" : "avis"
+      "color": "#FD0506",
+      "id": "avis"
     },
     {
-      "color" : "#1c1d21",
-      "id" : "segway"
+      "color": "#1c1d21",
+      "id": "segway"
     },
     {
-      "color" : "#553b2c",
-      "id" : "tractor"
+      "color": "#553b2c",
+      "id": "tractor"
     },
     {
-      "color" : "#1e085d",
-      "id" : "bike_rental"
+      "color": "#1e085d",
+      "id": "bike_rental"
     },
     {
-      "color" : "#767676",
-      "id" : "horse_carriage"
+      "color": "#767676",
+      "id": "horse_carriage"
     },
     {
-      "color" : "#0068b1",
-      "id" : "park_and_ride"
+      "color": "#0068b1",
+      "id": "park_and_ride"
     },
     {
-      "color" : "#18ecb8",
-      "id" : "drivy"
+      "color": "#18ecb8",
+      "id": "drivy"
     },
     {
-      "color" : "#009be0",
-      "id" : "car2go",
+      "color": "#009be0",
+      "id": "car2go",
       "group_icon": "icon_transport_car2go_group"
     }
   ],
-  "transportation_group" : [
+  "transportation_group": [
     {
-      "id" : "public"
+      "id": "public"
     },
     {
-      "id" : "walk"
+      "id": "walk"
     },
     {
-      "id" : "bike"
+      "id": "bike"
     },
     {
-      "id" : "bike_sharing"
+      "id": "bike_sharing"
     },
     {
-      "id" : "car"
+      "id": "car"
     },
     {
-      "id" : "car_sharing"
+      "id": "car_sharing"
     },
     {
-      "id" : "car_rental"
+      "id": "car_rental"
     },
     {
-      "id" : "taxi"
+      "id": "taxi"
     },
     {
-      "id" : "long_distance_bus"
+      "id": "long_distance_bus"
     },
     {
-      "id" : "scooter_sharing"
+      "id": "scooter_sharing"
     },
     {
-      "id" : "tourist"
+      "id": "tourist"
     }
   ]
 }
