@@ -12,12 +12,14 @@
     },
     {
       "color": "#2f4780",
+      "icon": "icon_transport_bus",
       "id": "long_distance_bus",
       "type": "public"
     },
     {
       "color": "#73D700",
-      "id": "flixbus"
+      "id": "flixbus",
+      "rendering_mode": "original"
     },
     {
       "color": "#009DDD",
@@ -110,15 +112,18 @@
     },
     {
       "color": "#fbd902",
-      "id": "ofo"
+      "id": "ofo",
+      "complementary_color": "#000000"
     },
     {
       "color": "#17ed74",
-      "id": "sco2t"
+      "id": "sco2t",
+      "complementary_color": "#707070"
     },
     {
       "color": "#404041",
-      "id": "mo2drive"
+      "id": "mo2drive",
+      "rendering_mode": "original"
     },
     {
       "color": "#00b0e9",
@@ -165,11 +170,13 @@
     },
     {
       "color": "#10130C",
-      "id": "sixt"
+      "id": "sixt",
+      "rendering_mode": "original"
     },
     {
       "color": "#009900",
-      "id": "europcar"
+      "id": "europcar",
+      "rendering_mode": "original"
     },
     {
       "color": "#FB0102",
