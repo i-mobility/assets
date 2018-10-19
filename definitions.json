@@ -34,14 +34,14 @@
       "type": "public"
     },
     {
-      "color": "#2f4780",
-      "id": "ship",
-      "type": "public"
-    },
-    {
       "color": "#156ab8",
       "id": "metro",
       "priority": "primary",
+      "type": "public"
+    },
+    {
+      "color": "#2f4780",
+      "id": "ship",
       "type": "public"
     },
     {
