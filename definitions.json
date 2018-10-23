@@ -44,7 +44,7 @@
       "id": "ship",
       "type": "public"
     },
-   
+
     {
       "color": "#4d7ea8",
       "id": "tram",
@@ -238,7 +238,7 @@
       "color": "#31959c",
       "id": "mopoint",
       "group_icon": "icon_transport_mopoint_group"
-    },
+    }
   ],
   "transportation_group": [
     {
