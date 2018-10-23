@@ -233,7 +233,12 @@
       "color": "#009be0",
       "id": "car2go",
       "group_icon": "icon_transport_car2go_group"
-    }
+    },
+    {
+      "color": "#31959c",
+      "id": "mopoint",
+      "group_icon": "icon_transport_mopoint_group"
+    },
   ],
   "transportation_group": [
     {
