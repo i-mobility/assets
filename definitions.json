@@ -44,7 +44,7 @@
       "id": "ship",
       "type": "public"
     },
-   
+
     {
       "color": "#4d7ea8",
       "id": "tram",
@@ -230,9 +230,18 @@
       "id": "drivy"
     },
     {
+      "color": "#102D5D",
+      "id": "family_of_power"
+    },
+    {
       "color": "#009be0",
       "id": "car2go",
       "group_icon": "icon_transport_car2go_group"
+    },
+    {
+      "color": "#31959c",
+      "id": "mopoint",
+      "group_icon": "icon_transport_mopoint_group"
     }
   ],
   "transportation_group": [
