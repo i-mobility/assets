@@ -234,6 +234,10 @@
       "id": "family_of_power"
     },
     {
+      "color": "#F2675C",
+      "id": "bahnhofshuttle"
+    },
+    {
       "color": "#009be0",
       "id": "car2go",
       "group_icon": "icon_transport_car2go_group"
