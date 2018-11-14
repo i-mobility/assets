@@ -243,9 +243,14 @@
       "group_icon": "icon_transport_car2go_group"
     },
     {
-      "color": "#31959c",
+      "color": "#004072",
       "id": "mopoint",
       "group_icon": "icon_transport_mopoint_group"
+    },
+    {
+      "color": "#74B943",
+      "id": "caruso",
+      "group_icon": "icon_transport_caruso_group"
     }
   ],
   "transportation_group": [
