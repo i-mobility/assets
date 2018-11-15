@@ -251,6 +251,11 @@
       "color": "#74B943",
       "id": "caruso",
       "group_icon": "icon_transport_caruso_group"
+    },
+    {
+      "color": "#004B70",
+      "id": "sharetoo",
+      "group_icon": "icon_transport_sharetoo_group"
     }
   ],
   "transportation_group": [
