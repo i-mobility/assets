@@ -255,7 +255,8 @@
     {
       "color": "#004B70",
       "id": "sharetoo",
-      "group_icon": "icon_transport_sharetoo_group"
+      "group_icon": "icon_transport_sharetoo_group",
+      "rendering_mode": "original"
     }
   ],
   "transportation_group": [
