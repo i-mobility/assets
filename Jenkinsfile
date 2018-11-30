@@ -49,7 +49,7 @@ node {
                         --fail \
                         --header "Authorization: token ${PHRASEAPPTOKEN}" \
                         --output "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME" \
-                        "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?file_format=\$FILE_FORMAT"
+                        "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?convert_emoji=true&file_format=\$FILE_FORMAT"
                 )
 
                 EN_LOCALE_RESPONSE=\$(
@@ -58,7 +58,7 @@ node {
                         --fail \
                         --header "Authorization: token ${PHRASEAPPTOKEN}" \
                         --output "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME" \
-                        "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?file_format=\$FILE_FORMAT"
+                        "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?convert_emoji=true&file_format=\$FILE_FORMAT"
                 )
             """
         }
