@@ -1,6 +1,11 @@
 {
   "transport": [
     {
+      "id": "christkind",
+      "color": "#0071bc",
+      "icon": "icon_transport_christkind"
+    },
+    {
       "color": "#d70012",
       "icon": {
         "default": "icon_transport_train",
