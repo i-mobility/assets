@@ -173,6 +173,10 @@
       "id": "auto_europe"
     },
     {
+      "color": "#005B5E",
+      "id": "blablacar"
+    },
+    {
       "color": "#0167BB",
       "id": "thrifty"
     },
@@ -285,6 +289,9 @@
     },
     {
       "id": "car_rental"
+    },
+    {
+      "id": "ride_sharing"
     },
     {
       "id": "taxi"
