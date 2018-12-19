@@ -6,7 +6,7 @@
       "icon": "icon_transport_christkind"
     },
     {
-      "color": "#d70012",
+      "color": "#F6FF33",
       "icon": {
         "default": "icon_transport_train",
         "nearby": "icon_transport_train_nearby"
@@ -109,7 +109,7 @@
       "id": "taxi"
     },
     {
-      "color": "#C30016",
+      "color": "#010100",
       "id": "citybike"
     },
     {
