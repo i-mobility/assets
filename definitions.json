@@ -49,7 +49,6 @@
       "id": "ship",
       "type": "public"
     },
-
     {
       "color": "#4d7ea8",
       "id": "tram",
@@ -163,6 +162,11 @@
     {
       "color": "#f4a81a",
       "id": "taxi_rank"
+    },
+    {
+      "color": "#000000",
+      "id": "uber",
+      "icon": "icon_transport_uber"
     },
     {
       "color": "#0068b1",
