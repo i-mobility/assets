@@ -32,7 +32,7 @@ node {
     stage('pull translations from PhraseApp') {
         withCredentials([string(credentialsId: 'd1d41fbe-b0f8-4a36-b95e-960e7d6285dd', variable: 'PHRASEAPPTOKEN')]) {
             sh"""
-                PHRASEAPP_API="api.phraseapp.com/api/v2/"
+                PHRASEAPP_API="api.phraseapp.com/api/v2"
                 FILE_FORMAT="simple_json"
                 PROJECT_ID="5d1947d996b5e135178933ba3654bd38"
                 TRANSLATIONS_FOLDER="translations"
