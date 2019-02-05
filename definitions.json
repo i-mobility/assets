@@ -270,6 +270,10 @@
       "id": "sharetoo",
       "group_icon": "icon_transport_sharetoo_group",
       "rendering_mode": "original"
+    },
+    {
+      "color": "#D8D8D8",
+      "id": "waiting"
     }
   ],
   "transportation_group": [
