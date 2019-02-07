@@ -92,6 +92,41 @@
       "type": "public"
     },
     {
+      "color": "#d70012",
+      "icon": "icon_transport_oebb",
+      "translation_key": "transportation_label.train",
+      "id": "oebb",
+      "type": "public"
+    },
+    {
+      "color": "#0098D0",
+      "icon": "icon_transport_westbahn",
+      "translation_key": "transportation_label.train",
+      "id": "westbahn",
+      "type": "public"
+    },
+    {
+      "color": "#90C73E",
+      "icon": "icon_transport_cat",
+      "translation_key": "transportation_label.train",
+      "id": "cat",
+      "type": "public"
+    },
+    {
+      "color": "#FBBB01",
+      "icon": "icon_transport_regiojet",
+      "translation_key": "transportation_label.train",
+      "id": "regiojet",
+      "type": "public"
+    },
+    {
+      "color": "#B72731",
+      "icon": "icon_transport_val",
+      "translation_key": "transportation_label.bus",
+      "id": "val",
+      "type": "public"
+    },
+    {
       "color": "#525C69",
       "id": "walk"
     },
