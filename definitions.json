@@ -127,6 +127,13 @@
       "type": "public"
     },
     {
+      "color": "#025A9C",
+      "icon": "icon_transport_airliner",
+      "translation_key": "transportation_label.bus",
+      "id": "air_liner",
+      "type": "public"
+    },
+    {
       "color": "#525C69",
       "id": "walk"
     },
