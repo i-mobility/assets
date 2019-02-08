@@ -99,7 +99,7 @@
       "type": "public"
     },
     {
-      "color": "#0098D0",
+      "color": "#000000",
       "icon": "icon_transport_westbahn",
       "translation_key": "transportation_label.train",
       "id": "westbahn",
