@@ -130,6 +130,7 @@
       "color": "#025A9C",
       "icon": "icon_transport_airliner",
       "translation_key": "transportation_label.bus",
+      "rendering_mode": "original",
       "id": "air_liner",
       "type": "public"
     },
