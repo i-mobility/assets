@@ -99,11 +99,12 @@
       "type": "public"
     },
     {
-      "color": "#0098D0",
+      "color": "#d4e05a",
       "icon": "icon_transport_westbahn",
       "translation_key": "transportation_label.westbahn",
       "rendering_mode": "original",
       "id": "westbahn",
+      "icon_style": "outline",
       "type": "public"
     },
     {
@@ -111,13 +112,15 @@
       "icon": "icon_transport_cat",
       "translation_key": "transportation_label.cat",
       "id": "cat",
+      "icon_style": "outline",
       "type": "public"
     },
     {
-      "color": "#FBBB01",
+      "color": "#e6366d",
       "icon": "icon_transport_regiojet",
       "translation_key": "transportation_label.regiojet",
       "id": "regiojet",
+      "icon_style": "outline",
       "type": "public"
     },
     {
@@ -125,10 +128,11 @@
       "icon": "icon_transport_val",
       "translation_key": "transportation_label.val",
       "id": "val",
+      "icon_style": "outline",
       "type": "public"
     },
     {
-      "color": "#025A9C",
+      "color": "#0661a0",
       "icon": "icon_transport_airliner",
       "translation_key": "transportation_label.airliner",
       "rendering_mode": "original",
