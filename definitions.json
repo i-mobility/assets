@@ -137,7 +137,8 @@
     },
     {
       "color": "#525C69",
-      "id": "walk"
+      "id": "walk",
+      "icon_style": "outline"
     },
     {
       "color": "#ED741B",
