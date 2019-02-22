@@ -136,6 +136,7 @@
       "icon": "icon_transport_airliner",
       "translation_key": "transportation_label.airliner",
       "rendering_mode": "original",
+      "icon_style": "outline",
       "id": "air_liner",
       "type": "public"
     },
