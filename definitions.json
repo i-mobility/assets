@@ -112,6 +112,7 @@
       "icon": "icon_transport_cat",
       "translation_key": "transportation_label.cat",
       "id": "cat",
+      "rendering_mode": "original",
       "icon_style": "outline",
       "type": "public"
     },
