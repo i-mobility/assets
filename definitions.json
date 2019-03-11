@@ -324,8 +324,13 @@
       "rendering_mode": "original"
     },
     {
-      "color": "#D8D8D8",
-      "id": "waiting"
+      "color": "#777777",
+      "icon": "icon_transport_waiting",
+      "translation_key": "transportation_label.waiting",
+      "rendering_mode": "original",
+      "id": "waiting",
+      "icon_style": "outline",
+      "type": "public"
     },
     {
       "color": "#118B9E",
