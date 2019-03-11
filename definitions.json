@@ -326,6 +326,10 @@
     {
       "color": "#D8D8D8",
       "id": "waiting"
+    },
+    {
+      "color": "#118B9E",
+      "id": "wind"
     }
   ],
   "transportation_group": [
@@ -367,6 +371,9 @@
     },
     {
       "id": "christmas"
+    },
+    {
+      "id": "escooter_sharing"
     }
   ]
 }
