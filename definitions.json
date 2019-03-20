@@ -335,6 +335,10 @@
     {
       "color": "#118B9E",
       "id": "wind"
+    },
+    {
+      "color": "#69d19a",
+      "id": "tier"
     }
   ],
   "transportation_group": [
