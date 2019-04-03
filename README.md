@@ -11,3 +11,4 @@ find . -iname "*.png" -exec optipng -o7 {} \;
 ```
 
 from the root directory before pushing new images.
+
