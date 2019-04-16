@@ -302,6 +302,11 @@
       "group_icon": "icon_transport_car2go_group"
     },
     {
+       "id": "drivenow",
+       "color": "#007fa3",
+       "group_icon": "icon_transport_drivenow_group"
+    },
+    {
       "color": "#004072",
       "id": "mopoint",
       "group_icon": "icon_transport_mopoint_group"
