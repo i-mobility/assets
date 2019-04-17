@@ -81,6 +81,13 @@
       "id": "dial_a_ride"
     },
     {
+      "color": "#5bc0eb",
+      "icon": "icon_transport_sev",
+      "id": "sev",
+      "translation_key": "transportation_label.sev",
+      "type": "public"
+    },
+    {
       "color": "#2f4780",
       "id": "cable_car",
       "type": "public"
