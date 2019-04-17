@@ -81,8 +81,8 @@
       "id": "dial_a_ride"
     },
     {
-      "color": "#5bc0eb",
-      "icon": "icon_transport_sev",
+      "color": "#F0CF25",
+      "icon": "icon_transport_bus",
       "id": "sev",
       "translation_key": "transportation_label.sev",
       "type": "public"
