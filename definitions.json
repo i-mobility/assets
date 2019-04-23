@@ -324,6 +324,11 @@
       "group_icon": "icon_transport_caruso_group"
     },
     {
+      "color": "#23bebe",
+      "id": "flomobil",
+      "group_icon": "icon_transport_flomobil_group"
+    },
+    {
       "color": "#004B70",
       "id": "sharetoo",
       "group_icon": "icon_transport_sharetoo_group",
