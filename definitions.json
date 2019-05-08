@@ -218,7 +218,8 @@
     },
     {
       "color": "#006a7a",
-      "id": "auto_europe"
+      "id": "auto_europe",
+      "group_icon": "icon_transport_auto_europe"
     },
     {
       "color": "#005B5E",
