@@ -140,6 +140,14 @@
       "type": "public"
     },
     {
+      "color": "#F78F20",
+      "icon": "icon_transport_digibus",
+      "translation_key": "transportation_label.digibus",
+      "id": "digibus",
+      "icon_style": "outline",
+      "type": "public"
+    },
+    {
       "color": "#525C69",
       "id": "walk",
       "rendering_mode": "template",
