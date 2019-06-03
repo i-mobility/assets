@@ -309,9 +309,14 @@
       "group_icon": "icon_transport_car2go_group"
     },
     {
-       "id": "drivenow",
-       "color": "#007fa3",
-       "group_icon": "icon_transport_drivenow_group"
+      "id": "drivenow",
+      "color": "#007fa3",
+      "group_icon": "icon_transport_drivenow_group"
+    },
+    {
+      "color": "#005072",
+      "id": "sharenow",
+      "group_icon": "icon_transport_sharenow_group"
     },
     {
       "color": "#004072",
