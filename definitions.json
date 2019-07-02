@@ -359,6 +359,10 @@
       "id": "bird"
     },
     {
+      "color": "#eb621b",
+      "id": "circ"
+    },
+    {
       "color": "#000000",
       "id": "goflash"
     },
