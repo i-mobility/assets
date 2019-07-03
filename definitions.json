@@ -304,6 +304,10 @@
       "id": "bahnhofshuttle"
     },
     {
+      "color": "#97BE0C",
+      "id": "istmobil"
+    },
+    {
       "color": "#009be0",
       "id": "car2go",
       "group_icon": "icon_transport_car2go_group"
