@@ -13,6 +13,9 @@ find . -iname "*.png" -exec optipng -o7 {} \;
 
 from the root directory before pushing new images.
 
+## Notes
+- For `definitions.json` the order of the `transport` list matters since clients use this order to determine which icon to show for stations.
+
 ## Releasing
 
 Just merge development branch to master branch - this will invoke 
