@@ -203,15 +203,6 @@
       "icon": "icon_transport_echarging"
     },
     {
-      "color": "#8cb238",
-      "icon": {
-        "default": "icon_transport_carsharing_247",
-        "nearby": "icon_transport_carsharing_247_nearby",
-        "routing": "icon_transport_carsharing_247_routing"
-      },
-      "id": "carsharing_247"
-    },
-    {
       "color": "#f4a81a",
       "id": "taxi_rank"
     },
