@@ -57,6 +57,13 @@
     {
       "color": "#5bc0eb",
       "icon": "icon_transport_bus",
+      "id": "bus",
+      "translation_key": "transportation_label.bus",
+      "type": "public"
+    },
+    {
+      "color": "#5bc0eb",
+      "icon": "icon_transport_bus",
       "id": "city_bus",
       "translation_key": "transportation_label.bus",
       "type": "public"
