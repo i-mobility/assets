@@ -40,6 +40,7 @@
     },
     {
       "color": "#009DDD",
+      "icon": "icon_transport_s_bahn",
       "id": "sbahn",
       "priority": "primary",
       "type": "public"
