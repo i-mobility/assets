@@ -39,6 +39,12 @@
       "type": "public"
     },
     {
+      "color": "#009DDD",
+      "id": "sbahn",
+      "priority": "primary",
+      "type": "public"
+    },
+    {
       "color": "#156ab8",
       "id": "metro",
       "priority": "primary",
@@ -102,7 +108,7 @@
     {
       "color": "#2f4780",
       "icon": "icon_transport_cartrain",
-      "id": "car_train",
+      "id": "cartrain",
       "type": "public"
     },
     {
@@ -299,7 +305,7 @@
     },
     {
       "color": "#F2675C",
-      "id": "bahnhofshuttle"
+      "id": "bhfshuttle"
     },
     {
       "color": "#97BE0C",
