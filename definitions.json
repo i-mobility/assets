@@ -343,6 +343,11 @@
       "group_icon": "icon_transport_flomobil_group"
     },
     {
+      "color": "#fedc00",
+      "id": "oeamtc_easy_way",
+      "group_icon": "icon_transport_oeamtc_easy_way_group"
+    },
+    {
       "color": "#004B70",
       "id": "sharetoo",
       "group_icon": "icon_transport_sharetoo_group",
