@@ -344,8 +344,8 @@
     },
     {
       "color": "#fedc00",
-      "id": "oeamtc_easy_way",
-      "group_icon": "icon_transport_oeamtc_easy_way_group"
+      "id": "easy_way",
+      "group_icon": "icon_transport_easy_way_group"
     },
     {
       "color": "#004B70",
