@@ -377,16 +377,24 @@
       "id": "circ"
     },
     {
+      "color": "#dcff00",
+      "id": "hive"
+    },
+    {
       "color": "#24d001",
       "id": "lime"
     },
     {
-      "color": "#e66757",
-      "id": "voi"
-    },
-    {
       "color": "#69d19a",
       "id": "tier"
+    },
+    {
+      "color": "#1dade9",
+      "id": "scoota"
+    },
+    {
+      "color": "#e66757",
+      "id": "voi"
     },
     {
       "color": "#656565",
