@@ -344,6 +344,10 @@
       "group_icon": "icon_transport_easy_way_group"
     },
     {
+      "color": "#e32119",
+      "id": "emmy"
+    },
+    {
       "color": "#004B70",
       "id": "sharetoo",
       "group_icon": "icon_transport_sharetoo_group",
