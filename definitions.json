@@ -309,6 +309,10 @@
       "id": "istmobil"
     },
     {
+      "color": "#fce820",
+      "id": "postbus"
+    },
+    {
       "color": "#009be0",
       "id": "car2go",
       "group_icon": "icon_transport_car2go_group"
