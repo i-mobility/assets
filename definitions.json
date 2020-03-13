@@ -199,10 +199,6 @@
       "rendering_mode": "original"
     },
     {
-      "color": "#e46d2c",
-      "id": "donkey"
-    },
-    {
       "color": "#41a641",
       "id": "open_charge",
       "icon": "icon_transport_echarging"
