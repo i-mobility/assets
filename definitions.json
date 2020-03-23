@@ -194,11 +194,6 @@
       "rendering_mode": "original"
     },
     {
-      "color": "#404041",
-      "id": "mo2drive",
-      "rendering_mode": "original"
-    },
-    {
       "color": "#41a641",
       "id": "open_charge",
       "icon": "icon_transport_echarging"
