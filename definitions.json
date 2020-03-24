@@ -304,16 +304,6 @@
       "id": "postbus"
     },
     {
-      "color": "#009be0",
-      "id": "car2go",
-      "group_icon": "icon_transport_car2go_group"
-    },
-    {
-      "id": "drivenow",
-      "color": "#007fa3",
-      "group_icon": "icon_transport_drivenow_group"
-    },
-    {
       "color": "#005072",
       "id": "sharenow",
       "group_icon": "icon_transport_sharenow_group"
