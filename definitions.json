@@ -184,6 +184,10 @@
       "id": "citybike"
     },
     {
+      "color": "#94c11f",
+      "id": "green4rent"
+    },
+    {
       "color": "#1c4c94",
       "id": "nextbike"
     },
