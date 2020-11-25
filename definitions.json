@@ -371,7 +371,11 @@
     },
     {
       "color": "#69d19a",
-      "id": "tier"
+      "id": "tier",
+      "icon": {
+        "default": "icon_transport_tier",
+        "secondary": "icon_park_zone_tier"
+      }
     },
     {
       "color": "#1dade9",
