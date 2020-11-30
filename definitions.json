@@ -382,7 +382,9 @@
     {
       "color": "#407cab",
       "id": "tier_parking",
-      "icon": "icon_park_zone_tier"
+      "icon": {
+        "default": "icon_park_zone_tier"
+      }
     },
     {
       "color": "#1dade9",
