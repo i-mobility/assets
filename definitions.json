@@ -384,6 +384,9 @@
       "id": "tier_parking",
       "icon": {
         "default": "icon_park_zone_tier"
+      },
+      "secondary_icon": {
+        "default": "icon_park_zone_tier_active_ride"
       }
     },
     {
