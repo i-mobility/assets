@@ -373,9 +373,16 @@
       "color": "#69d19a",
       "id": "tier",
       "icon": {
-        "default": "icon_transport_tier",
-        "secondary": "icon_park_zone_tier"
+        "default": "icon_transport_tier"
+      },
+      "secondary_icon": {
+        "default": "icon_park_zone_tier"
       }
+    },
+    {
+      "color": "#407cab",
+      "id": "tier_parking",
+      "icon": "icon_park_zone_tier"
     },
     {
       "color": "#1dade9",
