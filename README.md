@@ -15,6 +15,7 @@ from the root directory before pushing new images.
 
 ## Notes
 - For `definitions.json` the order of the `transport` list matters since clients use this order to determine which icon to show for stations.
+- Translations that should be pulled into the bundle need to have the `remoteassets` tag added.
 
 ## Releasing
 
