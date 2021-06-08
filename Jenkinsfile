@@ -31,7 +31,7 @@ node {
 
     stage('pull translations from PhraseApp') {
         withCredentials([string(credentialsId: 'd1d41fbe-b0f8-4a36-b95e-960e7d6285dd', variable: 'PHRASEAPPTOKEN')]) {
-            sh"""
+            sh"""#!/bin/bash
                 PHRASEAPP_API="api.phraseapp.com/api/v2"
                 FILE_FORMAT="simple_json"
                 PROJECT_ID="a486755273fdfdbf597e52ebb6239543"
@@ -80,7 +80,7 @@ node {
                 echo "only master branch pushes proper GITHUB releases, everything else creates pre-releases"
             }
 
-            sh """
+            sh """#!/bin/bash
                 API_URL="api.github.com"
                 UPLOAD_API_URL="uploads.github.com"
                 OWNER="i-mobility"
@@ -149,7 +149,7 @@ node {
     }
 
     stage('send github asset release urls to slack') {
-        sh """
+        sh """#!/bin/bash
             tmp_asset_name_url_file="tmp_asset_name_url_file"
             asset_json_file="assets.json"
             for response_json in "${release_json_responses_folder}"/*
