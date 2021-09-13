@@ -295,7 +295,11 @@
     },
     {
       "color": "#fcd41d",
-      "id": "postbus"
+      "id": "postbus",
+      "icon": {
+        "default": "icon_transport_postbus",
+        "nearby": "icon_transport_postbus_nearby"
+      },
     },
     {
       "color": "#005072",
