@@ -192,12 +192,6 @@
       "id": "nextbike"
     },
     {
-      "color": "#fbd902",
-      "id": "ofo",
-      "complementary_color": "#000000",
-      "rendering_mode": "original"
-    },
-    {
       "color": "#41a641",
       "id": "ladestellen",
       "icon": "icon_transport_echarging"
@@ -300,12 +294,12 @@
       "id": "bhfshuttle"
     },
     {
-      "color": "#97BE0C",
-      "id": "istmobil"
-    },
-    {
-      "color": "#fce820",
-      "id": "postbus"
+      "color": "#fcd41d",
+      "id": "postbus",
+      "icon": {
+        "default": "icon_transport_postbus",
+        "nearby": "icon_transport_postbus_nearby"
+      },
     },
     {
       "color": "#005072",
@@ -388,14 +382,6 @@
       "secondary_icon": {
         "default": "icon_park_zone_tier_active_ride"
       }
-    },
-    {
-      "color": "#1dade9",
-      "id": "scoota"
-    },
-    {
-      "color": "#e66757",
-      "id": "voi"
     },
     {
       "color": "#656565",
