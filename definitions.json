@@ -1,6 +1,11 @@
 {
   "transport": [
     {
+      "id": "postbus_station",
+      "color": "#ff4082",
+      "icon": "icon_transport_unknownstoptype.png"
+    },
+    {
       "id": "christkind",
       "color": "#0071bc",
       "icon": "icon_transport_christkind"
