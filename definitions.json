@@ -3,7 +3,7 @@
     {
       "id": "postbus_station",
       "color": "#ff4082",
-      "icon": "icon_transport_unknownstoptype.png"
+      "icon": "icon_transport_unknownstoptype"
     },
     {
       "id": "christkind",
