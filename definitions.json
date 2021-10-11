@@ -213,8 +213,16 @@
       "id": "bike"
     },
     {
-      "color": "#f4a81a",
-      "id": "taxi"
+      "color": "#FFD602",
+      "id": "taxi",
+      "rendering_mode": "original",
+      "icon_style": "outline"
+    },
+    {
+      "color": "#FFD602",
+      "id": "taxi_40100",
+      "rendering_mode": "original",
+      "icon_style": "outline"
     },
     {
       "color": "#C30016",
