@@ -15,26 +15,26 @@ for mapping in defs['transport']:
     assert 'id' in mapping, '"id" is required for each transport mapping'
     print(f'Checking transport mapping {mapping["id"]}…')
 
-    icon = mapping.get('icon', f'icon_transport_{mapping["id"]}')
     icons = set()
+    for icon_type in ('icon', 'secondary_icon', 'group_icon'):
+        if icon_type == 'icon':
+            icon = mapping.get(icon_type, f'icon_transport_{mapping["id"]}')
+        else:
+            if icon_type not in mapping:
+                continue
 
-    if isinstance(icon, dict):
-        for key, value in icon.items():
-            icons.add(value + '.png')
+            icon = mapping[icon_type]
 
-    else:
-        icons.add(icon + '.png')
+        if isinstance(icon, dict):
+            for key, value in icon.items():
+                icons.add(value + '.png')
 
-    if 'secondary_icon' in mapping:
-        for key, value in mapping['secondary_icon'].items():
-            icons.add(value + '.png')
-
-    if 'group_icon' in mapping:
-        icons.add(mapping['group_icon'] + '.png')
+        else:
+            icons.add(icon + '.png')
 
     for i in icons:
         for res in ('mdpi', 'hdpi', 'xhdpi', 'xxhdpi'):
-            assert (Path('images') / Path(res) / Path(i)).exists(), f'icon {icon} in {res} does not exist.'
+            assert (Path('images') / Path(res) / Path(i)).exists(), f'{i} in {res} does not exist.'
 
     all_icons.update(icons)
 
@@ -46,3 +46,5 @@ for res in ('mdpi', 'hdpi', 'xhdpi', 'xxhdpi'):
     for entry in (Path('images') / Path(res)).iterdir():
         if entry.name not in all_icons:
             entry.unlink()
+
+print('Done!')

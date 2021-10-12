@@ -214,15 +214,11 @@
     },
     {
       "color": "#FFD602",
-      "id": "taxi",
-      "rendering_mode": "original",
-      "icon_style": "outline"
+      "id": "taxi"
     },
     {
       "color": "#FFD602",
-      "id": "taxi_40100",
-      "rendering_mode": "original",
-      "icon_style": "outline"
+      "id": "taxi_40100"
     },
     {
       "color": "#C30016",
@@ -230,11 +226,19 @@
     },
     {
       "color": "#94c11f",
-      "id": "green4rent"
+      "id": "green4rent",
+      "icon": {
+        "default": "icon_transport_green4rent_indicator",
+        "nearby": "icon_transport_green4rent"
+      }
     },
     {
       "color": "#1c4c94",
-      "id": "nextbike"
+      "id": "nextbike",
+      "icon": {
+        "default": "icon_transport_nextbike_indicator",
+        "nearby": "icon_transport_nextbike"
+      }
     },
     {
       "color": "#41a641",
@@ -385,7 +389,11 @@
       "color": "#e20329",
       "id": "rail_and_drive",
       "group_icon": "icon_transport_rail_and_drive_group",
-      "rendering_mode": "original"
+      "rendering_mode": "original",
+      "icon": {
+        "default": "icon_transport_rail_and_drive_indicator",
+        "nearby": "icon_transport_rail_and_drive"
+      }
     },
     {
       "color": "#777777",
@@ -402,7 +410,11 @@
     },
     {
       "color": "#91cd47",
-      "id": "kiwi"
+      "id": "kiwi",
+      "icon": {
+        "default": "icon_transport_kiwi_indicator",
+        "nearby": "icon_transport_kiwi"
+      }
     },
     {
       "color": "#24d001",
@@ -412,7 +424,8 @@
       "color": "#69d19a",
       "id": "tier",
       "icon": {
-        "default": "icon_transport_tier"
+        "default": "icon_transport_tier_indicator",
+        "nearby": "icon_transport_tier"
       },
       "secondary_icon": {
         "default": "icon_park_zone_tier"
