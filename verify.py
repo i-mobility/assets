@@ -45,6 +45,6 @@ print('Checking for stray icons…')
 for res in ('mdpi', 'hdpi', 'xhdpi', 'xxhdpi'):
     for entry in (Path('images') / Path(res)).iterdir():
         if entry.name not in all_icons:
-            entry.unlink()
+            print(f'stray icon {entry.name}')  # entry.unlink()
 
 print('Done!')

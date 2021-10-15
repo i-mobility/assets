@@ -9,7 +9,8 @@
       "color": "#e2002a",
       "icon": {
         "default": "icon_transport_train",
-        "nearby": "icon_transport_train_nearby"
+        "nearby": "icon_transport_train_nearby",
+        "indicator": "icon_transport_public_indicator"
       },
       "id": "train",
       "priority": "primary",
@@ -17,7 +18,10 @@
     },
     {
       "color": "#24c2f9",
-      "icon": "icon_transport_bus",
+      "icon": {
+        "default": "icon_transport_bus",
+        "indicator": "icon_transport_public_indicator"
+      },
       "id": "long_distance_bus",
       "type": "public"
     },
@@ -28,6 +32,10 @@
     },
     {
       "color": "#00aeef",
+      "icon": {
+        "default": "icon_transport_s_bahn",
+        "indicator": "icon_transport_public_indicator"
+      },
       "icon": "icon_transport_s_bahn",
       "id": "city_train",
       "type": "public"
@@ -35,12 +43,20 @@
     {
       "color": "#00aeef",
       "id": "s_bahn",
+      "icon": {
+        "default": "icon_transport_s_bahn",
+        "indicator": "icon_transport_public_indicator"
+      },
       "priority": "primary",
       "type": "public"
     },
     {
       "color": "#00aeef",
       "icon": "icon_transport_s_bahn",
+      "icon": {
+        "default": "icon_transport_s_bahn",
+        "indicator": "icon_transport_public_indicator"
+      },
       "id": "sbahn",
       "priority": "primary",
       "type": "public"
@@ -48,6 +64,10 @@
     {
       "color": "#156ab8",
       "id": "metro",
+      "icon": {
+        "default": "icon_transport_metro",
+        "indicator": "icon_transport_public_indicator"
+      },
       "priority": "primary",
       "type": "public"
     },
@@ -56,89 +76,137 @@
       "id": "metro_u1",
       "priority": "primary",
       "translation_key": "transportation_label.metro",
-      "type": "public"
+      "type": "public",
+      "icon": {
+        "default": "icon_transport_metro_u1",
+        "indicator": "icon_transport_public_indicator"
+      }
     },
     {
       "color": "#9f65aa",
       "id": "metro_u2",
       "priority": "primary",
       "translation_key": "transportation_label.metro",
-      "type": "public"
+      "type": "public",
+      "icon": {
+        "default": "icon_transport_metro_u2",
+        "indicator": "icon_transport_public_indicator"
+      }
     },
     {
       "color": "#f48221",
       "id": "metro_u3",
       "priority": "primary",
       "translation_key": "transportation_label.metro",
-      "type": "public"
+      "type": "public",
+      "icon": {
+        "default": "icon_transport_metro_u3",
+        "indicator": "icon_transport_public_indicator"
+      }
     },
     {
       "color": "#02a44f",
       "id": "metro_u4",
       "priority": "primary",
       "translation_key": "transportation_label.metro",
-      "type": "public"
+      "type": "public",
+      "icon": {
+        "default": "icon_transport_metro_u4",
+        "indicator": "icon_transport_public_indicator"
+      }
     },
     {
       "color": "#976a39",
       "id": "metro_u6",
       "priority": "primary",
       "translation_key": "transportation_label.metro",
-      "type": "public"
+      "type": "public",
+      "icon": {
+        "default": "icon_transport_metro_u6",
+        "indicator": "icon_transport_public_indicator"
+      }
     },
     {
       "color": "#3e466b",
       "id": "ship",
-      "icon": "icon_transport_unknown",
+      "icon": {
+        "default": "icon_transport_unknown",
+        "indicator": "icon_transport_public_indicator"
+      },
       "type": "public"
     },
     {
       "color": "#467da8",
       "id": "tram",
+      "icon": {
+        "default": "icon_transport_tram",
+        "indicator": "icon_transport_public_indicator"
+      },
       "type": "public"
     },
     {
       "color": "#c4131a",
       "id": "tram_vienna",
-      "icon": "icon_transport_tram",
+      "icon": {
+        "default": "icon_transport_tram",
+        "indicator": "icon_transport_public_indicator"
+      },
       "type": "public"
     },
     {
       "color": "#24c2f9",
-      "icon": "icon_transport_bus",
+      "icon": {
+        "default": "icon_transport_bus",
+        "indicator": "icon_transport_public_indicator"
+      },
       "id": "bus",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
     {
       "color": "#24c2f9",
-      "icon": "icon_transport_bus",
+      "icon": {
+        "default": "icon_transport_bus",
+        "indicator": "icon_transport_public_indicator"
+      },
       "id": "city_bus",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
     {
       "color": "#24c2f9",
-      "icon": "icon_transport_bus",
+      "icon": {
+        "default": "icon_transport_bus",
+        "indicator": "icon_transport_public_indicator"
+      },
       "id": "express_bus",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
     {
       "color": "#24c2f9",
-      "icon": "icon_transport_bus",
+      "icon": {
+        "default": "icon_transport_bus",
+        "indicator": "icon_transport_public_indicator"
+      },
       "id": "regional_bus",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
     {
       "color": "#F4A81A",
-      "icon": "icon_transport_dialaride",
+      "icon": {
+        "default": "icon_transport_dialaride",
+        "indicator": "icon_transport_public_indicator"
+      },
       "id": "dialaride"
     },
     {
       "color": "#F0CF25",
-      "icon": "icon_transport_bus",
+      "icon": {
+        "default": "icon_transport_bus",
+        "indicator": "icon_transport_public_indicator"
+      },
       "id": "sev",
       "translation_key": "transportation_label.sev",
       "type": "public"
@@ -146,53 +214,77 @@
     {
       "color": "#3e466b",
       "id": "cable_car",
-      "icon": "icon_transport_unknown",
+      "icon": {
+        "default": "icon_transport_unknown",
+        "indicator": "icon_transport_public_indicator"
+      },
       "type": "public"
     },
     {
       "color": "#3e466b",
-      "icon": "icon_transport_unknown",
+      "icon": {
+        "default": "icon_transport_unknown",
+        "indicator": "icon_transport_public_indicator"
+      },
       "id": "cartrain",
       "type": "public"
     },
     {
       "color": "#e2002a",
-      "icon": "icon_transport_oebb",
+      "icon": {
+        "default": "icon_transport_oebb",
+        "indicator": "icon_transport_public_indicator"
+      },
       "translation_key": "transportation_label.oebb",
       "id": "oebb",
       "type": "public"
     },
     {
       "color": "#9ec400",
-      "icon": "icon_transport_train",
+      "icon": {
+        "default": "icon_transport_train",
+        "indicator": "icon_transport_public_indicator"
+      },
       "translation_key": "transportation_label.westbahn",
       "id": "westbahn",
       "type": "public"
     },
     {
       "color": "#90C73E",
-      "icon": "icon_transport_train",
+      "icon": {
+        "default": "icon_transport_train",
+        "indicator": "icon_transport_public_indicator"
+      },
       "translation_key": "transportation_label.cat",
       "id": "cat",
       "type": "public"
     },
     {
       "color": "#e2002a",
-      "icon": "icon_transport_train",
+      "icon": {
+        "default": "icon_transport_train",
+        "indicator": "icon_transport_public_indicator"
+      },
       "translation_key": "transportation_label.regiojet",
       "id": "regiojet",
       "type": "public"
     },
     {
       "color": "#9E1124",
-      "icon": "icon_transport_bus",
+      "icon": {
+        "default": "icon_transport_bus",
+        "indicator": "icon_transport_public_indicator"
+      },
       "translation_key": "transportation_label.val",
       "id": "val",
       "type": "public"
     },
     {
       "color": "#F78F20",
-      "icon": "icon_transport_digibus",
+      "icon": {
+        "default": "icon_transport_digibus",
+        "indicator": "icon_transport_public_indicator"
+      },
       "translation_key": "transportation_label.digibus",
       "id": "digibus",
       "icon_style": "outline",
@@ -214,11 +306,21 @@
     },
     {
       "color": "#FFD602",
-      "id": "taxi"
+      "id": "taxi",
+      "icon": {
+        "default": "icon_transport_taxi",
+        "nearby": "icon_transport_taxi",
+        "indicator": "icon_transport_taxi_indicator"
+      }
     },
     {
       "color": "#FFD602",
-      "id": "taxi_40100"
+      "id": "taxi_40100",
+      "icon": {
+        "default": "icon_transport_taxi",
+        "nearby": "icon_transport_taxi",
+        "indicator": "icon_transport_taxi_40100"
+      }
     },
     {
       "color": "#C30016",
@@ -228,16 +330,18 @@
       "color": "#94c11f",
       "id": "green4rent",
       "icon": {
-        "default": "icon_transport_green4rent_indicator",
-        "nearby": "icon_transport_green4rent"
+        "default": "icon_transport_green4rent",
+        "nearby": "icon_transport_green4rent",
+        "indicator": "icon_transport_green4rent_indicator"
       }
     },
     {
       "color": "#1c4c94",
       "id": "nextbike",
       "icon": {
-        "default": "icon_transport_nextbike_indicator",
-        "nearby": "icon_transport_nextbike"
+        "default": "icon_transport_nextbike",
+        "nearby": "icon_transport_nextbike",
+        "indicator": "icon_transport_nextbike_indicator"
       }
     },
     {
@@ -347,7 +451,8 @@
       "id": "postbus",
       "icon": {
         "default": "icon_transport_postbus",
-        "nearby": "icon_transport_postbus_nearby"
+        "nearby": "icon_transport_postbus_nearby",
+        "indicator": "icon_transport_postbus_indicator"
       }
     },
     {
@@ -391,8 +496,9 @@
       "group_icon": "icon_transport_rail_and_drive_group",
       "rendering_mode": "original",
       "icon": {
-        "default": "icon_transport_rail_and_drive_indicator",
-        "nearby": "icon_transport_rail_and_drive"
+        "default": "icon_transport_rail_and_drive",
+        "nearby": "icon_transport_rail_and_drive",
+        "indicator": "icon_transport_rail_and_drive_indicator"
       }
     },
     {
@@ -412,8 +518,9 @@
       "color": "#91cd47",
       "id": "kiwi",
       "icon": {
-        "default": "icon_transport_kiwi_indicator",
-        "nearby": "icon_transport_kiwi"
+        "default": "icon_transport_kiwi",
+        "nearby": "icon_transport_kiwi",
+        "indicator": "icon_transport_kiwi_indicator"
       }
     },
     {
@@ -424,8 +531,9 @@
       "color": "#69d19a",
       "id": "tier",
       "icon": {
-        "default": "icon_transport_tier_indicator",
-        "nearby": "icon_transport_tier"
+        "default": "icon_transport_tier",
+        "nearby": "icon_transport_tier",
+        "indicator": "icon_transport_tier_indicator"
       },
       "secondary_icon": {
         "default": "icon_park_zone_tier"
