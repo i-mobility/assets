@@ -292,9 +292,7 @@
     },
     {
       "color": "#525C69",
-      "id": "walk",
-      "rendering_mode": "template",
-      "icon_style": "outline"
+      "id": "walk"
     },
     {
       "color": "#eb7815",
