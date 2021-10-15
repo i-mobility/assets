@@ -292,7 +292,8 @@
     },
     {
       "color": "#525C69",
-      "id": "walk"
+      "id": "walk",
+      "rendering_mode": "template"
     },
     {
       "color": "#eb7815",
