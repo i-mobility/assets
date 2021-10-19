@@ -293,7 +293,8 @@
     {
       "color": "#525C69",
       "id": "walk",
-      "rendering_mode": "template"
+      "rendering_mode": "template",
+      "icon_style": "outline"
     },
     {
       "color": "#eb7815",
