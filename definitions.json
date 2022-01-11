@@ -345,6 +345,15 @@
       }
     },
     {
+      "color": "#a41338",
+      "id": "bike_tirol",
+      "icon": {
+        "default": "icon_transport_bike_tirol",
+        "nearby": "icon_transport_bike_tirol",
+        "indicator": "icon_transport_bike_tirol_indicator"
+      }
+    },
+    {
       "color": "#41a641",
       "id": "ladestellen",
       "icon": "icon_transport_echarging"
