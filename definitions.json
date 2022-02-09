@@ -345,6 +345,15 @@
       }
     },
     {
+      "color": "#a41338",
+      "id": "bike_tirol",
+      "icon": {
+        "default": "icon_transport_bike_tirol",
+        "nearby": "icon_transport_bike_tirol",
+        "indicator": "icon_transport_bike_tirol_indicator"
+      }
+    },
+    {
       "color": "#41a641",
       "id": "ladestellen",
       "icon": "icon_transport_echarging"
@@ -547,6 +556,15 @@
       },
       "secondary_icon": {
         "default": "icon_park_zone_tier_active_ride"
+      }
+    },
+    {
+      "color": "#e5ff00",
+      "id": "link",
+      "icon": {
+        "default": "icon_transport_link",
+        "nearby": "icon_transport_link",
+        "indicator": "icon_transport_link_indicator"
       }
     }
   ],
