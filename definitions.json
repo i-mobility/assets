@@ -557,6 +557,15 @@
       "secondary_icon": {
         "default": "icon_park_zone_tier_active_ride"
       }
+    },
+    {
+      "color": "#e5ff00",
+      "id": "link",
+      "icon": {
+        "default": "icon_transport_link",
+        "nearby": "icon_transport_link",
+        "indicator": "icon_transport_link_indicator"
+      }
     }
   ],
   "transportation_group": [
