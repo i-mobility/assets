@@ -1,6 +1,14 @@
 {
   "transport": [
     {
+      "id": "region-bike_sharing",
+      "color": "#07d183"
+    },
+    {
+      "id": "region-escooters",
+      "color": "#b771ca"
+    },
+    {
       "id": "postbus_station",
       "color": "#ff4082",
       "icon": "icon_transport_unknownstoptype"
@@ -346,12 +354,7 @@
     },
     {
       "color": "#a41338",
-      "id": "bike_tirol",
-      "icon": {
-        "default": "icon_transport_bike_tirol",
-        "nearby": "icon_transport_bike_tirol",
-        "indicator": "icon_transport_bike_tirol_indicator"
-      }
+      "id": "bike_tirol"
     },
     {
       "color": "#41a641",
@@ -560,12 +563,7 @@
     },
     {
       "color": "#e5ff00",
-      "id": "link",
-      "icon": {
-        "default": "icon_transport_link",
-        "nearby": "icon_transport_link",
-        "indicator": "icon_transport_link_indicator"
-      }
+      "id": "link"
     }
   ],
   "transportation_group": [
