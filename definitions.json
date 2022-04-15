@@ -2,11 +2,11 @@
   "transport": [
     {
       "id": "region-bike_sharing",
-      "color": "#07d183"
+      "color": "#b771ca"
     },
     {
       "id": "region-escooters",
-      "color": "#b771ca"
+      "color": "#07d183"
     },
     {
       "id": "postbus_station",
