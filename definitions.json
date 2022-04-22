@@ -1,11 +1,11 @@
 {
   "transport": [
     {
-      "id": "region-bike_sharing",
+      "id": "region_bike_sharing",
       "color": "#b771ca"
     },
     {
-      "id": "region-escooters",
+      "id": "region_escooters",
       "color": "#07d183"
     },
     {
