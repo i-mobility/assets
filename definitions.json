@@ -353,6 +353,14 @@
       }
     },
     {
+      "color": "#c8001a",
+      "id": "city_bike_linz"
+    },
+    {
+      "color": "#e30613",
+      "id": "wienmobil_rad"
+    },
+    {
       "color": "#a41338",
       "id": "bike_tirol"
     },
