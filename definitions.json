@@ -9,6 +9,11 @@
       "color": "#07d183"
     },
     {
+      "id": "region_car_rental",
+      "color": "#e20329",
+      "icon": "icon_transport_rail_and_drive"
+    },
+    {
       "id": "postbus_station",
       "color": "#ff4082",
       "icon": "icon_transport_unknownstoptype"
