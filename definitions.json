@@ -368,6 +368,11 @@
       "id": "bike_tirol"
     },
     {
+      "color": "#e2002a",
+      "id": "oebb_bike",
+      "icon": "icon_transport_oebb"
+    },
+    {
       "color": "#41a641",
       "id": "ladestellen",
       "icon": "icon_transport_echarging"
