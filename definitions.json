@@ -370,7 +370,10 @@
     {
       "color": "#e2002a",
       "id": "oebb_bike",
-      "icon": "icon_transport_oebb"
+      "icon": {
+        "default": "icon_transport_oebb",
+        "nearby": "icon_transport_oebb"
+      }
     },
     {
       "color": "#41a641",
