@@ -507,11 +507,6 @@
       "group_icon": "icon_transport_flomobil_group"
     },
     {
-      "color": "#fedc00",
-      "id": "easy_way",
-      "group_icon": "icon_transport_easy_way_group"
-    },
-    {
       "color": "#e32119",
       "id": "emmy"
     },
