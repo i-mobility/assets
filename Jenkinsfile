@@ -1,6 +1,10 @@
 import groovy.json.JsonOutput
 
 node {
+    properties([
+        disableConcurrentBuilds()
+   ])
+
     cleanWs()
 
     def isDevelopment = (env.BRANCH_NAME == "master") ? false : true
