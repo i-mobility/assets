@@ -483,6 +483,14 @@
       }
     },
     {
+      "color": "#E2002A",
+      "id": "oebb_transfer",
+      "icon": {
+        "default": "icon_transport_oebb_transfer",
+        "indicator": "icon_transport_oebb_transfer_indicator"
+      }
+    },
+    {
       "color": "#005072",
       "id": "sharenow",
       "group_icon": "icon_transport_sharenow_group"
