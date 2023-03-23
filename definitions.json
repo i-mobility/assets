@@ -485,6 +485,7 @@
     {
       "color": "#E2002A",
       "id": "oebb_transfer",
+      "type": "public",
       "icon": {
         "default": "icon_transport_oebb_transfer",
         "indicator": "icon_transport_oebb_transfer_indicator"
