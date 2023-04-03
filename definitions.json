@@ -442,22 +442,6 @@
       "id": "avis"
     },
     {
-      "color": "#1c1d21",
-      "id": "segway"
-    },
-    {
-      "color": "#553b2c",
-      "id": "tractor"
-    },
-    {
-      "color": "#1e085d",
-      "id": "bike_rental"
-    },
-    {
-      "color": "#767676",
-      "id": "horse_carriage"
-    },
-    {
       "color": "#0068b1",
       "id": "park_and_ride"
     },
@@ -497,29 +481,13 @@
       "group_icon": "icon_transport_sharenow_group"
     },
     {
-      "color": "#004072",
-      "id": "mopoint",
-      "group_icon": "icon_transport_mopoint_group"
-    },
-    {
       "color": "#74B943",
       "id": "caruso",
       "group_icon": "icon_transport_caruso_group"
     },
     {
-      "color": "#23bebe",
-      "id": "flomobil",
-      "group_icon": "icon_transport_flomobil_group"
-    },
-    {
       "color": "#e32119",
       "id": "emmy"
-    },
-    {
-      "color": "#004B70",
-      "id": "sharetoo",
-      "group_icon": "icon_transport_sharetoo_group",
-      "rendering_mode": "original"
     },
     {
       "color": "#e20329",
@@ -615,9 +583,6 @@
     },
     {
       "id": "scooter_sharing"
-    },
-    {
-      "id": "tourist"
     },
     {
       "id": "escooter_sharing"
