@@ -364,6 +364,14 @@
       "id": "wienmobil_rad"
     },
     {
+      "color": "#07d183",
+      "id": "stadtrad_innsbruck"
+    },
+    {
+      "color": "#137fd2",
+      "id": "regiorad_tirol"
+    },
+    {
       "color": "#e2002a",
       "id": "oebb_bike",
       "icon": {
