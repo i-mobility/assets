@@ -500,6 +500,7 @@
     {
       "color": "#e20329",
       "id": "rail_and_drive",
+      "type": "public",
       "group_icon": "icon_transport_rail_and_drive_group",
       "rendering_mode": "original",
       "icon": {
