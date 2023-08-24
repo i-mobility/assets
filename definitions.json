@@ -1,6 +1,16 @@
 {
   "transport": [
     {
+      "id": "route_start",
+      "color": "#137FD2",
+      "icon": "icon_transport_route_start"
+    },
+    {
+      "id": "route_end",
+      "color": "#FF4082",
+      "icon": "icon_transport_route_end"
+    },
+    {
       "id": "region_bike_sharing",
       "color": "#b771ca"
     },
