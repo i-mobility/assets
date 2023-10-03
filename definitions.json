@@ -366,8 +366,31 @@
       }
     },
     {
-      "color": "#c8001a",
-      "id": "city_bike_linz"
+      "color": "#1c4c94",
+      "id": "nextbike_burgenland",
+      "icon": {
+        "default": "icon_transport_nextbike",
+        "nearby": "icon_transport_nextbike",
+        "indicator": "icon_transport_nextbike_indicator"
+      }
+    },
+    {
+      "color": "#1c4c94",
+      "id": "nextbike_niederosterreich",
+      "icon": {
+        "default": "icon_transport_nextbike",
+        "nearby": "icon_transport_nextbike",
+        "indicator": "icon_transport_nextbike_indicator"
+      }
+    },
+    {
+      "color": "#b6363a",
+      "id": "city_bike_linz",
+      "icon": {
+        "default": "icon_transport_city_bike_linz",
+        "nearby": "icon_transport_city_bike_linz",
+        "indicator": "icon_transport_city_bike_linz"
+      }
     },
     {
       "color": "#e30613",
