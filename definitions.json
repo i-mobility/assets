@@ -358,6 +358,15 @@
     },
     {
       "color": "#1c4c94",
+      "id": "region_nextbike",
+      "icon": {
+        "default": "icon_transport_nextbike",
+        "nearby": "icon_transport_nextbike",
+        "indicator": "icon_transport_nextbike_indicator"
+      }
+    },
+    {
+      "color": "#1c4c94",
       "id": "nextbike",
       "icon": {
         "default": "icon_transport_nextbike",
