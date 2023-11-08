@@ -561,8 +561,13 @@
       "type": "public"
     },
     {
-      "color": "#000000",
-      "id": "bird"
+      "color": "#26ccf0",
+      "id": "bird",
+      "icon": {
+        "default": "icon_transport_bird",
+        "nearby": "icon_transport_bird",
+        "indicator": "icon_transport_bird_indicator"
+      }
     },
     {
       "color": "#91cd47",
