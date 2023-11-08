@@ -398,7 +398,7 @@
       "icon": {
         "default": "icon_transport_city_bike_linz",
         "nearby": "icon_transport_city_bike_linz",
-        "indicator": "icon_transport_city_bike_linz"
+        "indicator": "icon_transport_city_bike_linz_indicator"
       }
     },
     {
