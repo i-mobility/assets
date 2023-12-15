@@ -552,6 +552,18 @@
       }
     },
     {
+      "color": "#e20329",
+      "id": "gourban",
+      "type": "public",
+      "group_icon": "icon_transport_unknownstoptype",
+      "rendering_mode": "original",
+      "icon": {
+        "default": "icon_transport_unknownstoptype",
+        "nearby": "icon_transport_unknownstoptype",
+        "indicator": "iicon_transport_unknownstoptype"
+      }
+    },
+    {
       "color": "#777777",
       "icon": "icon_transport_waiting",
       "translation_key": "transportation_label.waiting",
