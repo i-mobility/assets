@@ -409,6 +409,8 @@
       "color": "#07d183",
       "id": "stadtrad_innsbruck",
       "icon": {
+        "default": "icon_transport_stadtrad_innsbruck",
+        "nearby": "icon_transport_stadtrad_innsbruck",
         "indicator": "icon_transport_stadtrad_innsbruck_indicator"
       }
     },
@@ -416,6 +418,8 @@
       "color": "#137fd2",
       "id": "regiorad_tirol",
       "icon": {
+        "default": "icon_transport_regiorad_tirol",
+        "nearby": "icon_transport_regiorad_tirol",
         "indicator": "icon_transport_regiorad_tirol_indicator"
       }
     },
