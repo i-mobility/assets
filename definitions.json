@@ -407,11 +407,17 @@
     },
     {
       "color": "#07d183",
-      "id": "stadtrad_innsbruck"
+      "id": "stadtrad_innsbruck",
+      "icon": {
+        "indicator": "icon_transport_stadtrad_innsbruck_indicator"
+      }
     },
     {
       "color": "#137fd2",
-      "id": "regiorad_tirol"
+      "id": "regiorad_tirol",
+      "icon": {
+        "indicator": "icon_transport_regiorad_tirol_indicator"
+      }
     },
     {
       "color": "#e2002a",
