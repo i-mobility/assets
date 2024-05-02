@@ -34,7 +34,7 @@ node {
     }
 
     stage('pull translations from PhraseApp') {
-        withCredentials([string(credentialsId: 'd1d41fbe-b0f8-4a36-b95e-960e7d6285dd', variable: 'PHRASEAPPTOKEN')]) {
+        withCredentials([string(credentialsId: 'phrase-token', variable: 'PHRASEAPPTOKEN')]) {
             sh"""#!/bin/bash
                 PHRASEAPP_API="api.phraseapp.com/api/v2"
                 FILE_FORMAT="simple_json"
@@ -78,7 +78,7 @@ node {
     }
 
     stage('create github release and push zip files to github as releases') {
-        withCredentials([string(credentialsId: '1acb794c-0cc8-43cd-9580-f97347847122', variable: 'GITHUBTOKEN')]) {
+        withCredentials([string(credentialsId: 'prod--github-jenkins--token', variable: 'GITHUBTOKEN')]) {
 
             if (isDevelopment) {
                 echo "only master branch pushes proper GITHUB releases, everything else creates pre-releases"
