@@ -546,10 +546,6 @@
       "group_icon": "icon_transport_caruso_group"
     },
     {
-      "color": "#e32119",
-      "id": "emmy"
-    },
-    {
       "color": "#e20329",
       "id": "rail_and_drive",
       "type": "public",
