@@ -49,11 +49,6 @@
       "type": "public"
     },
     {
-      "color": "#73D700",
-      "id": "flixbus",
-      "rendering_mode": "original"
-    },
-    {
       "color": "#00aeef",
       "icon": {
         "default": "icon_transport_s_bahn",
