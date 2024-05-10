@@ -455,51 +455,8 @@
       "id": "parken_at"
     },
     {
-      "color": "#006a7a",
-      "id": "auto_europe",
-      "group_icon": "icon_transport_auto_europe"
-    },
-    {
       "color": "#005B5E",
       "id": "blablacar"
-    },
-    {
-      "color": "#0167BB",
-      "id": "thrifty"
-    },
-    {
-      "color": "#10130C",
-      "id": "sixt",
-      "rendering_mode": "original"
-    },
-    {
-      "color": "#009900",
-      "id": "europcar",
-      "rendering_mode": "original"
-    },
-    {
-      "color": "#FB0102",
-      "id": "megadrive"
-    },
-    {
-      "color": "#FD0506",
-      "id": "buchbinder"
-    },
-    {
-      "color": "#334899",
-      "id": "global"
-    },
-    {
-      "color": "#FFD004",
-      "id": "hertz"
-    },
-    {
-      "color": "#00275E",
-      "id": "budget"
-    },
-    {
-      "color": "#FD0506",
-      "id": "avis"
     },
     {
       "color": "#0068b1",
