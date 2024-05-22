@@ -406,7 +406,7 @@
       "id": "wienmobil_rad"
     },
     {
-      "color": "#07d183",
+      "color": "#9F072D",
       "id": "stadtrad_innsbruck",
       "icon": {
         "default": "icon_transport_stadtrad_innsbruck",
@@ -415,7 +415,7 @@
       }
     },
     {
-      "color": "#137fd2",
+      "color": "#000000",
       "id": "regiorad_tirol",
       "icon": {
         "default": "icon_transport_regiorad_tirol",
@@ -570,7 +570,7 @@
       "icon": {
         "default": "icon_transport_unknownstoptype",
         "nearby": "icon_transport_unknownstoptype",
-        "indicator": "iicon_transport_unknownstoptype"
+        "indicator": "icon_transport_unknownstoptype"
       }
     },
     {
