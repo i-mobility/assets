@@ -509,12 +509,12 @@
       "color": "#e20329",
       "id": "gourban",
       "type": "public",
-      "group_icon": "icon_transport_unknownstoptype",
+      "group_icon": "icon_transport_rail_and_drive_group",
       "rendering_mode": "original",
       "icon": {
-        "default": "icon_transport_unknownstoptype",
-        "nearby": "icon_transport_unknownstoptype",
-        "indicator": "icon_transport_unknownstoptype"
+        "default": "icon_transport_rail_and_drive",
+        "nearby": "icon_transport_rail_and_drive",
+        "indicator": "icon_transport_rail_and_drive_indicator"
       }
     },
     {
