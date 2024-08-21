@@ -167,6 +167,7 @@
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
       },
+      "translation_key": "transportation_label.tram",
       "type": "public"
     },
     {
@@ -176,6 +177,7 @@
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
       },
+      "translation_key": "transportation_label.tram",
       "type": "public"
     },
     {
@@ -185,6 +187,7 @@
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
       },
+      "translation_key": "transportation_label.tram",
       "type": "public"
     },
     {
@@ -194,6 +197,7 @@
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
       },
+      "translation_key": "transportation_label.tram",
       "type": "public"
     },
     {
@@ -203,6 +207,17 @@
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
       },
+      "translation_key": "transportation_label.tram",
+      "type": "public"
+    },
+    {
+      "color": "#390412",
+      "id": "innsbruck_STB",
+      "icon": {
+        "default": "icon_transport_tram",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "translation_key": "transportation_label.tram",
       "type": "public"
     },
     {
@@ -371,6 +386,16 @@
         "indicator": "icon_transport_public_indicator"
       },
       "id": "dialaride"
+    },
+    {
+      "color": "#c26ba2",
+      "icon": {
+        "default": "icon_transport_dialaride",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "innsbruck_HBB",
+      "translation_key": "transportation_label.dialaride",
+      "type": "public"
     },
     {
       "color": "#F0CF25",
