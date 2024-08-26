@@ -162,7 +162,7 @@
     },
     {
       "color": "#a97e82",
-      "id": "innsbruck_1",
+      "id": "1",
       "icon": {
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
@@ -172,7 +172,7 @@
     },
     {
       "color": "#b44e69",
-      "id": "innsbruck_2",
+      "id": "2",
       "icon": {
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
@@ -182,7 +182,7 @@
     },
     {
       "color": "#9e545f",
-      "id": "innsbruck_3",
+      "id": "3",
       "icon": {
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
@@ -192,7 +192,7 @@
     },
     {
       "color": "#845165",
-      "id": "innsbruck_5",
+      "id": "5",
       "icon": {
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
@@ -202,7 +202,7 @@
     },
     {
       "color": "#006633",
-      "id": "innsbruck_6",
+      "id": "6",
       "icon": {
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
@@ -212,7 +212,7 @@
     },
     {
       "color": "#390412",
-      "id": "innsbruck_STB",
+      "id": "STB",
       "icon": {
         "default": "icon_transport_tram",
         "indicator": "icon_transport_public_indicator"
@@ -245,7 +245,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_A",
+      "id": "A",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -255,7 +255,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_C",
+      "id": "C",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -265,7 +265,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_F",
+      "id": "F",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -275,7 +275,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_J",
+      "id": "J",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -285,7 +285,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_K",
+      "id": "K",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -295,7 +295,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_M",
+      "id": "M",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -305,7 +305,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_R",
+      "id": "R",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -315,7 +315,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_T",
+      "id": "T",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -325,7 +325,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_W",
+      "id": "W",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -335,7 +335,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_NX",
+      "id": "NX",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -345,7 +345,7 @@
         "default": "icon_transport_bus",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_5XX",
+      "id": "5XX",
       "translation_key": "transportation_label.bus",
       "type": "public"
     },
@@ -393,7 +393,7 @@
         "default": "icon_transport_dialaride",
         "indicator": "icon_transport_public_indicator"
       },
-      "id": "innsbruck_HBB",
+      "id": "HBB",
       "translation_key": "transportation_label.dialaride",
       "type": "public"
     },
