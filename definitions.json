@@ -669,6 +669,14 @@
       "group_icon": "icon_transport_sharenow_group"
     },
     {
+      "color": "#1E0046",
+      "id": "free2move",
+      "group_icon": "icon_transport_free2move_group",
+      "icon": {
+        "default": "icon_transport_free2move"
+      }
+    },
+    {
       "color": "#74B943",
       "id": "caruso",
       "group_icon": "icon_transport_caruso_group"
