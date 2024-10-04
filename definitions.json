@@ -749,6 +749,18 @@
       }
     },
     {
+      "color": "#00A8E9",
+      "id": "dott",
+      "icon": {
+        "default": "icon_transport_dott",
+        "nearby": "icon_transport_dott",
+        "indicator": "icon_transport_dott_indicator"
+      },
+      "secondary_icon": {
+        "default": "icon_park_zone_dott"
+      }
+    },
+    {
       "color": "#000000",
       "id": "bird",
       "icon": {
