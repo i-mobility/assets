@@ -8,7 +8,7 @@ Follow the instructions in the "assets" section here https://imobility.atlassian
 For optimal file size run
 
 ```bash
-find . -iname "*.png" -exec optipng -o7 {} \;
+find . -iname "*.png" -print0 | xargs -0 -n 1 -P 10 optipng -o7
 ```
 
 from the root directory before pushing new images.
