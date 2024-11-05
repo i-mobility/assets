@@ -603,7 +603,8 @@
       "id": "oebb_bike",
       "icon": {
         "default": "icon_transport_oebb_bike",
-        "nearby": "icon_transport_oebb_bike"
+        "nearby": "icon_transport_oebb_bike",
+        "indicator": "icon_transport_oebb_bike_indicator"
       }
     },
     {
