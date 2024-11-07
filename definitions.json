@@ -746,7 +746,7 @@
         "indicator": "icon_transport_tier_indicator"
       },
       "secondary_icon": {
-        "default": "icon_park_zone_tier"
+        "default": "icon_park_zone_escooter"
       }
     },
     {
@@ -758,7 +758,7 @@
         "indicator": "icon_transport_dott_indicator"
       },
       "secondary_icon": {
-        "default": "icon_park_zone_dott"
+        "default": "icon_park_zone_escooter"
       }
     },
     {
@@ -768,16 +768,29 @@
         "default": "icon_transport_bird",
         "nearby": "icon_transport_bird",
         "indicator": "icon_transport_bird_indicator"
+      },
+      "secondary_icon": {
+        "default": "icon_park_zone_escooter"
       }
     },
     {
       "color": "#407cab",
       "id": "tier_parking",
       "icon": {
-        "default": "icon_park_zone_tier"
+        "default": "icon_park_zone_escooter"
       },
       "secondary_icon": {
-        "default": "icon_park_zone_tier_active_ride"
+        "default": "icon_park_zone_escooter_active_ride"
+      }
+    },
+    {
+      "color": "#407cab",
+      "id": "bird_parking",
+      "icon": {
+        "default": "icon_park_zone_escooter"
+      },
+      "secondary_icon": {
+        "default": "icon_park_zone_escooter_active_ride"
       }
     },
     {
