@@ -768,6 +768,9 @@
         "default": "icon_transport_bird",
         "nearby": "icon_transport_bird",
         "indicator": "icon_transport_bird_indicator"
+      },
+      "secondary_icon": {
+        "default": "icon_park_zone_bird"
       }
     },
     {
@@ -778,6 +781,16 @@
       },
       "secondary_icon": {
         "default": "icon_park_zone_tier_active_ride"
+      }
+    },
+    {
+      "color": "#407cab",
+      "id": "bird_parking",
+      "icon": {
+        "default": "icon_park_zone_bird"
+      },
+      "secondary_icon": {
+        "default": "icon_park_zone_bird_active_ride"
       }
     },
     {
