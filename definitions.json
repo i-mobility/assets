@@ -380,6 +380,10 @@
       "type": "public"
     },
     {
+      "id": "rebranding_dott",
+      "translation_key": "transportation_label.rebranding.dott"
+    },
+    {
       "color": "#F4A81A",
       "icon": {
         "default": "icon_transport_dialaride",
