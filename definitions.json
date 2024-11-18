@@ -767,10 +767,6 @@
       }
     },
     {
-      "id": "rebranding_dott",
-      "translation_key": "transportation_label.rebranding.dott"
-    },
-    {
       "color": "#000000",
       "id": "bird",
       "icon": {
