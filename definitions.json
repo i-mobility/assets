@@ -382,7 +382,15 @@
     {
       "id": "rebranding_dott",
       "color": "#077FB3",
-      "translation_key": "transportation_label.rebranding.dott"
+      "translation_key": "transportation_label.rebranding.dott",
+      "icon": {
+        "default": "icon_transport_dott",
+        "nearby": "icon_transport_dott",
+        "indicator": "icon_transport_dott_indicator"
+      },
+      "secondary_icon": {
+        "default": "icon_park_zone_escooter"
+      }
     },
     {
       "color": "#F4A81A",
