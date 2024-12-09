@@ -839,5 +839,33 @@
     {
       "id": "on_demand_service"
     }
-  ]
+  ],
+  "redeem_code": {
+    "sponsors": [
+      {
+        "id": "wegfinder",
+        "translation_key": "code_sponsor.wegfinder"
+      }
+    ],
+    "providers": [
+      {
+        "id": "wegfinder",
+        "translation_key": "code_provider.wegfinder",
+        "icon": "icon_wegfinder",
+        "color": "#FF4082"
+      },
+      {
+        "id": "stadtrad_innsbruck",
+        "translation_key": "code_provider.stadtrad_innsbruck",
+        "icon": "icon_stadtrad_innsbruck",
+        "color": "#9F072D"
+      },
+      {
+        "id": "vvt_regiorad",
+        "translation_key": "code_provider.vvt_regiorad",
+        "icon": "icon_vvt_regiorad",
+        "color": "#000000"
+      }
+    ]
+  }
 }
