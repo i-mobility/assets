@@ -845,6 +845,70 @@
       {
         "id": "wegfinder",
         "translation_key": "code_sponsor.wegfinder"
+      },
+      {
+        "id": "stadtrad_innsbruck",
+        "translation_key": "code_sponsor.stadtrad_innsbruck"
+      },
+      {
+        "id": "vvt_regiorad",
+        "translation_key": "code_sponsor.vvt_regiorad"
+      },
+      {
+        "id": "city_bike_linz",
+        "translation_key": "code_sponsor.city_bike_linz"
+      },
+      {
+        "id": "nextbike",
+        "translation_key": "code_sponsor.nextbike"
+      },
+      {
+        "id": "oebb_bike",
+        "translation_key": "code_sponsor.oebb_bike"
+      },
+      {
+        "id": "rail_and_drive",
+        "translation_key": "code_sponsor.rail_and_drive"
+      },
+      {
+        "id": "bird",
+        "translation_key": "code_sponsor.bird"
+      },
+      {
+        "id": "dott",
+        "translation_key": "code_sponsor.dott"
+      },
+      {
+        "id": "oebb_transfer",
+        "translation_key": "code_sponsor.oebb_transfer"
+      },
+      {
+        "id": "postbus",
+        "translation_key": "code_sponsor.postbus"
+      },
+      {
+        "id": "vvt",
+        "translation_key": "code_sponsor.vvt"
+      },
+      {
+        "id": "ivb",
+        "translation_key": "code_sponsor.ivb"
+      },
+      {
+        "id": "ooevv",
+        "translation_key": "code_sponsor.ooevv"
+      },
+      {
+        "id": "baden",
+        "translation_key": "code_sponsor.baden"
+      },
+      {
+        "id": "leoben",
+        "translation_key": "code_sponsor.leoben"
+      },
+      {
+        "id": "villach",
+        "translation_key": "code_sponsor.villach"
       }
     ],
     "providers": [
