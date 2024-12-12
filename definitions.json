@@ -933,6 +933,10 @@
     ]
   },
   "filters": {
+    "taxi": [],
+    "car_rental": [
+      "gourban"
+    ],
     "escooters": [
       "dott",
       "bird",
@@ -945,8 +949,8 @@
       "regiorad_tirol",
       "stadtrad_innsbruck"
     ],
-    "car_rental": [
-      "gourban"
-    ]
+    "public": [],
+    "individual": [],
+    "nearby": []
   }
 }
