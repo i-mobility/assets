@@ -931,5 +931,22 @@
         "color": "#000000"
       }
     ]
+  },
+  "filters": {
+    "escooters": [
+      "dott",
+      "bird",
+      "tier"
+    ],
+    "bike_sharing": [
+      "city_bike_linz",
+      "nextbike",
+      "oebb_bike",
+      "regiorad_tirol",
+      "stadtrad_innsbruck"
+    ],
+    "car_rental": [
+      "gourban"
+    ]
   }
 }
