@@ -1,12 +1,14 @@
 import re
 import sys
 import os
+import shutil
 
 from json import load
 from pathlib import Path
 from collections import defaultdict
 from subprocess import check_output
 
+CORRECT = os.getenv("CORRECT_ASSETS", 'False').lower() in ('true', '1', 't')
 COLOR_PATTERN = re.compile(r'^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$')
 RESOLUTIONS = ('mdpi', 'hdpi', 'xhdpi', 'xxhdpi')
 TRANSPORT_ICON_TYPES = ('icon', 'secondary_icon', 'group_icon', 'indicator')
@@ -41,11 +43,15 @@ EXPECTED_SIZES={
         'xhdpi': '80x80', 
         'xxhdpi': '120x120'
     }
-
 }
 
 transport_icons = defaultdict(set)
 issues = list()
+
+
+if CORRECT:
+    shutil.copytree('images', 'images_corrected')
+
 
 def expect(condition, message, path=None):
     if not condition:
@@ -125,9 +131,14 @@ for type, icons in transport_icons.items():
             extra_info = ''
 
             if actual_size != expected_size:
-                for res, expected in EXPECTED_SIZES[type].items():
+                for other_res, expected in EXPECTED_SIZES[type].items():
                     if expected == actual_size:
-                       extra_info = f', Probably belongs in {res}'
+                        extra_info = f', Probably belongs in {other_res}'
+                        if CORRECT:
+                            destination_path = Path('images_corrected') / Path(other_res) / Path(i)
+                            if os.path.exists(destination_path):
+                                os.remove(destination_path)
+                            shutil.copyfile(path, destination_path)
 
             expect(actual_size == expected_size, f'Expected {path} to have size {expected_size} got {actual_size}{extra_info}', path = path)
            
