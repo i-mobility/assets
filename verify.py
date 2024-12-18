@@ -120,11 +120,17 @@ for type, icons in transport_icons.items():
             if not expect(path.exists(), f'{i} in {res} does not exist.'):
                 continue
 
-            expected_size=EXPECTED_SIZES[type][res]
-            actual_size=get_image_size(path)
-            
-            expect(actual_size == expected_size, f'Expected {path} to have size {expected_size} got {actual_size}', path = path)
+            expected_size = EXPECTED_SIZES[type][res]
+            actual_size = get_image_size(path)
+            extra_info = ''
 
+            if actual_size != expected_size:
+                for res, expected in EXPECTED_SIZES[type].items():
+                    if expected == actual_size:
+                       extra_info = f', Probably belongs in {res}'
+
+            expect(actual_size == expected_size, f'Expected {path} to have size {expected_size} got {actual_size}{extra_info}', path = path)
+           
 
 print('Checking for stray icons…')
 for res in RESOLUTIONS:
