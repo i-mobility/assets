@@ -104,7 +104,7 @@ all_icons = set()
 
 def get_image_size(path):
     return check_output([
-    'identify', '-format', '\'%wx%h\'', path
+    'identify', '-format', '%wx%h', path
     ]).decode('utf-8')
     
 
