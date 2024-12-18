@@ -1,5 +1,6 @@
 import re
 import sys
+import os
 
 from json import load
 from pathlib import Path
@@ -17,22 +18,22 @@ EXPECTED_SIZES={
         'xxhdpi': '72x72'
     },
     'transport.secondary_icon': {
-        'mdpi': '15x15', 
-        'hdpi': '15x15', 
-        'xhdpi': '15x15', 
-        'xxhdpi': '15x15'
+        'mdpi': '24x24', 
+        'hdpi': '36x36', 
+        'xhdpi': '48x48', 
+        'xxhdpi': '72x72'
     },
     'transport.group_icon': {
-        'mdpi': '15x15', 
-        'hdpi': '15x15', 
-        'xhdpi': '15x15', 
-        'xxhdpi': '15x15'
+        'mdpi': '24x24', 
+        'hdpi': '36x36', 
+        'xhdpi': '48x48', 
+        'xxhdpi': '72x72'
     },
     'transport.indicator': {
         'mdpi': '15x15', 
-        'hdpi': '15x15', 
-        'xhdpi': '15x15', 
-        'xxhdpi': '15x15'
+        'hdpi': '23x23', 
+        'xhdpi': '30x30', 
+        'xxhdpi': '45x45'
     },
     'redeem_code.provider': {
         'mdpi': '40x40', 
