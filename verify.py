@@ -1,4 +1,5 @@
 import re
+import sys
 
 from json import load
 from pathlib import Path
@@ -47,6 +48,7 @@ issues = list()
 
 def expect(condition, message):
     if not condition:
+        print(f'::error:: {message}')
         issues.append(message)
     return condition
 
@@ -128,5 +130,4 @@ for res in RESOLUTIONS:
 if len(issues) == 0:
     print('All good 👍')
 else:
-    for issue in issues:
-        print(f'::error:: {issue}')
+    sys.exit(1)
