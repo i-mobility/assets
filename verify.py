@@ -46,9 +46,13 @@ EXPECTED_SIZES={
 transport_icons = defaultdict(set)
 issues = list()
 
-def expect(condition, message):
+def expect(condition, message, path=None):
     if not condition:
-        print(f'::error:: {message}')
+        if not path:
+            print(f'::error:: {message}')
+        else:
+            print(f'::error file={path}:: {message}')
+
         issues.append(message)
     return condition
 
@@ -118,14 +122,14 @@ for type, icons in transport_icons.items():
             expected_size=EXPECTED_SIZES[type][res]
             actual_size=get_image_size(path)
             
-            expect(actual_size == expected_size, f'Expected {path} to have size {expected_size} got {actual_size}')
+            expect(actual_size == expected_size, f'Expected {path} to have size {expected_size} got {actual_size}', path = path)
 
 
 print('Checking for stray icons…')
 for res in RESOLUTIONS:
     for entry in (Path('images') / Path(res)).iterdir():
         if entry.name not in all_icons:
-            print(f'stray icon {entry.name}')  # entry.unlink()
+            print(f'::warning file=images/{entry.name}::stray icon {entry.name}')  # entry.unlink()
 
 
 if len(issues) == 0:
