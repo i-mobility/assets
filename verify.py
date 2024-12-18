@@ -35,10 +35,10 @@ EXPECTED_SIZES={
         'xxhdpi': '15x15'
     },
     'redeem_code.provider': {
-        'mdpi': '15x15', 
-        'hdpi': '15x15', 
-        'xhdpi': '15x15', 
-        'xxhdpi': '15x15'
+        'mdpi': '40x40', 
+        'hdpi': '60x60', 
+        'xhdpi': '80x80', 
+        'xxhdpi': '120x120'
     }
 
 }
@@ -103,10 +103,11 @@ def get_image_size(path):
     ]).decode('utf-8')
     
 
-print(f'Checking icons…')
+print('Checking icons…')
 for type, icons in transport_icons.items():
     all_icons.update(icons)
 
+    print(f'- {type}')
     for i in icons:
         for res in RESOLUTIONS:
             path = Path('images') / Path(res) / Path(i)
