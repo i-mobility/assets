@@ -129,7 +129,7 @@ print('Checking for stray icons…')
 for res in RESOLUTIONS:
     for entry in (Path('images') / Path(res)).iterdir():
         if entry.name not in all_icons:
-            print(f'::warning file=images/{entry.name}::stray icon {entry.name}')  # entry.unlink()
+            print(f'::warning file={entry}::stray icon {entry}')  # entry.unlink()
 
 
 if len(issues) == 0:
