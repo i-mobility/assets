@@ -742,18 +742,6 @@
       "id": "lime"
     },
     {
-      "color": "#0E1A50",
-      "id": "tier",
-      "icon": {
-        "default": "icon_transport_tier",
-        "nearby": "icon_transport_tier",
-        "indicator": "icon_transport_tier_indicator"
-      },
-      "secondary_icon": {
-        "default": "icon_park_zone_escooter"
-      }
-    },
-    {
       "color": "#077FB3",
       "id": "dott",
       "icon": {
@@ -775,16 +763,6 @@
       },
       "secondary_icon": {
         "default": "icon_park_zone_escooter"
-      }
-    },
-    {
-      "color": "#407cab",
-      "id": "tier_parking",
-      "icon": {
-        "default": "icon_park_zone_escooter"
-      },
-      "secondary_icon": {
-        "default": "icon_park_zone_escooter_active_ride"
       }
     },
     {
@@ -939,8 +917,7 @@
     ],
     "escooters": [
       "dott",
-      "bird",
-      "tier"
+      "bird"
     ],
     "bike_sharing": [
       "city_bike_linz",
