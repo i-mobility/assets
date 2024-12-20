@@ -14,22 +14,22 @@ RESOLUTIONS = ('mdpi', 'hdpi', 'xhdpi', 'xxhdpi')
 TRANSPORT_ICON_TYPES = ('icon', 'secondary_icon', 'group_icon', 'indicator')
 EXPECTED_SIZES={
     'transport.icon': {
-        'mdpi': '24x24', 
-        'hdpi': '36x36', 
-        'xhdpi': '48x48', 
-        'xxhdpi': '72x72'
+        'mdpi': '36x36', 
+        'hdpi': '54x54', 
+        'xhdpi': '72x72', 
+        'xxhdpi': '108x108'
     },
     'transport.secondary_icon': {
-        'mdpi': '24x24', 
-        'hdpi': '36x36', 
-        'xhdpi': '48x48', 
-        'xxhdpi': '72x72'
+        'mdpi': '36x36', 
+        'hdpi': '54x54', 
+        'xhdpi': '72x72', 
+        'xxhdpi': '108x108'
     },
     'transport.group_icon': {
-        'mdpi': '24x24', 
-        'hdpi': '36x36', 
-        'xhdpi': '48x48', 
-        'xxhdpi': '72x72'
+        'mdpi': '36x36', 
+        'hdpi': '54x54', 
+        'xhdpi': '72x72', 
+        'xxhdpi': '108x108'
     },
     'transport.indicator': {
         'mdpi': '15x15', 
