@@ -6,13 +6,13 @@ import shutil
 from json import load
 from pathlib import Path
 from collections import defaultdict
-from subprocess import check_output
+from PIL import Image
 
-CORRECT = os.getenv("CORRECT_ASSETS", 'False').lower() in ('true', '1', 't')
+CORRECT = os.getenv('CORRECT_ASSETS', 'False').lower() in ('true', '1', 't')
 COLOR_PATTERN = re.compile(r'^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$')
 RESOLUTIONS = ('mdpi', 'hdpi', 'xhdpi', 'xxhdpi')
 TRANSPORT_ICON_TYPES = ('icon', 'secondary_icon', 'group_icon', 'indicator')
-EXPECTED_SIZES={
+EXPECTED_SIZES = {
     'transport.icon': {
         'mdpi': '36x36', 
         'hdpi': '54x54', 
@@ -66,8 +66,8 @@ def expect(condition, message, path=None):
 with open('definitions.json') as fh:
     defs = load(fh)
 
-print(f'Checking definitions.json…')
-print(f'Checking transport…')
+print('Checking definitions.json…')
+print('Checking transport…')
 for mapping in defs['transport']:
     if not expect('id' in mapping, '"id" is required for each transport mapping'):
         continue
@@ -81,7 +81,7 @@ for mapping in defs['transport']:
             icon = { 'default': icon }
 
         if icon_type == 'icon':
-            if not 'default' in icon:
+            if 'default' not in icon:
                 icon['default'] = f'icon_transport_{mapping["id"]}'
 
         for key, value in icon.items():
@@ -93,7 +93,7 @@ for mapping in defs['transport']:
     if 'color' in mapping:
         expect(COLOR_PATTERN.search(mapping['color']), f'{mapping["id"]} has invalid color {mapping["color"]}')
 
-print(f'Checking redeem_code.sponsors…')
+print('Checking redeem_code.sponsors…')
 for mapping in defs['redeem_code']['providers']:
     if not expect('id' in mapping, '"id" is required for each provider mapping'):
         continue
@@ -109,9 +109,8 @@ for mapping in defs['redeem_code']['providers']:
 all_icons = set()
 
 def get_image_size(path):
-    return check_output([
-     'magick', 'identify', '-format', '%wx%h', path
-    ]).decode('utf-8')
+    with Image.open(path) as img:
+        return f'{img.width}x{img.height}'
     
 
 print('Checking icons…')
