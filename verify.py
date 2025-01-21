@@ -55,14 +55,13 @@ if CORRECT:
 
 
 def log(message, severity = 'warning', path=None):
-    if not condition:
-        if not path:
-            print(f'::{severity}:: {message}')
-        else:
-            print(f'::{severity} file={path}:: {message}')
+    if not path:
+        print(f'::{severity}:: {message}')
+    else:
+        print(f'::{severity} file={path}:: {message}')
 
-        if severity == 'error':
-            errors.append(message)
+    if severity == 'error':
+        errors.append(message)
 
 def expect(condition, message, severity = 'warning', path=None):
     if not condition:
