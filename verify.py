@@ -91,13 +91,13 @@ for mapping in defs['transport']:
 
     print(f'- {mapping["id"]}')
 
+    if 'translation_key' not in mapping:
+        mapping['translation_key'] = f'transportation_label.{mapping["id"]}'
+  
+    check_translation_key(mapping['translation_key'])
+    
     for icon_type in TRANSPORT_ICON_TYPES:
         icon = mapping.get(icon_type, dict())
-
-        if 'translation_key' not in mapping:
-            mapping['translation_key'] = f'transportation_label.{mapping["id"]}'
-      
-        check_translation_key(mapping['translation_key'])
 
         if isinstance(icon, str):
             icon = { 'default': icon }
