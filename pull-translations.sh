@@ -11,20 +11,20 @@ TAGS="remoteassets"
 
 mkdir translations
 
-DE_LOCALE_RESPONSE=\$(
+DE_LOCALE_RESPONSE=$(
     curl \
         --request GET \
         --fail \
         --header "Authorization: token ${PHRASEAPPTOKEN}" \
-        --output "\$TRANSLATIONS_FOLDER/\$LOCALE_DE_FILENAME" \
-        "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_DE/download?convert_emoji=true&file_format=\$FILE_FORMAT&tags=\$TAGS"
+        --output "$TRANSLATIONS_FOLDER/$LOCALE_DE_FILENAME" \
+        "https://$PHRASEAPP_API/projects/$PROJECT_ID/locales/$LOCALE_DE/download?convert_emoji=true&file_format=$FILE_FORMAT&tags=$TAGS"
 )
 
-EN_LOCALE_RESPONSE=\$(
+EN_LOCALE_RESPONSE=$(
     curl \
         --request GET \
         --fail \
         --header "Authorization: token ${PHRASEAPPTOKEN}" \
-        --output "\$TRANSLATIONS_FOLDER/\$LOCALE_EN_FILENAME" \
-        "https://\$PHRASEAPP_API/projects/\$PROJECT_ID/locales/\$LOCALE_EN/download?convert_emoji=true&file_format=\$FILE_FORMAT&tags=\$TAGS"
+        --output "$TRANSLATIONS_FOLDER/$LOCALE_EN_FILENAME" \
+        "https://$PHRASEAPP_API/projects/$PROJECT_ID/locales/$LOCALE_EN/download?convert_emoji=true&file_format=$FILE_FORMAT&tags=$TAGS"
 )
