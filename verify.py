@@ -66,7 +66,7 @@ def log(message, severity = 'warning', path=None):
 
 def expect(condition, message, severity = 'warning', path=None):
     if not condition:
-        log(severity = severity, message, path = path)
+        log(message, severity = severity, path = path)
     return condition
 
 
@@ -87,7 +87,7 @@ def check_translation_key(key):
 print('Checking definitions.json…')
 print('Checking transport…')
 for mapping in defs['transport']:
-    if not expect('id' in mapping, severity = 'error', '"id" is required for each transport mapping'):
+    if not expect('id' in mapping, severity = 'error', message = '"id" is required for each transport mapping'):
         continue
 
     print(f'- {mapping["id"]}')
@@ -114,23 +114,23 @@ for mapping in defs['transport']:
                 transport_icons['transport.' + icon_type].add(value + '.png')
 
     if 'color' in mapping:
-        expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', f'{mapping["id"]} has invalid color {mapping["color"]}')
+        expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', message = f'{mapping["id"]} has invalid color {mapping["color"]}')
 
 print('Checking redeem_code.sponsors…')
 for mapping in defs['redeem_code']['providers']:
-    if not expect('id' in mapping, severity = 'error', '"id" is required for each provider mapping'):
+    if not expect('id' in mapping, severity = 'error', message = '"id" is required for each provider mapping'):
         continue
-    if not expect('icon' in mapping, severity = 'error', '"icon" is required for each provider mapping'):
+    if not expect('icon' in mapping, severity = 'error', message = '"icon" is required for each provider mapping'):
         continue
 
     print(f'Checking sponsor mapping {mapping["id"]}…')
-    if expect('translation_key' in mapping, severity = 'error', '"translation_key" is required for each provider mapping'):
+    if expect('translation_key' in mapping, severity = 'error', message = '"translation_key" is required for each provider mapping'):
         check_translation_key(mapping['translation_key'])
 
     transport_icons['redeem_code.provider'].add(mapping['icon'] + '.png' )
 
-    if expect('color' in mapping, severity = 'error', '"color" is required for each provider mapping'):
-        expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', f'{mapping["id"]} has invalid color {mapping["color"]}')
+    if expect('color' in mapping, severity = 'error', message = '"color" is required for each provider mapping'):
+        expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', message = f'{mapping["id"]} has invalid color {mapping["color"]}')
 
 all_icons = set()
 
@@ -148,7 +148,7 @@ for type, icons in transport_icons.items():
         for res in RESOLUTIONS:
             path = Path('images') / Path(res) / Path(i)
 
-            if not expect(path.exists(), severity = 'error', f'{i} in {res} does not exist.'):
+            if not expect(path.exists(), severity = 'error', message = f'{i} in {res} does not exist.'):
                 continue
 
             expected_size = EXPECTED_SIZES[type][res]
@@ -165,7 +165,7 @@ for type, icons in transport_icons.items():
                                 os.remove(destination_path)
                             shutil.copyfile(path, destination_path)
 
-            expect(actual_size == expected_size, f'Expected {path} to have size {expected_size} got {actual_size}{extra_info}', path = path)
+            expect(actual_size == expected_size, message = f'Expected {path} to have size {expected_size} got {actual_size}{extra_info}', path = path)
            
 
 print('Checking for stray icons…')
