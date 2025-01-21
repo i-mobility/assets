@@ -46,21 +46,22 @@ EXPECTED_SIZES = {
 }
 
 transport_icons = defaultdict(set)
-issues = list()
+errors = list()
 
 
 if CORRECT:
     shutil.copytree('images', 'images_corrected')
 
 
-def expect(condition, message, path=None):
+def expect(condition, severity = 'warning', message, path=None):
     if not condition:
         if not path:
-            print(f'::warning:: {message}')
+            print(f'::{severity}:: {message}')
         else:
-            print(f'::warning file={path}:: {message}')
+            print(f'::{severity} file={path}:: {message}')
 
-        issues.append(message)
+        if severity == 'error':
+            errors.append(message)
     return condition
 
 with open('definitions.json') as fh:
@@ -69,7 +70,7 @@ with open('definitions.json') as fh:
 print('Checking definitions.json…')
 print('Checking transport…')
 for mapping in defs['transport']:
-    if not expect('id' in mapping, '"id" is required for each transport mapping'):
+    if not expect('id' in mapping, severity = 'error', '"id" is required for each transport mapping'):
         continue
 
     print(f'- {mapping["id"]}')
@@ -91,20 +92,20 @@ for mapping in defs['transport']:
                 transport_icons['transport.' + icon_type].add(value + '.png')
 
     if 'color' in mapping:
-        expect(COLOR_PATTERN.search(mapping['color']), f'{mapping["id"]} has invalid color {mapping["color"]}')
+        expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', f'{mapping["id"]} has invalid color {mapping["color"]}')
 
 print('Checking redeem_code.sponsors…')
 for mapping in defs['redeem_code']['providers']:
-    if not expect('id' in mapping, '"id" is required for each provider mapping'):
+    if not expect('id' in mapping, severity = 'error', '"id" is required for each provider mapping'):
         continue
-    if not expect('icon' in mapping, '"icon" is required for each provider mapping'):
+    if not expect('icon' in mapping, severity = 'error', '"icon" is required for each provider mapping'):
         continue
     print(f'Checking sponsor mapping {mapping["id"]}…')
 
     transport_icons['redeem_code.provider'].add(mapping['icon'] + '.png' )
 
     if 'color' in mapping:
-        expect(COLOR_PATTERN.search(mapping['color']), f'{mapping["id"]} has invalid color {mapping["color"]}')
+        expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', f'{mapping["id"]} has invalid color {mapping["color"]}')
 
 all_icons = set()
 
@@ -122,7 +123,7 @@ for type, icons in transport_icons.items():
         for res in RESOLUTIONS:
             path = Path('images') / Path(res) / Path(i)
 
-            if not expect(path.exists(), f'{i} in {res} does not exist.'):
+            if not expect(path.exists(), severity = 'error', f'{i} in {res} does not exist.'):
                 continue
 
             expected_size = EXPECTED_SIZES[type][res]
@@ -149,7 +150,5 @@ for res in RESOLUTIONS:
             print(f'::warning file={entry}::stray icon {entry}')  # entry.unlink()
 
 
-# if len(issues) == 0:
-#     print('All good 👍')
-# else:
-#     sys.exit(1)
+if len(issues) > 0:
+    sys.exit(1)
