@@ -150,5 +150,5 @@ for res in RESOLUTIONS:
             print(f'::warning file={entry}::stray icon {entry}')  # entry.unlink()
 
 
-if len(issues) > 0:
+if len(errors) > 0:
     sys.exit(1)
