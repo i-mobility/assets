@@ -122,11 +122,14 @@ for mapping in defs['redeem_code']['providers']:
         continue
     if not expect('icon' in mapping, severity = 'error', '"icon" is required for each provider mapping'):
         continue
+
     print(f'Checking sponsor mapping {mapping["id"]}…')
+    if expect('translation_key' in mapping, severity = 'error', '"translation_key" is required for each provider mapping'):
+        check_translation_key(mapping['translation_key'])
 
     transport_icons['redeem_code.provider'].add(mapping['icon'] + '.png' )
 
-    if 'color' in mapping:
+    if expect('color' in mapping, severity = 'error', '"color" is required for each provider mapping'):
         expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', f'{mapping["id"]} has invalid color {mapping["color"]}')
 
 all_icons = set()
