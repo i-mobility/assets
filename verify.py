@@ -54,7 +54,7 @@ if CORRECT:
     shutil.copytree('images', 'images_corrected')
 
 
-def log(severity = 'warning', message, path=None):
+def log(message, severity = 'warning', path=None):
     if not condition:
         if not path:
             print(f'::{severity}:: {message}')
@@ -64,7 +64,7 @@ def log(severity = 'warning', message, path=None):
         if severity == 'error':
             errors.append(message)
 
-def expect(condition, severity = 'warning', message, path=None):
+def expect(condition, message, severity = 'warning', path=None):
     if not condition:
         log(severity = severity, message, path = path)
     return condition
