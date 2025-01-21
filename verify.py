@@ -81,7 +81,7 @@ for language in LANGUAGES:
 def check_translation_key(key):
     for language in LANGUAGES:
         if not translations[language].get(key):
-            log(f'translation {key} missing for {language}')
+            log(f'translation {key} missing for {language}', severity = 'error')
 
 print('Checking definitions.json…')
 print('Checking transport…')
