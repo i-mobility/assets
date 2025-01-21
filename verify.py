@@ -156,6 +156,7 @@ for type, icons in transport_icons.items():
 
     print(f'- {type}')
     for i in icons:
+        print(f'  - {i}')
         for res in RESOLUTIONS:
             path = Path('images') / Path(res) / Path(i)
 
