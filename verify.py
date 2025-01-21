@@ -76,7 +76,7 @@ with open('definitions.json') as fh:
 translations = dict()
 
 for language in LANGUAGES:
-    with open(Path('translations') / Path(language)) as fh:
+    with open(f'translations/{language}.json') as fh:
         translations[language] = load(fh)
 
 def check_translation_key(key):
