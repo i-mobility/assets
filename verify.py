@@ -11,6 +11,7 @@ from PIL import Image
 CORRECT = os.getenv('CORRECT_ASSETS', 'False').lower() in ('true', '1', 't')
 COLOR_PATTERN = re.compile(r'^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$')
 RESOLUTIONS = ('mdpi', 'hdpi', 'xhdpi', 'xxhdpi')
+LANGUAGES = ('en', 'de')
 TRANSPORT_ICON_TYPES = ('icon', 'secondary_icon', 'group_icon', 'indicator')
 EXPECTED_SIZES = {
     'transport.icon': {
@@ -53,7 +54,7 @@ if CORRECT:
     shutil.copytree('images', 'images_corrected')
 
 
-def expect(condition, severity = 'warning', message, path=None):
+def log(severity = 'warning', message, path=None):
     if not condition:
         if not path:
             print(f'::{severity}:: {message}')
@@ -62,10 +63,26 @@ def expect(condition, severity = 'warning', message, path=None):
 
         if severity == 'error':
             errors.append(message)
+
+def expect(condition, severity = 'warning', message, path=None):
+    if not condition:
+        log(severity = severity, message, path = path)
     return condition
+
 
 with open('definitions.json') as fh:
     defs = load(fh)
+
+translations = dict()
+
+for language in LANGUAGES:
+    with open(Path('translations') / Path(language)) as fh:
+        translations[language] = load(fh)
+
+def check_translation_key(key):
+    for language in LANGUAGES:
+        if not translations[language].get(key)
+            log(f'translation {key} missing for {language}')
 
 print('Checking definitions.json…')
 print('Checking transport…')
@@ -77,7 +94,12 @@ for mapping in defs['transport']:
 
     for icon_type in TRANSPORT_ICON_TYPES:
         icon = mapping.get(icon_type, dict())
+
+        if 'translation_key' not in mapping:
+            mapping['translation_key'] = f'transportation_label.{mapping["id"]}'
       
+        check_translation_key(mapping['translation_key'])
+
         if isinstance(icon, str):
             icon = { 'default': icon }
 
