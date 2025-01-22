@@ -177,12 +177,10 @@ node {
 
         slackMessageJson = JsonOutput.prettyPrint(asset_json_file_content)
 
-        if (isDevelopment) {
-          // sends to #notifications
-          slackSend(channel: '#notifications', message: '```' + slackMessageJson + '```')
-        } else {
+        if (!isDevelopment) {
           // sends to #backend
-          slackSend(channel: '#backend', message: '```' + slackMessageJson + '```')
+          slackSend(
+            channel: '#backend', message: '```' + slackMessageJson + '```\n:warning: New asseets are NOT automatically used\n`v1/config`must be adapted to reference the new assets\nSee https://github.com/i-mobility/assets#releasing for more info')
         }
     }
 }
