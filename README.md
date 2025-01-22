@@ -24,6 +24,7 @@ the jenkins pipeline which will create a release for you.
 
 
 > [!IMPORTANT]
-> Creating a release does not automatically serve the new assets
-> `v1/config` endpoint has to be adapted to reference this newly created release 
-> See [here](https://github.com/i-mobility/backend/commit/08aa89a4eaeb2b77d20ca11901e80ec5509caec8) for a example 
+> Creating a release does not automatically serve the new assets.
+>
+> `v1/config` endpoint must to be adapted to reference the newly created release.
+> See [here](https://github.com/i-mobility/backend/commit/08aa89a4eaeb2b77d20ca11901e80ec5509caec8) for a example.
