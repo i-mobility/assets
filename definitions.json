@@ -109,6 +109,10 @@
       {
         "id": "villach",
         "translation_key": "code_sponsor.villach"
+      },
+      {
+        "id": "oebb",
+        "translation_key": "code_sponsor.oebb"
       }
     ]
   },
