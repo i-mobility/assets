@@ -180,7 +180,7 @@ node {
         if (!isDevelopment) {
           // sends to #backend
           slackSend(
-            channel: '#backend', message: '```' + slackMessageJson + '```\n:warning: New asseets are NOT automatically used\n`v1/config`must be adapted to reference the new assets\nSee https://github.com/i-mobility/assets#releasing for more info')
+            channel: '#backend', message: '```' + slackMessageJson + '```\n\n:warning: New assets are NOT automatically used\n`v1/config`must be adapted to reference the new assets\nSee https://github.com/i-mobility/assets#releasing for more info')
         }
     }
 }
