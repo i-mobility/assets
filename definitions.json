@@ -859,18 +859,6 @@
       "id": "lime"
     },
     {
-      "color": "#0E1A50",
-      "icon": {
-        "default": "icon_transport_tier",
-        "indicator": "icon_transport_tier_indicator",
-        "nearby": "icon_transport_tier"
-      },
-      "id": "tier",
-      "secondary_icon": {
-        "default": "icon_park_zone_escooter"
-      }
-    },
-    {
       "color": "#077FB3",
       "icon": {
         "default": "icon_transport_dott",
