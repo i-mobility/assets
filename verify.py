@@ -149,7 +149,7 @@ print('Checking rental…')
 for rental_type, providers in defs['rental'].items():
     print(f'- {rental_type}')
     for provider in providers:
-        expect(provider in all_providers, severity = 'error', message = f'"{provider}" not defined in .transport')
+        expect(provider in all_providers, severity = 'error', message = f'provider "{provider}" not listed in .transport')
 
 all_icons = set()
 
