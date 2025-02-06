@@ -150,7 +150,7 @@ for definitions in defs['rental']:
     for type, providers in definitions:
         print(f'- {type}')
         for provider in providers:
-            expect(provider in all_providers, severity = 'error', message = f'"{provider}" not defined in .transport'):
+            expect(provider in all_providers, severity = 'error', message = f'"{provider}" not defined in .transport')
 
 all_icons = set()
 
