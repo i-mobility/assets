@@ -135,7 +135,7 @@ for mapping in defs['redeem_code']['providers']:
     if expect('color' in mapping, severity = 'error', message = '"color" is required for each provider mapping'):
         expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', message = f'{mapping["id"]} has invalid color {mapping["color"]}')
 
-print('Checking redeem_code.sponsors')
+print('Checking redeem_code.sponsors…')
 for mapping in defs['redeem_code']['sponsors']:
     if not expect('id' in mapping, severity = 'error', message = '"id" is required for each provider mapping'):
         continue
@@ -145,9 +145,9 @@ for mapping in defs['redeem_code']['sponsors']:
     if expect('translation_key' in mapping, severity = 'error', message = '"translation_key" is required for each provider mapping'):
         check_translation_key(mapping['translation_key'])
 
-print('Checking rental')
+print('Checking rental…')
 for definitions in defs['rental']:
-    for type, providers in definitions:
+    for type, providers in definitions.items():
         print(f'- {type}')
         for provider in providers:
             expect(provider in all_providers, severity = 'error', message = f'"{provider}" not defined in .transport')
