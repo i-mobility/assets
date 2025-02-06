@@ -47,6 +47,7 @@ EXPECTED_SIZES = {
 }
 
 transport_icons = defaultdict(set)
+all_providers = set()
 errors = list()
 
 
@@ -90,6 +91,7 @@ for mapping in defs['transport']:
         continue
 
     print(f'- {mapping["id"]}')
+    all_providers.add(mapping["id"])
 
     if 'translation_key' not in mapping:
         mapping['translation_key'] = f'transportation_label.{mapping["id"]}'
@@ -142,6 +144,13 @@ for mapping in defs['redeem_code']['sponsors']:
     
     if expect('translation_key' in mapping, severity = 'error', message = '"translation_key" is required for each provider mapping'):
         check_translation_key(mapping['translation_key'])
+
+print('Checking rental')
+for definitions in defs['rental']:
+    for type, providers in definitions:
+        print(f'- {type}')
+        for provider in providers:
+            expect(provider in all_providers, severity = 'error', message = f'"{provider}" not defined in .transport'):
 
 all_icons = set()
 

@@ -116,6 +116,14 @@
       }
     ]
   },
+  "rental": {
+    "bike": [
+      "oebb_bikefsdfdsf"
+    ],
+    "car": [
+      "gourban"
+    ]
+  },
   "transport": [
     {
       "color": "#137FD2",
