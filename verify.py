@@ -146,11 +146,10 @@ for mapping in defs['redeem_code']['sponsors']:
         check_translation_key(mapping['translation_key'])
 
 print('Checking rental…')
-for definitions in defs['rental']:
-    for type, providers in definitions.items():
-        print(f'- {type}')
-        for provider in providers:
-            expect(provider in all_providers, severity = 'error', message = f'"{provider}" not defined in .transport')
+for rental_type, providers in defs['rental'].items():
+    print(f'- {rental_type}')
+    for provider in providers:
+        expect(provider in all_providers, severity = 'error', message = f'"{provider}" not defined in .transport')
 
 all_icons = set()
 
