@@ -668,7 +668,8 @@
         "indicator": "icon_transport_nextbike_indicator",
         "nearby": "icon_transport_nextbike"
       },
-      "id": "region_nextbike"
+      "id": "region_nextbike",
+      "translation_key": "transportation_label.nextbike"
     },
     {
       "color": "#1c4c94",
@@ -890,7 +891,8 @@
       "id": "bird_parking",
       "secondary_icon": {
         "default": "icon_park_zone_escooter_active_ride"
-      }
+      },
+      "translation_key": "transportation_label.bird"
     },
     {
       "color": "#e5ff00",
