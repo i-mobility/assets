@@ -838,15 +838,6 @@
       "type": "public"
     },
     {
-      "color": "#777777",
-      "icon": "icon_transport_waiting",
-      "icon_style": "outline",
-      "id": "waiting",
-      "rendering_mode": "original",
-      "translation_key": "transportation_label.waiting",
-      "type": "public"
-    },
-    {
       "color": "#91cd47",
       "icon": {
         "default": "icon_transport_kiwi",
