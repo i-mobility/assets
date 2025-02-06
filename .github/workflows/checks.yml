@@ -23,5 +23,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Pull Translations
+        run: ./pull-translations.sh
+        env:
+          PHRASEAPPTOKEN: ${{ secrets.PHRASE_ACCESS_TOKEN }}
+
       - name: Lint Assets
         run: python verify.py
+        

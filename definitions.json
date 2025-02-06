@@ -668,7 +668,8 @@
         "indicator": "icon_transport_nextbike_indicator",
         "nearby": "icon_transport_nextbike"
       },
-      "id": "region_nextbike"
+      "id": "region_nextbike",
+      "translation_key": "transportation_label.nextbike"
     },
     {
       "color": "#1c4c94",
@@ -837,15 +838,6 @@
       "type": "public"
     },
     {
-      "color": "#777777",
-      "icon": "icon_transport_waiting",
-      "icon_style": "outline",
-      "id": "waiting",
-      "rendering_mode": "original",
-      "translation_key": "transportation_label.waiting",
-      "type": "public"
-    },
-    {
       "color": "#91cd47",
       "icon": {
         "default": "icon_transport_kiwi",
@@ -887,20 +879,11 @@
       "icon": {
         "default": "icon_park_zone_escooter"
       },
-      "id": "tier_parking",
-      "secondary_icon": {
-        "default": "icon_park_zone_escooter_active_ride"
-      }
-    },
-    {
-      "color": "#407cab",
-      "icon": {
-        "default": "icon_park_zone_escooter"
-      },
       "id": "bird_parking",
       "secondary_icon": {
         "default": "icon_park_zone_escooter_active_ride"
-      }
+      },
+      "translation_key": "transportation_label.bird"
     },
     {
       "color": "#e5ff00",
