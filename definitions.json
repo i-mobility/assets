@@ -887,16 +887,6 @@
       "icon": {
         "default": "icon_park_zone_escooter"
       },
-      "id": "tier_parking",
-      "secondary_icon": {
-        "default": "icon_park_zone_escooter_active_ride"
-      }
-    },
-    {
-      "color": "#407cab",
-      "icon": {
-        "default": "icon_park_zone_escooter"
-      },
       "id": "bird_parking",
       "secondary_icon": {
         "default": "icon_park_zone_escooter_active_ride"
