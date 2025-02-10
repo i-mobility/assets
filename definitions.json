@@ -497,7 +497,7 @@
       "type": "public"
     },
     {
-      "color": "#077FB3",
+      "color": "#00A8E9",
       "icon": {
         "default": "icon_transport_dott",
         "indicator": "icon_transport_dott_indicator",
@@ -851,7 +851,7 @@
       "id": "lime"
     },
     {
-      "color": "#077FB3",
+      "color": "#00A8E9",
       "icon": {
         "default": "icon_transport_dott",
         "indicator": "icon_transport_dott_indicator",
