@@ -886,6 +886,17 @@
       "translation_key": "transportation_label.bird"
     },
     {
+      "color": "#00A8E9",
+      "icon": {
+        "default": "icon_park_zone_escooter"
+      },
+      "id": "dott_parking",
+      "secondary_icon": {
+        "default": "icon_park_zone_escooter_active_ride"
+      },
+      "translation_key": "transportation_label.dott"
+    },
+    {
       "color": "#e5ff00",
       "id": "link"
     }
