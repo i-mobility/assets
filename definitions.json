@@ -497,19 +497,6 @@
       "type": "public"
     },
     {
-      "color": "#00A8E9",
-      "icon": {
-        "default": "icon_transport_dott",
-        "indicator": "icon_transport_dott_indicator",
-        "nearby": "icon_transport_dott"
-      },
-      "id": "rebranding_dott",
-      "secondary_icon": {
-        "default": "icon_park_zone_escooter"
-      },
-      "translation_key": "transportation_label.rebranding.dott"
-    },
-    {
       "color": "#F4A81A",
       "icon": {
         "default": "icon_transport_dialaride",
@@ -860,7 +847,8 @@
       "id": "dott",
       "secondary_icon": {
         "default": "icon_park_zone_escooter"
-      }
+      },
+      "translation_key": "transportation_label.dott"
     },
     {
       "color": "#26ccf0",
