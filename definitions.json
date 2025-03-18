@@ -5,7 +5,8 @@
       "nextbike",
       "oebb_bike",
       "regiorad_tirol",
-      "stadtrad_innsbruck"
+      "stadtrad_innsbruck",
+      "radbox"
     ],
     "car_rental": [
       "gourban"
@@ -738,6 +739,10 @@
     {
       "color": "#f4a81a",
       "id": "taxi_rank"
+    },
+    {
+      "color": "#000000",
+      "id": "radbox"
     },
     {
       "color": "#000000",
