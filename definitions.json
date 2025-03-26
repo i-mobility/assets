@@ -358,6 +358,126 @@
       "type": "public"
     },
     {
+      "color": "#E0001A",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_1",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#005EB0",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_2",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#805E29",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_3",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#FEC000",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_4",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#14B4F2",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_5",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#74B929",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_6",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#009C93",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_7",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#F07E09",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_8",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#5D257A",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_9",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#F4A389",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_10",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#9FD6D0",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_12",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
+      "color": "#BAD986",
+      "icon": {
+        "default": "icon_transport_obus",
+        "indicator": "icon_transport_public_indicator"
+      },
+      "id": "salzburg_obus_14",
+      "translation_key": "transportation_label.trolleybus",
+      "type": "public"
+    },
+    {
       "color": "#3778a7",
       "icon": {
         "default": "icon_transport_bus",
