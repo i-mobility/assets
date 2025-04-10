@@ -6,7 +6,8 @@
       "oebb_bike",
       "regiorad_tirol",
       "stadtrad_innsbruck",
-      "radbox"
+      "radbox",
+      "dott_bike"
     ],
     "car_rental": [
       "gourban"
@@ -77,6 +78,10 @@
       },
       {
         "id": "dott",
+        "translation_key": "code_sponsor.dott"
+      },
+      {
+        "id": "dott_bike",
         "translation_key": "code_sponsor.dott"
       },
       {
@@ -970,6 +975,19 @@
         "nearby": "icon_transport_dott"
       },
       "id": "dott",
+      "secondary_icon": {
+        "default": "icon_park_zone_escooter"
+      },
+      "translation_key": "transportation_label.dott"
+    },
+    {
+      "color": "#00A8E9",
+      "icon": {
+        "default": "icon_transport_dott",
+        "indicator": "icon_transport_dott_indicator",
+        "nearby": "icon_transport_dott"
+      },
+      "id": "dott_bike",
       "secondary_icon": {
         "default": "icon_park_zone_escooter"
       },
