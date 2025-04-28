@@ -867,6 +867,7 @@
     },
     {
       "color": "#000000",
+      "icon": "icon_transport_radbox",
       "id": "radbox"
     },
     {
