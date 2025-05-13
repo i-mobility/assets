@@ -868,7 +868,8 @@
     {
       "color": "#000000",
       "icon": "icon_transport_radbox",
-      "id": "radbox"
+      "id": "radbox",
+      "translation_key": "transportation_label.vvt_radbox"
     },
     {
       "color": "#000000",
