@@ -873,6 +873,11 @@
     },
     {
       "color": "#000000",
+      "icon": "icon_transport_radbox",
+      "id": "vvt_radbox"
+    },
+    {
+      "color": "#000000",
       "icon": "icon_transport_uber",
       "id": "uber"
     },
