@@ -15,7 +15,8 @@
     "escooters": [
       "dott",
       "bird",
-      "tier"
+      "tier",
+      "lime"
     ],
     "individual": [],
     "nearby": [],
@@ -83,6 +84,10 @@
       {
         "id": "dott_bike",
         "translation_key": "code_sponsor.dott"
+      },
+      {
+        "id": "lime",
+        "translation_key": "code_sponsor.lime"
       },
       {
         "id": "oebb_transfer",
@@ -972,7 +977,16 @@
     },
     {
       "color": "#24d001",
-      "id": "lime"
+      "icon": {
+        "default": "icon_transport_lime",
+        "indicator": "icon_transport_lime_indicator",
+        "nearby": "icon_transport_lime"
+      },
+      "id": "lime",
+      "secondary_icon": {
+        "default": "icon_park_zone_escooter"
+      },
+      "translation_key": "transportation_label.lime"
     },
     {
       "color": "#00A8E9",
