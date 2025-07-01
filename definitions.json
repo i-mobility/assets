@@ -1049,6 +1049,17 @@
       "translation_key": "transportation_label.dott"
     },
     {
+      "color": "#00A8E9",
+      "icon": {
+        "default": "icon_park_zone_escooter"
+      },
+      "id": "lime_parking",
+      "secondary_icon": {
+        "default": "icon_park_zone_escooter_active_ride"
+      },
+      "translation_key": "transportation_label.lime"
+    },
+    {
       "color": "#e5ff00",
       "id": "link"
     }
