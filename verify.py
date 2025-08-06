@@ -7,6 +7,7 @@ from json import load
 from pathlib import Path
 from collections import defaultdict
 from PIL import Image
+import jsonschema
 
 CORRECT = os.getenv('CORRECT_ASSETS', 'False').lower() in ('true', '1', 't')
 COLOR_PATTERN = re.compile(r'^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$')
@@ -71,6 +72,7 @@ def expect(condition, message, severity = 'warning', path=None):
 
 with open('definitions.json') as fh:
     defs = load(fh)
+    jsonschema.validate(instance=defs, schema=load(open('definitions-schema.json')))
 
 translations = dict()
 
@@ -91,20 +93,13 @@ for mapping in defs['transport']:
 
     print(f'- {mapping["id"]}')
 
-    if 'translation_key' not in mapping:
-        mapping['translation_key'] = f'transportation_label.{mapping["id"]}'
-  
+    if not expect('translation_key' in mapping, severity = 'error', message = '"translation_key" is required for each transport mapping'):
+        continue
+
     check_translation_key(mapping['translation_key'])
     
     for icon_type in TRANSPORT_ICON_TYPES:
         icon = mapping.get(icon_type, dict())
-
-        if isinstance(icon, str):
-            icon = { 'default': icon }
-
-        if icon_type == 'icon':
-            if 'default' not in icon:
-                icon['default'] = f'icon_transport_{mapping["id"]}'
 
         for key, value in icon.items():
             if key == 'indicator':
@@ -112,7 +107,7 @@ for mapping in defs['transport']:
             else:
                 transport_icons['transport.' + icon_type].add(value + '.png')
 
-    if 'color' in mapping:
+    if expect('color' in mapping, severity = 'error', message = '"color" is required for each transport mapping'):
         expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', message = f'{mapping["id"]} has invalid color {mapping["color"]}')
 
 print('Checking redeem_code.providers…')
