@@ -121,18 +121,8 @@
          }
           ,
           "secondary_icon": {
-            "type": "object",
-            "description": "Secondary icon configuration",
-            "properties": {
-              "default": {
-                "type": "string",
-                "description": "Default secondary icon identifier"
-              }
-            },
-            "required": [
-              "default"
-            ],
-            "additionalProperties": false
+            "type": "string",
+            "description": "Secondary icon configuration"
           },
           "group_icon": {
             "type": "string",

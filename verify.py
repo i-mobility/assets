@@ -93,19 +93,20 @@ for mapping in defs['transport']:
 
     print(f'- {mapping["id"]}')
 
-    if not expect('translation_key' in mapping, severity = 'error', message = '"translation_key" is required for each transport mapping'):
-        continue
+    if expect('translation_key' in mapping, severity = 'error', message = '"translation_key" is required for each transport mapping'):
+        check_translation_key(mapping['translation_key'])
 
-    check_translation_key(mapping['translation_key'])
-    
-    for icon_type in TRANSPORT_ICON_TYPES:
-        icon = mapping.get(icon_type, dict())
-
-        for key, value in icon.items():
-            if key == 'indicator':
-                transport_icons['transport.indicator'].add(value + '.png')
-            else:
-                transport_icons['transport.' + icon_type].add(value + '.png')
+    if expect('icon' in mapping, severity = 'error', message = '"icon" is required for each transport mapping'):
+        if expect('default' in mapping['icon'], severity = 'error', message = '"icon.default" is required for each transport mapping'):
+            transport_icons['transport.icon'].add(mapping['icon']['default'] + '.png')
+        if 'indicator' in mapping['icon']:
+            transport_icons['transport.indicator'].add(mapping['icon']['indicator'] + '.png')
+        if 'nearby' in mapping['icon']:
+            transport_icons['transport.icon'].add(mapping['icon']['nearby'] + '.png')
+    if 'secondary_icon' in mapping:
+        transport_icons['transport.secondary_icon'].add(mapping['secondary_icon'] + '.png')
+    if 'group_icon' in mapping:
+        transport_icons['transport.group_icon'].add(mapping['group_icon'] + '.png')
 
     if expect('color' in mapping, severity = 'error', message = '"color" is required for each transport mapping'):
         expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', message = f'{mapping["id"]} has invalid color {mapping["color"]}')
