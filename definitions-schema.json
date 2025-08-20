@@ -1,0 +1,205 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Transportation Definitions Schema",
+  "description": "Schema for transportation configuration definitions including filters, redeem codes, transport modes, and transportation groups",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "The JSON Schema version used for this document"
+    },
+    "filters": {
+      "type": "object",
+      "description": "Filter categories for different transportation types",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "redeem_code": {
+      "type": "object",
+      "description": "Configuration for redeem code providers and sponsors",
+      "properties": {
+        "providers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "color": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$",
+                "description": "Hex color code for the provider"
+              },
+              "icon": {
+                "type": "string",
+                "description": "Icon identifier for the provider"
+              },
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the provider"
+              },
+              "translation_key": {
+                "type": "string",
+                "description": "Translation key for the provider name"
+              }
+            },
+            "required": [
+              "color",
+              "icon",
+              "id",
+              "translation_key"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "sponsors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the sponsor"
+              },
+              "translation_key": {
+                "type": "string",
+                "description": "Translation key for the sponsor name"
+              }
+            },
+            "required": [
+              "id",
+              "translation_key"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "providers",
+        "sponsors"
+      ],
+      "additionalProperties": false
+    },
+    "transport": {
+      "type": "array",
+      "description": "List of transportation modes and their configurations",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the transport mode"
+          },
+          "color": {
+            "type": "string",
+            "pattern": "^#[0-9A-Fa-f]{6}$",
+            "description": "Hex color code for the transport mode"
+          },
+          "icon": {
+              "type": "object",
+              "description": "Icon configuration with different states",
+              "properties": {
+                "default": {
+                  "type": "string",
+                  "description": "Default icon identifier"
+                },
+                "indicator": {
+                  "type": "string",
+                  "description": "Indicator icon identifier"
+                },
+                "nearby": {
+                  "type": "string",
+                  "description": "Nearby icon identifier"
+                }
+              },
+              "required": [
+                "default"
+              ],
+              "additionalProperties": false
+         }
+          ,
+          "secondary_icon": {
+            "type": "string",
+            "description": "Secondary icon configuration"
+          },
+          "group_icon": {
+            "type": "string",
+            "description": "Group icon identifier"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "primary"
+            ],
+            "description": "Priority level of the transport mode"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "public"
+            ],
+            "description": "Type classification of the transport mode"
+          },
+          "translation_key": {
+            "type": "string",
+            "description": "Translation key for the transport mode name"
+          },
+          "icon_style": {
+            "type": "string",
+            "enum": [
+              "outline",
+              "filled"
+            ],
+            "description": "Style of the icon rendering"
+          },
+          "rendering_mode": {
+            "type": "string",
+            "enum": [
+              "template",
+              "original"
+            ],
+            "description": "Mode for rendering the icon"
+          }
+        },
+        "required": [
+          "id",
+          "color",
+          "icon",
+          "translation_key"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "transportation_group": {
+      "type": "array",
+      "description": "List of transportation group categories",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the transportation group"
+          },
+          "translation_key": {
+            "type": "string",
+            "description": "Translation key for the transportation group name"
+          }
+        },
+        "required": [
+          "id",
+          "translation_key"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "filters",
+    "redeem_code",
+    "transport",
+    "transportation_group"
+  ],
+  "additionalProperties": false
+}
