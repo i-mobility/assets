@@ -98,28 +98,38 @@
             "description": "Hex color code for the transport mode"
           },
           "icon": {
-              "type": "object",
-              "description": "Icon configuration with different states",
-              "properties": {
-                "default": {
-                  "type": "string",
-                  "description": "Default icon identifier"
-                },
-                "indicator": {
-                  "type": "string",
-                  "description": "Indicator icon identifier"
-                },
-                "nearby": {
-                  "type": "string",
-                  "description": "Nearby icon identifier"
-                }
+            "type": "object",
+            "description": "Icon configuration with different states",
+            "properties": {
+              "default": {
+                "type": "string",
+                "description": "Default icon identifier"
               },
-              "required": [
-                "default"
-              ],
-              "additionalProperties": false
-         }
-          ,
+              "indicator": {
+                "type": "string",
+                "description": "Indicator icon identifier"
+              },
+              "nearby": {
+                "type": "string",
+                "description": "Nearby icon identifier"
+              }
+            },
+            "required": [
+              "default"
+            ],
+            "additionalProperties": false
+          },
+          "marker_badge": {
+            "type": "object",
+            "description": "Badge configuration with different states",
+            "properties": {
+              "nearby": {
+                "type": "string",
+                "description": "Nearby badge identifier"
+              }
+            },
+            "required": ["nearby"]
+          },
           "secondary_icon": {
             "type": "string",
             "description": "Secondary icon configuration"
