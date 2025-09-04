@@ -9,6 +9,12 @@ LOCALE_DE_FILENAME="de.json"
 LOCALE_EN_FILENAME="en.json"
 TAGS="remoteassets"
 
+# If PHRASEAPPTOKEN is not defined, fetch it from Azure Key Vault
+if [ -z "$PHRASEAPPTOKEN" ]; then
+    PHRASEAPPTOKEN=$(az keyvault secret show --name phrase-token --vault-name imobkeyvault --query value | tr -d '"' | tr -d '\n')
+fi
+
+
 mkdir translations
 
 DE_LOCALE_RESPONSE=$(
