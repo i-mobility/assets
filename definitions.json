@@ -1109,7 +1109,7 @@
         "nearby": "icon_transport_dott"
       },
       "marker_badge": {
-        "nearby": "icon_transport_scooter"
+        "nearby": "icon_transport_scooter_badge"
       },
       "id": "dott",
       "secondary_icon": "icon_park_zone_escooter",
@@ -1123,7 +1123,7 @@
         "nearby": "icon_transport_dott"
       },
       "marker_badge": {
-        "nearby": "icon_transport_bike"
+        "nearby": "icon_transport_bike_badge"
       },
       "id": "dott_bike",
       "secondary_icon": "icon_park_zone_escooter",

@@ -34,9 +34,15 @@ EXPECTED_SIZES = {
         'xxhdpi': '108x108'
     },
     'transport.indicator': {
-        'mdpi': '15x15', 
-        'hdpi': '23x23', 
-        'xhdpi': '30x30', 
+        'mdpi': '15x15',
+        'hdpi': '23x23',
+        'xhdpi': '30x30',
+        'xxhdpi': '45x45'
+    },
+    'transport.marker_badge': {
+        'mdpi': '15x15',
+        'hdpi': '23x23',
+        'xhdpi': '30x30',
         'xxhdpi': '45x45'
     },
     'redeem_code.provider': {
@@ -107,6 +113,9 @@ for mapping in defs['transport']:
         transport_icons['transport.secondary_icon'].add(mapping['secondary_icon'] + '.png')
     if 'group_icon' in mapping:
         transport_icons['transport.group_icon'].add(mapping['group_icon'] + '.png')
+    if 'marker_badge' in mapping:
+        if 'nearby' in mapping['marker_badge']:
+            transport_icons['transport.marker_badge'].add(mapping['marker_badge']['nearby'] + '.png')
 
     if expect('color' in mapping, severity = 'error', message = '"color" is required for each transport mapping'):
         expect(COLOR_PATTERN.search(mapping['color']), severity = 'error', message = f'{mapping["id"]} has invalid color {mapping["color"]}')
