@@ -1173,7 +1173,7 @@
   "transportation_group": [
     {
       "id": "public",
-      "translation_key": "transportation_group.public_transport"
+      "translation_key": "transportation_group.public"
     },
     {
       "id": "walk",
