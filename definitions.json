@@ -1160,14 +1160,6 @@
       "id": "lime_parking",
       "secondary_icon": "icon_park_zone_escooter_active_ride",
       "translation_key": "transportation_label.lime"
-    },
-    {
-      "color": "#e5ff00",
-      "icon": {
-        "default": "icon_transport_link"
-      },
-      "id": "link",
-      "translation_key": "transportation_label.link"
     }
   ],
   "transportation_group": [
