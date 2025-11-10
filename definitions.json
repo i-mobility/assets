@@ -1059,8 +1059,8 @@
       "icon": {
         "default": "icon_transport_car"
       },
-      "id": "hgl",
-      "translation_key": "transportation_label.hgl"
+      "id": "ibiola_hgl",
+      "translation_key": "transportation_label.ibiola_hgl"
     },
     {
       "color": "#e20329",
