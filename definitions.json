@@ -1055,6 +1055,14 @@
       "translation_key": "transportation_label.caruso"
     },
     {
+      "color": "#eb7815",
+      "icon": {
+        "default": "icon_transport_car"
+      },
+      "id": "hgl",
+      "translation_key": "transportation_label.hgl"
+    },
+    {
       "color": "#e20329",
       "group_icon": "icon_transport_rail_and_drive_group",
       "icon": {
